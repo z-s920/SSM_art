@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>客服中心</title>
+    <link rel="stylesheet" th:href="@{/asserts/layui/css/layui.css}" media="all">
+    <style>
+        .layim-chat-text .layui-layim-photos {
+            width: 120px;}
+    </style>
+    <script th:src="@{/asserts/layui/layui.js}"></script>
+</head>
+<body>
+<script>
+    const userId = [[${session.customer}]];
+    const webSocket = new WebSocket("ws://localhost:8081/chat?userId=" + userId);//localhost websocket
+    //监听收到的聊天消息，假设你服务端emit的事件名为：chatMessage
+    function send(type , res){
+        // 发送   json数据，包含 消息类型，发送消息的文本
+        webSocket.send(JSON.stringify({  // 将JS对象 转换成 json格式   {“id”:1}
+            type: type ,
+            data: res
+        }));
+    }
+    layui.use('layim', function (layim) {
+        //  收到消息
+        webSocket.onmessage = function (res) {
+            res = JSON.parse(res.data);  // 将json转化成JS对象
+            switch (res.type) {
+                case 'TYPE_TEXT_MESSAGE':  // 判断消息类型是不是 消息
+                    layim.getMessage(res.msg);  // 将消息给了 layim
+                    break;
+            }
+        };
+        layim.on('sendMessage', function (res) {   // 调用发送函数
+            send('chatMessage' , res)
+        });
+        layim.config(
+            {
+                brief: true ,  // 开启简约模式
+                title: '游客',
+                init: {
+                    //配置客户信息
+                    mine: {
+                        "username": "访客:"+userId //我的昵称
+                        ,"id": userId //我的ID
+                        ,"status": "online" //在线状态 online：在线、hide：隐身
+                        ,"remark": "在深邃的编码世界，做一枚轻盈的纸飞机" //我的签名
+                        ,"avatar": "../asserts/avatar/fangke.png" //我的头像
+                    }
+                }
+            })
+            .chat({
+                name: '客服姐姐',
+                type: 'friend',
+                avatar: '../asserts/avatar/kefu.jpg'
+                ,
+                id: '101032'  // 客服id
+            });
+    });
+</script>
+</body>
+</html>

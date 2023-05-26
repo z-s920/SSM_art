@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>个人注册</title>
+    <link rel="shortcut icon"  th:href="@{/asserts/image/favicon.ico}">
+    <link rel="stylesheet" th:href="@{/asserts/css/normalize.css} "/>
+    <link rel="stylesheet" th:href="@{/asserts/css/register.css}"/>
+    <script src="js/jquery.min.js" th:src="@{/asserts/js/jquery.min.js}"></script>
+    <script src="js/register.js" th:src="@{/asserts/js/register.js}"></script>
+</head>
+<script>
+    function check() {
+        const username = $("#username").val();
+
+        const password = $("#password").val();
+        if (username==""||password=="")
+        {
+            $("#message").text("账号或密码不能为空！");
+            return false;
+        }
+        return true;
+    }
+</script>
+<body>
+<div class="w">
+    <header>
+        <div class="logo"><a href="index.html"></a></div>
+    </header>
+    <div class="registerarea">
+        <h3>
+            注册新用户
+            <em>我有账号，去<a href="login.html">登陆</a></em>
+        </h3>
+        <div class="reg_form">
+
+            <span id="message">[[${msg}]]</span>
+            <form method="post" name="register" id="register" th:action="@{/register}"
+                  onsubmit="return check()">
+                <ul>
+                    <li>
+                        <label for="tel">角色：</label>
+                        &nbsp&nbsp<select name="power">
+                        <option>学生</option>
+                        <option>教师</option>
+                        <option>校外艺术家</option>
+                        <option>收藏爱好者</option>
+                    </select>
+
+                    </li>
+                    <li>
+                        <label for="username">账号：</label>
+                        <input type="text" name="username" class="inp" id="username">
+                        <span class="hint">
+                                <i class="hint_icon"></i>
+                                <em>请输入六位数账号！</em>
+                            </span>
+                    </li>
+                    <li class="password">
+                        <label for="psw">登录密码：
+                            <img  th:src="@{/asserts/image/close.png}" width="24px" alt="">
+                        </label>
+                        <input type="password" name="password" class="inp" id="password">
+                        <span class="hint">
+                                <i class="hint_icon"></i>
+                                <em>请输入6~16位密码!</em>
+                            </span>
+                    </li>
+
+                    <li class="repassword">
+                        <label for="repsw">确认密码：
+                            <img th:src="@{asserts/image/close.png}" width="24px" alt="">
+                        </label>
+                        <input type="password" class="inp" id="repsw">
+                        <span class="hint">
+                                <i class="hint_icon"></i>
+                                <em>请再次输入密码!</em>
+                            </span>
+                    </li>
+                    <li>
+                        <input type="submit" value="完成注册" class="over">
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

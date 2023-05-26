@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>校园艺术画展| Campus art exhibition</title>
+    <link rel="icon" th:href="@{/asserts/image/favicon.ico}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/asserts/css/style_cn.css}" />
+    <link rel="stylesheet" th:href="@{/asserts/css/lrtk.css}" />
+    <link rel="stylesheet" th:href="@{/asserts/css/jqtransform.css}" />
+    <script type="text/javascript" th:src="@{/asserts/player/jwplayer.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery-1.8.0.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.fancybox.pack.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/audio.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/coin-slider.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/banner.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/common_fun.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/xAutocomplete_JQ.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.xplaceholder.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.jqtransform.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/avalon/avalon.min_xwk.js}"></script>
+    <script type="text/javascript">
+        avalon.config({loader: false})
+    </script>
+</head>
+<body>
+<div id="wrap">
+    <div id="topKvBg">
+        <img th:src="@{asserts/css/img/03.jpg}">
+        <s></s><i></i>
+    </div>
+    <div id="header">
+        <div class="topMenu">
+            <div class="inner">
+                <ul class="menu">
+                    <li >
+                        <a class="con" href="/user/home">HOME</a>
+
+                    </li>
+
+                    <li>
+                        <a class="con" href="javascript:;">艺术商店</a>
+                        <div class="downMenu downMenu2 div_menu_top2">
+                            <div class="preview">
+                                <div class="previewBox" style="display:none">
+                                    <a href="" class="previewCon">
+                                        <div class="pic"><img th:src="@{/asserts/image/20210920.jpg}"></div>
+                                        <h4>（延期）RAM纸张实验室 | 来吧！纸人偶！</h4>
+                                        <p>2021-01-23</p>
+                                    </a>
+                                </div>
+                                <div class="previewBox" style="display:none">
+                                    <a href="" class="previewCon">
+                                        <div class="pic"><img th:src="@{/asserts/image/202101211714221797.jpg}"></div>
+                                        <h4>（延期）RAM纸张实验室 | 缝隙</h4>
+                                        <p>2021-01-24</p>
+                                    </a>
+                                </div>
+                                <div class="switch">
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                            </div>
+                            <ul>
+                                <li><a href="/chinese">中国艺术画</a></li>
+                                <li><a href="/western">西方艺术画</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="con" href="javascript:;">艺术家</a>
+                        <div class="downMenu">
+                            <ul>
+                                <li><a href="/chinesepeople">中国艺术家</a></li>
+                                <li><a href="">西方艺术家</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li >
+                        <a class="con" href="/Mycart"><i class="t3"></i>购物车</a>
+                    </li>
+                </ul>
+                <div class="topLink">
+                    <ul>
+
+                        <li><a class="link" onclick="show('http://127.0.0.1:8081/userKeFu','用户客服中心','800','600')"><i class="t7"></i>客服</a></li>
+                        </li>
+                        <li><a class="link" href="/administratorLogin" onclick="G_show_login_div()"><i class="t8"></i>管理员登录</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content" style="background: whitesmoke" class="exhibitionDetail researchDetail cf">
+        <div class="exhibitionDetailTop cf researchDetailTop">
+            <div class="colL">
+                <h2>要旅行，先修路。通向未来的路在你脚下</h2>
+                <p></p>
+            </div>
+        </div>
+        <div class="exhibitionMain cf researchMain">
+            <div class="colL">
+                <div class="researchText">
+                    <div class="cmsMainBox">	<div class="cmsMainBoxCon"><h4><span style="color:#000000">荣幸地宣布，受策展人比利安娜·思瑞克之邀，与长期研究项目“要旅行，先修路。通向未来的路在你脚下”（As you go… roads under your feet, towards the new future）达成合作。项目为期3年，由比利安娜·思瑞克策划并发起。从中国到巴尔干半岛、从埃塞俄比亚到中亚，项目的核心是在不同语境中就彼此共通的问题发出原本被淹没的声音。不同的个人、组织和机构仿若一枚枚有机研究“细胞”，通过合作建立知识共性，一种新型的亲密形式将由此浮现，而其参与者也将联手呈现一种全新的合作形式。<br>
+<br>
+2020年6月，我们发起了一项名为“帘幕”（CURTAIN）的研究项目。希望呈现并非限定于特定时间或地理范围的单个项目，而是通过一系列联动式的委约和合作，拓展与艺术家的对话，聚集来自不同群体和领域的批判性学者、思考者及实践者。在“帘幕”的发展过程中，我们了解到“要旅行，先修路。通向未来的路在你脚下”，并在其研究议题中看到了无限可能性。我们期冀通过共同研究及提供项目支持，寻求创新的合作形式，以打破艺术领域默许的阶级划分，鼓励多元文化和跨学科研究所能够激发的创造性交融。<br>
+<br>
+项目合作中及其重要的部分在于委约创作，为不断加入的合作者们提供帮助，希望能够为文艺生态体系中至关重要的各项实践活动提供保障和支持，以委约创作的形式确保这个平台能够产出建设性的想法、新方向和不同媒介的艺术创作，让源自不同实践者的新讨论和新互动能够不断深化。通过“要旅行，先修路。通向未来的路在你脚下”，我们希望与其他合作机构和项目参与者建立更紧密的联系，包括：郑亦然（艺术家，中国）、罗贝尔·特梅斯根（艺术家，埃塞俄比亚）、Berhanu（人类学家，中国）、星际巴士-埃塞俄比亚（科学、艺术、技术、创新项目，埃塞俄比亚）、玛莉嘉·格拉瓦什（文化学家，斯洛文尼亚）等。<br>
+<br>
+<br>
+郑亦然<br>
+<br>
+郑亦然是一名跨学科艺术家，目前在布鲁克林和中国两地工作、生活。通过沉浸装置、即兴行为、雕塑和艺术家书籍等媒介，她构建出作为公共介入手段的情境，试图在当代艺术语境内外，拓展人们对所处社会和文化环境的认知。<br>
+<br>
+“部屋物语”是郑亦然目前正在进行中的持续性项目，在当前这一独特的困难时期，艺术家向全球公开征集个人生活经验的文字创作。从各地收集而来的所有文稿将构成一个不断扩展的实体档案库，而每一位投稿人亦将拥有专属文档。作品将以文献的形式自2020年11月呈现于上海外滩美术馆。<br>
+<br>
+特别鸣谢Longlati Foundation为《部屋物语（上海），2020》提供支持。<br>
+<br>
+<br>
+罗贝尔·特梅斯根（Robel Temesgen）<br>
+<br>
+罗贝尔·特梅斯根的创作横跨绘画、行为、装置、录像等媒介，还包括各类合作性项目。通过围绕“Nu Bunna Tetu”咖啡壶、守护神Adbar等本土文化遗产展开重新想象，特梅斯根将“陌生人”这一构成其对社会政治动态持续研究兴趣的对象与体现社会、社会性和社交性的空间结合起来。<br>
+<br>
+2020年，特梅斯根发起了一份新报纸，聚焦埃塞俄比亚近年的情况。通过配图和文本，他对暴力、抗议和动荡中出现的各种工具、素材、事件和对象进行重新界定、梳理和分析。该项目可以视作对特定时期的记录；以及对个体和集体参与的纪念。<br>
+<br>
+<br>
+Berhanu<br>
+<br>
+Berhanu的研究课题为非洲，主要涵盖城市化、移民、迁移与田园主义、后社会主义转型和跨文化交流等。<br>
+<br>
+在“要旅行，先修路。通向未来的路在你脚下”项目中，Berhanu将与埃塞俄比亚研究员阿吉扎·阿卜杜勒·费塔（Aziza Abdul Fetah）和辛克·埃谢图（Sinkneh Eshetu）共同参与亚的斯亚贝巴河流项目。该项目旨在研究河流恢复项目对周边居民的社会经济生活所产生的影响。项目指出关于发展、城市更新和迁离等问题，以及空间对城市社会阶层的限制。<br>
+<br>
+<br>
+星际巴士-埃塞俄比亚（Astrobus-Ethiopia）<br>
+<br>
+“星际巴士-埃塞俄比亚”是一项移动中的科学、艺术、创新推广计划。以驾驶汽车的方式，项目去往埃塞俄比亚的不同地点，举办各种结合科学、尤其是天文学、艺术和创造型的活动，激发学生与公众对科学的认识，并看见其在现代世界的影响。<br>
+<br>
+“星际巴士-埃塞俄比亚”的负责人，亚贝巴尔·塔德斯·范塔耶（Yabebal Tadesse Fantaye），早前是一名宇宙学家，现在是一名数据科学家。他的研究致力于将人工智能运用于地球卫星图像，以便找到监测非洲发展进度的新方法。2020年，范塔耶博士发起了一个新项目，从亚的斯亚贝巴的社会经济状态着手，研究新冠疫情对该地的影响。他以收集到的无人机监测图像为基础，并开展大规模调研以收集心理健康状况、经济稳定和家庭暴力等方面的数据。<br>
+<br>
+<br>
+玛莉嘉·格拉瓦什（Marija Glavaš）<br>
+<br>
+玛莉嘉·格拉瓦什是一名文化学研究员。她的研究主要围绕中国艺术和文化对巴尔干地区的影响。她尤其关注由中国政府出口或合作制造的（实体或数字）内容，以及这些内容如何塑造巴尔干地区的文化景观。</span></h4>
+                    </div></div><div class="cmsMainBox">	<img th:src="@{asserts/image/202010091814384986.jpg}">	<div class="cmsMainBoxCon"></div></div><div class="cmsMainBox">	<div class="cmsMainBoxCon"><h4>&nbsp;</h4>
+
+                    <h4><span style="color:#000000">关于“要旅行，先修路。通向未来的路在你脚下”<br>
+<br>
+“要旅行，先修路。通向未来的路在你脚下”是一项为期三年的研究项目，策展人比利安娜·思瑞克此前曾在东非、中亚和若干巴尔干国家开展策展研究，并于2019年正式发起该项目。<br>
+<br>
+这是一项为期3年的长期研究项目，一系列组织、机构和个人将作为研究“细胞”参与其中，包括：教育平台“策展能/该做什么”（贝尔格莱德）、现代艺术画廊（卢布尔雅那）、上海外滩美术馆（上海）、广东时代美术馆（广州）、ArtCom（阿斯塔纳）、博尔公共图书馆（塞尔维亚）、研究员罗贝尔·特梅斯根和辛克·埃谢图（亚的斯亚贝巴）等。<br>
+<br>
+在语言差异引发恐惧，而偏见与歧视让人们成为陌路之时，我们能否实现人类学观察的去殖民化，不再站在远方凝望“他者”，而将研究对象转化为我们能够参与其中的事物？<br>
+<br>
+研究的形成基于一系列既有的共性，如社会主义和不结盟政策。在长期参与的过程中，不同“细胞”排列组合，并试图以合作的形式凸显相异的知识结构，其中不仅包括艺术家，还包括在项目中展开研究的建筑师、作家、人类学家和活动家等。<br>
+<br>
+项目参与者包括：辛克·埃谢图·齐勒克、阿吉扎·阿卜杜勒·费塔、莎拉·布希拉、耶利卡·约万诺维奇、亚历克斯·尤尔科、埃格里姆·卡帕、胡昀、库尔莎特·梅德诺娃、星际巴士-埃塞俄比亚、索尔维格·苏斯、艾西亚·巴兹德瑞亚瓦和罗伯特·鲍勃尼克、卡亚·克拉纳、提亚莎·波加卡（ŠUM）、Water咖啡馆、波塔·莎里波娃、纳塔利娅·查梅耶娃等。<br>
+<br>
+项目第一阶段于2020年2月启动，以亚的斯亚贝巴合作小组会面和首次公开呈现拉开序幕。<br>
+</span></h4>
+                </div></div><div class="cmsMainBox">	<div class="cmsMainBoxCon"><h4>&nbsp;</h4>
+
+                    <h4>&nbsp;</h4>
+
+                    <h4>&nbsp;</h4>
+
+                    <h4><span style="color:#000000">关于比利安娜·思瑞克<br>
+<br>
+比利安娜·思瑞克是一位独立策展人。<br>
+<br>
+她曾担任第三届乌拉尔当代艺术工业双年展联合策展人（叶卡捷琳堡，2015）、卡蒂斯特艺术基金会驻留策展人（巴黎，2015）、以及Henie Onstad艺术中心研究员（Høvikodden，2016）。她近期的展览项目包括：“慢进？我们如何共处”（广东时代美术馆，广州，2019）、“When the Other Meets the Other Other”（贝尔格莱德文化中心，2017）、“把一切都交给你”（明当代美术馆，上海，2016/2017）、“所见非所得-一个关于杨峰艺术与教育基金会的展览”（杨峰艺术与教育基金会，深圳，2017）。<br>
+<br>
+2013年，思瑞克发起聚焦中国和东南亚地区的研讨平台“从展览的历史到展览制造的未来”，平台的系列集会先后在奥克兰St Paul St Gallery（新西兰，2013）、上海外滩美术馆（上海，2018）、广东时代美术馆（广州，2019）举办。同名出版物于2019年由Sternberg出版社出版。思瑞克的其他著作包括：聚焦上海艺术家自我组织展览的专著《上海展览史：1979-2006》，由英国华人当代艺术中心出版；与蔡影茜联合主编的《无为而为——机制批判的生与死》，由英国黑狗出版社出版。<br>
+<br>
+2018年，她创立了教育平台“策展能/该做什么”。她曾获得ICI独立视野策展奖提名（2012）。目前，她致力于策划并推动长期研究项目“要旅行，先修路。通向未来的路在你脚下”。她正在攻读墨尔本莫纳什大学策展专业博士研究生学位。</span></h4>
+                </div></div><div class="cmsMainBox">	<div class="cmsMainBoxCon"><h4><br>
+                    <br>
+                    <br>
+                    <span style="color:#000000">关于“帘幕”<br>
+<br>
+“帘幕”是上海外滩美术馆于2020年发起的一项跨越多地的长期研究项目。项目为期3年，将以多元形式呈现一系列展览、活动、对话平台和跨机构合作等。“帘幕”系列旨在突破展览的物理限制，拓展与艺术家的对话，聚集来自不同群体和领域的批判性思考者及实践者。<br>
+<br>
+“帘幕”这一概念富有多重内涵，体现了多元的公众参与形式。“帘幕”是一种既属于物质性又属于非物质性的装置，在集体表演中闪现于不同的舞台和集合方式之间。我们想呈现的并非限定于特定时间或地理范围的单个项目，而是希望通过一系列联动式的委约和合作内容来推动项目的开展，激励我们深入新的研究领域。这一长期的项目框架有助于我们在不同空间保持情感和交流，打破我们原先消费视觉文化的习惯，共同建立意识形态和相关性知识。<br>
+<br>
+</span></h4>
+                </div></div>			</div>
+                <div class="researchBlock participant cf">
+                    <h4>参与者</h4>
+                    <div>
+                        <a target="_blank" href=""><img th:src="@{asserts/image/201309301851056234.jpg}" width="110" height="110"><span>比利安娜·思瑞克</span></a>
+                        <a target="_blank" href=""><img th:src="@{asserts/image/202010091846058273.jpg}" width="110" height="110"><span>郑亦然</span></a>
+                        <a target="_blank" href=""><img th:src="@{asserts/image/default.png}" width="110" height="110"><span>罗贝尔·特梅斯根</span></a>
+                        <a target="_blank" href=""><img th:src="@{asserts/image/default.png}" width="110" height="110"><span>Berhanu</span></a>
+                        <a target="_blank" href=""><img th:src="@{asserts/image/202010101322505794.jpg}" width="110" height="110"><span>星际巴士-埃塞俄比亚</span></a>
+                        <a target="_blank" href=""><img th:src="@{asserts/image/default.png}" width="110" height="110"><span>玛莉嘉·格拉瓦什</span></a>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div id="footer">
+        <s></s>
+        <div class="inner">
+            <div class="topBox">
+                <div class="newSwitch" >
+                    <h3>公告</h3>
+                    <a class="more" href="">更多新闻</a>
+                    <a class="newBox" href="" th:each="News:${session.news}">
+                        <h4>[[${News.title}]]</h4>
+                        <p>[[${News.content}]]</p>
+                    </a>
+                    <div class="switch">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="info">
+                    <h3><i class="i2"></i>开放时间</h3>
+                    <p>星期二 - 星期日 10:00 ~ 18:00</p>
+                    <h3><i class="i3"></i>地址</h3>
+                    <p>邯郸市邯山区学院北路</p>
+                    <h3><i class="i1"></i>电话和邮箱</h3>
+                    <p> +86 21 63216251<br><a href="">1136993620@qq.com</a></p>
+                </div>
+                <div class="calendarBox">
+                    <div class="cldBody">
+                        <table>
+                            <thead>
+                            <tr>
+                                <td colspan="7">
+                                    <div class="top">
+                                        <span id="left"><</span>
+                                        <span id="topDate"></span>
+                                        <span id="right">></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr id="week" >
+                                <td>日</td>
+                                <td>一</td>
+                                <td>二</td>
+                                <td>三</td>
+                                <td>四</td>
+                                <td>五</td>
+                                <td>六</td>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody" ></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var param = {
+            tim_show_next_page:false,
+            data_end:false,
+            loading:false,
+            page:1
+        };
+        function show_next_page(){
+            if(param.loading){
+                return;
+            }
+            param.loading = true;
+            $.fancybox.showLoading();
+
+            $.get($.gurl('/ajaxs/load_publication'),{
+                page:++param.page
+            },function(rsp){
+                if(rsp == ''){
+                    param.data_end = true;
+                }else{
+                    $('.bookList ul').append(rsp);
+                }
+                param.loading = false;
+                $.fancybox.hideLoading();
+            });
+        }
+        $(window).bind('scroll.show_next_page', function (){
+            //显示下一页
+            if($.pageEnd() && !param.data_end){
+                if(param.tim_show_next_page){
+                    clearTimeout(param.tim_show_next_page);
+                }
+                param.tim_show_next_page = setTimeout(function(){
+                    show_next_page();
+                },200);
+            }
+        });
+    });
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        var G_forget_email = '';
+        var tim_resend;
+
+        //preload small pic
+        $('#topKvBg img[_src]').each(function(){
+            var _this = $(this);
+            var img = new Image();
+            img.onload = function(){
+                _this.attr('src',_this.attr('_src'));
+            };
+            img.src = $(this).attr('_src');
+        });
+
+        //top menu first click
+        $('.topMenu .menu>li').each(function(){
+            var a_tag = $(this).children('a');
+            var a_sub = $(this).find('ul li:first a');
+            if(a_sub.attr('href') != 'javascript:;'){
+                a_tag.attr('href',a_sub.attr('href'));
+            }
+        });
+        //top menu exhibition/event
+        function set_top_menu(div){
+            $(div+' .previewBox:first').show();
+            $(div+' .switch i:first').addClass('now');
+
+            $(div+' .switch i').css({cursor:'pointer'});
+
+            var idx = 0;
+            var idx_count = $(div+' .previewBox').size() -1;
+            if(idx_count < 1){
+                return;
+            }
+
+            var tim = null;
+
+            $(div+' .switch i').hover(function(){
+                clearTimeout(tim);
+                idx = $(this).index();
+                $(div+' .previewBox:visible').fadeOut();
+                $(div+' .previewBox').eq(idx).fadeIn();
+                $(div+' .switch i').removeClass('now');
+                $(div+' .switch i').eq(idx).addClass('now');
+            },function(){
+                go();
+            });
+
+            $(div+' .preview').hover(function(){
+                clearTimeout(tim);
+            },function(){
+                go();
+            });
+            function go(){
+                clearTimeout(tim);
+                tim = setTimeout(function(){
+                    if($(div).is(':visible')){
+                        idx++;
+                        if(idx >= idx_count){
+                            idx = -1;
+                        }
+                        $(div+' .previewBox:visible').fadeOut();
+                        $(div+' .previewBox').eq(idx).fadeIn();
+                        $(div+' .switch i').removeClass('now');
+                        $(div+' .switch i').eq(idx).addClass('now');
+                    }
+                    go();
+                },3000);
+            };
+            go();
+        };
+        set_top_menu('.div_menu_top1');
+        set_top_menu('.div_menu_top2');
+
+
+        //news list
+        function set_news_list(){
+            var div = '#footer .newSwitch';
+            $(div+' .newBox').hide();
+            $(div+' .newBox:first').show();
+            $(div+' .switch i:first').addClass('now');
+
+            var idx = 0;
+            var idx_count = $(div+' .newBox').size() -1;
+            if(idx_count < 1){
+                return;
+            }
+
+            var tim = null;
+            $(div+' .switch i').hover(function(){
+                clearTimeout(tim);
+                idx = $(this).index();
+                $(div+' .newBox:visible').stop().fadeOut();
+                $(div+' .newBox').eq(idx).stop().fadeIn();
+                $(div+' .switch i').removeClass('now');
+                $(div+' .switch i').eq(idx).addClass('now');
+            },function(){
+                go();
+            });
+            function go(){
+                clearTimeout(tim);
+                tim = setTimeout(function(){
+                    idx++;
+                    if(idx >= idx_count){
+                        idx = -1;
+                    }
+                    $(div+' .newBox:visible').stop().fadeOut();
+                    $(div+' .newBox').eq(idx).stop().fadeIn();
+                    $(div+' .switch i').removeClass('now');
+                    $(div+' .switch i').eq(idx).addClass('now');
+                    go();
+                },3000);
+            };
+            go();
+        };
+        set_news_list();
+
+
+        $('.li_share').hover(function(){
+            $('.stayIcon').fadeIn();
+        },function(){
+            $('.stayIcon').fadeOut();
+        });
+
+        var date = new Date();
+        var year = date.getFullYear();
+        var nowyear = date.getFullYear();
+        var month = date.getMonth()+1;
+        var nowmonth = date.getMonth()+1;
+        var dateday = date.getDate();
+        var todateHtml = year + '年'+ month + '月';
+        $('#topDate').text(todateHtml);
+        function showcld(){
+            var monthDay = [31,28,31,30,31,30,31,31,30,31,30,31];  // 创建数组存放每个月有多少天 ,默认2月为28天
+            // 判断闰年
+            if(year % 4 == 0 && year %100 != 0 || year % 400 == 0){
+                monthDay[1] = 29;
+            }
+            // 计算每个月的天数
+            var days = monthDay[month-1];
+            // 判断每月第一天为周几
+            date.setYear(year);        //某年
+            date.setMonth(month-1);   //某年的某月
+            date.setDate(1);   // 某月的某天
+            var weekday = date.getDay();  // 判断某天是周几
+            // 补齐一号前的空格
+            var tbodyHtml = '<tr>';
+            for(var i = 0; i<weekday; i++){
+                tbodyHtml += "<td></td>";
+            }
+            // 补齐每月的日期
+            var changLine = weekday;
+            var tagClass = '';
+            for(i=1; i<=days; i++){//每一个日期的填充
+                if(year == nowyear && month == nowmonth && i == dateday) {
+                    tagClass = "curDate";//当前日期对应格子
+                }else{
+                    tagClass = "isDate";
+                }
+                tbodyHtml += "<td class=" + tagClass + ">" + i + "</td>";
+                changLine = (changLine+1)%7;
+                if(changLine == 0 && i != days){//是否换行填充的判断
+                    tbodyHtml += "</tr><tr>";
+                }
+            }
+            $('#tbody').empty();   // 清空原有的内容
+            $('#tbody').append(tbodyHtml);   //添加当前月份的日期内容
+        }
+// 设置按钮点击事件
+        $('#left').click(function(){
+            month = month-1;
+            if(month < 1){
+                month = 12;
+                year--;
+            }
+            var todateHtml = year + '年'+ month + '月';
+            $('#topDate').text(todateHtml);
+            showcld();
+        });
+
+        $('#right').click(function(){
+            month = month+1;
+            if(month > 12){
+                month = 1;
+                year++;
+            }
+            var todateHtml = year + '年'+ month + '月';
+            $('#topDate').text(todateHtml);
+            showcld();
+        })
+        showcld();  //页面加载后执行函
+
+
+
+        //搜索
+
+
+
+
+
+
+    });
+</script>
+
+</body>
+</html>

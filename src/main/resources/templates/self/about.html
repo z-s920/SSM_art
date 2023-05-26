@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>校园艺术画展| Campus art exhibition</title>
+    <link rel="icon" th:href="@{/asserts/image/favicon.ico}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/asserts/css/style_cn.css}" />
+    <link rel="stylesheet" th:href="@{/asserts/css/lrtk.css}" />
+    <link rel="stylesheet" th:href="@{/asserts/css/jqtransform.css}" />
+    <script type="text/javascript" th:src="@{/asserts/player/jwplayer.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery-1.8.0.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.fancybox.pack.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/audio.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/coin-slider.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/banner.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/common_fun.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/xAutocomplete_JQ.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.xplaceholder.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.jqtransform.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/avalon/avalon.min_xwk.js}"></script>
+    <script type="text/javascript">
+        avalon.config({loader: false})
+    </script>
+    <style type="text/css">
+        .fancybox-lock .fancybox-overlay {overflow:hidden}
+        .jwclick{opacity:0}
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="topKvBg">
+        <img th:src="@{/asserts/css/img/03.jpg}">
+        <s></s><i></i>
+    </div>
+    <div id="header">
+        <div class="topMenu">
+            <div class="inner">
+                <h1 class="logo"><a href="/cn/">上海外滩美术馆 | Rockbund Art Museum</a></h1>
+                <ul class="menu">
+                    <li class="curr">
+                        <a class="con" href="javascript:;">参观</a>
+                        <div class="downMenu">
+                            <ul>
+                                <li><a href="/cn/press/show_list/news">公告</a></li>
+                                <li><a href="/cn/page/detail/dbdk">交通</a></li>
+                                <li><a href="/cn/page/detail/42ej">开放时间及门票</a></li>
+                                <li><a href="/cn/page/detail/340cq">联络</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="con" href="javascript:;">展览</a>
+                        <div class="downMenu downMenu2 div_menu_top1">
+                            <div class="preview">
+                                <div class="previewBox" style="display:none">
+                                    <a href="/cn/exhibition/overview/366cswr" class="previewCon">
+                                        <div class="pic"><img src=""></div>
+                                        <h4>帘幕</h4>
+                                        <p>
+                                            2021-05-14 - 2021-07-25													</p>
+                                    </a>
+                                </div>
+                                <div class="switch">
+                                    <i></i>
+                                </div>
+                            </div>
+                            <ul>
+                                <li><a href="/cn/exhibition/show_list/#now">当前展览</a></li>
+                                <li><a href="/cn/exhibition/show_list/#future">展览预告</a></li>
+                                <li><a href="/cn/exhibition/show_list/#past">展览回顾</a></li>
+                                <li><a href="javascript:;">虚拟展览</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="con" href="javascript:;">活动</a>
+                        <div class="downMenu downMenu2 div_menu_top2">
+                            <div class="preview">
+                                <div class="previewBox" style="display:none">
+                                    <a href="/cn/event/overview/35fcswn" class="previewCon">
+                                        <div class="pic"><img src="2"></div>
+                                        <h4>RAM纸张实验室 | 缝隙</h4>
+                                        <p>
+                                            2021-04-10													</p>
+                                    </a>
+                                </div>
+                                <div class="previewBox" style="display:none">
+                                    <a href="/cn/event/overview/2f2cswm" class="previewCon">
+                                        <div class="pic"><img src=""></div>
+                                        <h4>RAM纸张实验室 | 来吧！纸人偶！</h4>
+                                        <p>
+                                            2021-04-17													</p>
+                                    </a>
+                                </div>
+                                <div class="previewBox" style="display:none">
+                                    <a href="/cn/event/overview/0f3cswt" class="previewCon">
+                                        <div class="pic"><img src=""></div>
+                                        <h4>RAM纸张实验室 | 工作坊：独一无二的纸</h4>
+                                        <p>
+                                            2021-04-24													</p>
+                                    </a>
+                                </div>
+                                <div class="switch">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                            </div>
+                            <ul>
+                                <li><a href="/cn/event/show_list/#today">今日活动</a></li>
+                                <li><a href="/cn/event/show_list/#preview">活动预告</a></li>
+                                <li><a href="/cn/event/show_list/#review">活动回顾</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="con" href="javascript:;">教育</a>
+                        <div class="downMenu">
+                            <ul>
+                                <li><a href="/cn/education/overview">综述</a></li>
+                                <li><a href="/cn/education/events">活动</a></li>
+                                <li><a href="/cn/education/publications">相关出版物</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="con" href="javascript:;">研究</a>
+                        <div class="downMenu">
+                            <ul>
+                                <li><a href="/cn/research/overview">综述</a></li>
+                                <li><a href="/cn/research/events">活动</a></li>
+                                <li><a href="/cn/research/publications">相关出版物</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li >
+                        <a class="con" href="javascript:;">资料</a>
+                        <div class="downMenu">
+                            <ul>
+                                <li><a href="/cn/library/publication">出版物</a></li>
+                                <li><a href="/cn/photo/gallery">图片库</a></li>
+                                <li><a href="/cn/photo/artworks">作品</a></li>
+                                <li><a href="/cn/photo/video">视频库</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="con" href="/cn/press/show_list/press_release">媒体</a>
+                    </li>
+                    <li><a target="_blank" class="con" href="http://hugobossasiaart.org/cn/">HUGO BOSS ASIA ART</a></li>
+                </ul>
+                <div class="topLink">
+                    <ul>
+                        <li><a class="link" href=""><i class="t5"></i>关于</a></li>
+                        <li><a class="link" href="/cn/page/detail/627cv"><i class="t6"></i>加入我们</a></li>
+                        <li><a class="link" href="/cn/users/reg_overview?return_url=/cn/page/detail/474cr"><i class="t7"></i>会员</a></li>
+                        <li class="li_share"><span class="link"><i class="t1"></i>关注我们</span>
+                            <div class="stayIcon" style="display:none">
+                                <a class="i7" target="_blank" href="https://twitter.com/Rockbund" title="Twitter"></a>
+                                <a class="i2" target="_blank" href="http://site.douban.com/ram/" title="Douban"></a>
+                                <a class="i3" target="_blank" href="http://weibo.com/rbartmuseum" title="Weibo"></a>
+                                <a class="i4" href="javascript:;" data-fancybox-href="/images/Wechat_code.jpg" data-fancybox-title="请用微信扫描二维码，并关注我们" title="Wechat"></a>
+                                <a class="i6" target="_blank" href="http://instagram.com/rockbundartmuseum" title="instagram"></a>
+                                <a class="i1" target="_blank" href="https://www.facebook.com/RockbundArt" title="Facebook"></a>
+                            </div>
+                        </li>
+                        <li><a class="link a_header_search" href="javascript:;"><i class="t2"></i>搜索</a>
+                            <div class="inputText div_header_search_artist_exhibition" style="display:none"><em></em>
+                                <form onsubmit="return false">
+                                    <input type="text" class="ipt_search_text" placeholder="搜索人物、展览或活动">
+                                </form>
+                                <div class="hiden div_search_result">
+
+                                </div>
+                            </div>
+                        </li>
+                        <li><a class="link" href="/cn/shop/show_list"><i class="t3"></i>商店</a></li>
+                                          </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content" class="pageBox cf" >
+        <s class="conLBg"></s>
+        <s class="conRBg"></s>
+        <s class="line"></s>
+        <div class="colL">
+            <div class="" style="color: #fff">
+                <div class="subnav" >
+                    <h2>关于</h2>
+                    <ul>
+                        <li>
+                            <span><i></i>关于</span>
+                            <ul>
+                                <li class="curr"><a href="/cn/page/detail/474cr">愿景</a></li>
+                                <li><a href="/cn/page/detail/1e3ep">我们是谁</a></li>
+                                <li><a href="/cn/page/detail/ad3er">与我们一同展望未来</a></li>
+                                <li><a href="/cn/page/detail/c38h">馆长</a></li>
+                                <li><a href="/cn/page/detail/ab8cs">艺术委员会</a></li>
+                                <li><a href="/cn/page/detail/53cew">团队</a></li>
+                                <li><a href="/cn/page/detail/644dv">致谢</a></li>
+                                <li><a href="/cn/page/detail/415g">历史</a></li>
+                                <li><a href="/cn/page/detail/54fct">空间</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="colR">
+            <h2 class="pageTitle">愿景</h2>
+            <div class="shareMin pageShare">
+                <strong>分享</strong>
+                <!-- Baidu Button BEGIN -->
+                <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+                    <a class="bds_fbook s1" href="javascript:;"></a>
+                    <a class="bds_twi" title="" href="javascript:;"></a>
+                    <a class="bds_tsina" title="" href="javascript:;"></a>
+                    <a class="bds_douban" title="" href="javascript:;"></a>
+                    <span class="bds_more"></span>
+                </div>
+                <script type="text/javascript" id="bdshare_js" data="type=tools&amp;mini=1&amp;uid=777755" src="http://bdimg.share.baidu.com/static/js/bds_s_v2.js?cdnversion=384635"></script>
+                <script type="text/javascript" id="bdshell_js"></script>
+                <!-- Baidu Button END -->
+            </div>
+            <div id="cmsWrap2">
+                <div class="cmsMainBox">	<div class="div_embed"><iframe height="361" width="570" src="https://player.youku.com/embed/XNTEyMzI4Mzc2NA==" frameborder="0" 'allowfullscreen'=""></iframe></div>	<div class="cmsMainBoxCon"><div class="caption"><strong>“愿景”</strong>，文字、图片编辑：拉瑞斯·弗洛乔；摄影、视频剪辑：刘树伟；音乐：Hilight Tribe</div>
+                </div></div><div class="cmsMainBox">	<div class="cmsMainBoxCon"><h3><br></h3><h3><span style="color:#000000"><strong>《愿景》</strong></span></h3><h4><strong><span style="color:#000000">作者&nbsp;<a data-cke-saved-href="http://www.rockbundartmuseum.org/cn/artist/overview/ff4cxu" href="http://www.rockbundartmuseum.org/cn/artist/overview/ff4cxu" target="_blank">​</a></span><a data-cke-saved-href="http://www.rockbundartmuseum.org/cn/artist/overview/ff4cxu" href="http://www.rockbundartmuseum.org/cn/artist/overview/ff4cxu" target="_blank"><span style="color:#000000">​拉瑞斯·弗洛乔</span></a></strong></h4><h4><br><br></h4><h4><span style="color:#000000">愿景</span></h4><h4><span style="color:#000000">持续拓展</span></h4><h4><span style="color:#000000">欲望</span></h4><h4><span style="color:#000000">为了持续的延展</span></h4><h4><span style="color:#000000">和建设性的矛盾的欲望</span></h4><h4><br></h4><h4><span style="color:#000000">美术馆成为舟</span></h4><h4><span style="color:#000000">海洋</span></h4><h4><span style="color:#000000">遗忘的岛屿</span></h4><h4><br></h4><h4><span style="color:#000000">不是美术馆</span></h4><h4><span style="color:#000000">而是地平线</span></h4><h4><span style="color:#000000">去拥抱</span></h4><h4><span style="color:#000000">不可能的空间</span></h4><h4><br></h4><h4><span style="color:#000000">艺术</span></h4><h4><span style="color:#000000">触摸</span></h4><h4><span style="color:#000000">不可见（的）</span></h4><h4><br></h4><h4><span style="color:#000000">计划之前</span></h4><h4><span style="color:#000000">凭着令人着迷的直觉</span></h4><h4><span style="color:#000000">去冒险</span></h4><h4><span style="color:#000000">迎接意外的邂逅</span></h4><h4><span style="color:#000000">和绝妙的矛盾</span></h4><h4><br></h4><h4><span style="color:#000000">在规划之前</span></h4><h4><span style="color:#000000">记得</span></h4><h4><span style="color:#000000">被排除的</span></h4><h4><span style="color:#000000">被遗忘的</span></h4><h4><br></h4><h4><span style="color:#000000">艺术</span></h4><h4><span style="color:#000000">重塑</span></h4><h4><span style="color:#000000">历史</span></h4><h4><br></h4><h4><span style="color:#000000">当代性</span></h4><h4><span style="color:#000000">转瞬即逝</span></h4><h4><span style="color:#000000">因循守旧</span></h4><h4><span style="color:#000000">无时不在</span></h4><h4><br></h4><h4><span style="color:#000000">不去寻找固定的身份</span></h4><h4><span style="color:#000000">预想</span></h4><h4><span style="color:#000000">和冒险</span></h4><h4><span style="color:#000000">去尝试不同</span></h4><h4><br></h4><h4><span style="color:#000000">阴影有存在的必要</span></h4><h4><span style="color:#000000">以揭示不可想象的</span></h4><h4><span style="color:#000000">恐惧</span></h4><h4><span style="color:#000000">并</span></h4><h4><span style="color:#000000">追溯</span></h4><h4><span style="color:#000000">无尽之途</span></h4><h4><br></h4><h4><span style="color:#000000">不要相信</span></h4><h4><span style="color:#000000">只需去体验</span></h4><h4><span style="color:#000000">再体验</span></h4><h4><span style="color:#000000">深刻</span></h4><h4><span style="color:#000000">激进</span></h4><h4><span style="color:#000000">简单</span></h4><h4><span style="color:#000000">置身其中</span></h4><h4><br></h4><h4><span style="color:#000000">艺术</span></h4><h4><span style="color:#000000">质问</span></h4><h4><span style="color:#000000">表层</span></h4><h4><span style="color:#000000">是图片？</span></h4><h4><span style="color:#000000">皮肤？</span></h4><h4><span style="color:#000000">肉身？</span></h4><h4><span style="color:#000000">疆域？</span></h4><h4><span style="color:#000000">大海？</span></h4><h4><br></h4><h4><span style="color:#000000">这表层</span></h4><h4><span style="color:#000000">如同深渊</span></h4><h4><br></h4><h4><span style="color:#000000">不是展览</span></h4><h4><span style="color:#000000">不是陈列</span></h4><h4><span style="color:#000000">不是系统</span></h4><h4><span style="color:#000000">是不可抑制的欲望</span></h4><h4><span style="color:#000000">为了运动</span></h4><h4><span style="color:#000000">行动</span></h4><h4><span style="color:#000000">和改变</span></h4><h4><br></h4><h4><span style="color:#000000">为无名者</span></h4><h4><span style="color:#000000">而冒险</span></h4><h4><br></h4><h4><span style="color:#000000">迎接</span></h4><h4><span style="color:#000000">不可命名的</span></h4><h4><br></h4><h4><span style="color:#000000">让不可能的</span></h4><h4><span style="color:#000000">图景</span></h4><h4><span style="color:#000000">发生</span></h4><h4><br></h4><h4><span style="color:#000000">让不可见</span></h4><h4><span style="color:#000000">成为可见</span></h4><h4><br></h4><h4><span style="color:#000000">艺术</span></h4><h4><span style="color:#000000">延伸</span></h4><h4><span style="color:#000000">丈量</span></h4><h4><span style="color:#000000">间隙之地</span></h4><h4><span style="color:#000000">中间之所</span></h4><h4><br></h4><h4><span style="color:#000000">图像</span></h4><h4><span style="color:#000000">超越</span></h4><h4><span style="color:#000000">一切</span></h4><h4><span style="color:#000000">疆域</span></h4><h4><br></h4><h4><span style="color:#000000">不是边界</span></h4><h4><span style="color:#000000">而是通途</span></h4><h4><br></h4><h4><span style="color:#000000">所在</span></h4><h4><span style="color:#000000">跟随不恰当的</span></h4><h4><span style="color:#000000">结合</span></h4><h4><span style="color:#000000">而起源，</span></h4><h4><span style="color:#000000">存在</span></h4><h4><span style="color:#000000">和发展</span></h4><h4><br></h4><h4><span style="color:#000000">变化</span></h4><h4><span style="color:#000000">来自</span></h4><h4><span style="color:#000000">微小</span></h4><h4><span style="color:#000000">细节</span></h4><h4><span style="color:#000000">不可察觉的</span></h4><h4><span style="color:#000000">珍贵差异</span></h4><h4><br></h4><h4><span style="color:#000000">艺术</span></h4><h4><span style="color:#000000">去失控</span></h4><h4><br></h4><h4><span style="color:#000000">在社交媒体力量之外</span></h4><h4><span style="color:#000000">取关</span></h4><h4><span style="color:#000000">退订</span></h4><h4><span style="color:#000000">卸载</span></h4><h4><br></h4><h4><span style="color:#000000">坚定站立于</span></h4><h4><span style="color:#000000">界限</span></h4><h4><span style="color:#000000">边缘</span></h4><h4><span style="color:#000000">失败</span></h4><h4><span style="color:#000000">伤痛</span></h4><h4><br></h4><h4><span style="color:#000000">永不妥协</span></h4><h4><span style="color:#000000">去行动</span></h4><h4><br></h4><h4><span style="color:#000000">艺术</span></h4><h4><span style="color:#000000">开启无尽的可能性</span></h4><h4><br></h4><h4><span style="color:#000000">新</span></h4><h4><span style="color:#000000">已然经过</span></h4><h4><br></h4><h4><span style="color:#000000">记住</span></h4><h4><span style="color:#000000">保守(主义)</span></h4><h4><span style="color:#000000">毫无依存</span></h4><h4><br></h4><h4><span style="color:#000000">当代</span></h4><h4><span style="color:#000000">是一段无尽的</span></h4><h4><span style="color:#000000">重新存档</span></h4><h4><span style="color:#000000">重新记忆</span></h4><h4><span style="color:#000000">重新搜索</span></h4><h4><span style="color:#000000">重新思考</span></h4><h4><span style="color:#000000">的进程</span></h4><h4><br></h4><h4><span style="color:#000000">去看</span></h4><h4><span style="color:#000000">超越被编码的故事</span></h4><h4><span style="color:#000000">拓宽已存在的文本</span></h4><h4><span style="color:#000000">去重新行动</span></h4><h4><span style="color:#000000">重新制作</span></h4><h4><span style="color:#000000">重新组合</span></h4><h4><span style="color:#000000">重新创造</span></h4><h4><br></h4><h4><span style="color:#000000">展览</span></h4><h4><span style="color:#000000">作为激进的</span></h4><h4><span style="color:#000000">转译行为</span></h4><h4><br></h4><h4><span style="color:#000000">不去理解另一种语言</span></h4><h4><span style="color:#000000">不必解释意义</span></h4><h4><span style="color:#000000">不需掌控知识</span></h4><h4><span style="color:#000000">不用看见所有</span></h4><h4><span style="color:#000000">只是</span></h4><h4><span style="color:#000000">去拥抱</span></h4><h4><span style="color:#000000">替换的力量</span></h4><h4><br></h4><h4><span style="color:#000000">美术馆</span></h4><h4><span style="color:#000000">不是物品的集合之地</span></h4><h4><span style="color:#000000">而是情感的延伸之所</span></h4><h4><br></h4><h4><span style="color:#000000">展览落幕</span></h4><h4><span style="color:#000000">生活已被延展</span></h4><p><br></p></div></div>		</div>
+            <script type="text/javascript">
+                var bds_config = {'review':'off','bdText':$.sub_share($('#cmsWrap2').text())};
+                document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+            </script>
+        </div>
+    </div>		<div id="footer">
+    <s></s>
+    <div class="inner">
+        <div class="topBox">
+            <div class="newSwitch">
+                <h3>公告</h3>
+                <a class="more" href="/cn/press/show_list/news">更多新闻</a>
+                <a class="newBox" href="/cn/press/detail/c89dww">
+                    <h4>客堂间里的故事正在发生｜上海外滩美术馆发起社区项目“客堂间”</h4>
+                    <p>“客堂间”是由上海外滩美术馆发起，聚焦外滩区域内社会与个人经验变迁的长期项目平台。</p>
+                </a>
+                <a class="newBox" href="/cn/press/detail/550dwv">
+                    <h4>“RAM空间站"来啦！</h4>
+                    <p>上海外滩美术馆很高兴地宣布“RAM空间站”（RAM Station）已正式向公众开放。观众熟悉的艺术商店和阅览室都已迁移至此，美术馆公共教育活动也在这里恢复举办，不定期展开影评会、讲座、工作坊以及与阅览室推荐书籍相关的各类活动。这里将成为RAM在闭馆期间与大家保持联系的新基地。</p>
+                </a>
+                <a class="newBox" href="/cn/press/detail/9f8dwu">
+                    <h4>艺术家项目—“部屋物语”公开征集</h4>
+                    <p>这是一封致特殊时期所有记录者们的公开征集。上海外滩美术馆邀请你加入由艺术家郑亦然（Jasphy Zheng）发起的一项长期公共参与项目。我们希望通过共同的努力，收集起散落在各方的珍贵文字。</p>
+                </a>
+                <div class="switch">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </div>
+            </div>
+            <div class="info">
+                <h3><i class="i2"></i>开放时间</h3>
+                <p>星期二 - 星期日 10:00 ~ 18:00</p>
+                <h3><i class="i3"></i>地址</h3>
+                <p>上海市黄浦区虎丘路20号</p>
+                <h3><i class="i1"></i>电话和邮箱</h3>
+                <p> +86 21 63216251<br><a href="mailto:info@rockbundartmuseum.org">info@rockbundartmuseum.org</a></p>
+            </div>
+            <div class="calendarBox">
+                <div id="cont"></div>
+            </div>
+        </div>
+        <div class="bottomBox">
+            <div class="footerNav">
+                <a href="/cn/page/detail/474cr">关于</a><i></i>
+                <a href="/cn/page/detail/dbdk">参观</a><i></i>
+                <a href="/cn/exhibition/show_list/#now">展览</a><i></i>
+                <a href="/cn/event/show_list/#today">活动</a><i></i>
+                <a href="/cn/education/overview">教育</a><i></i>
+                <a href="/cn/research/overview">研究</a><i></i>
+                <a href="/cn/library/publication">资料</a><i></i>
+                <a href="/cn/press/show_list/press_release">媒体</a><i></i>
+                <a href="/cn/exhibition/overview/e6djst">HUGO BOSS ASIA ART</a>
+            </div>
+            <div class="copy">
+                <span class="footerLogo"></span>
+                <small>Copyright &copy; 2021 上海外滩美术馆 | Rockbund Art Museum. | <a href="http://www.beian.miit.gov.cn" target="_blank">沪ICP备14037079号-1</a></small>
+                <div class="supported">Supported by <a href="http://www.rockbund.com/" target="_blank"><span>ROCKBUND</span></a></div>
+                <div class="follow">
+                    <strong>follow us</strong>
+                </div>
+                <a href="http://www.comonetwork.com/" class="como" target="_blank">Designed &amp; Developed by COMONETWORK</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div style="display:none">
+    <div id="div_common_alert" class="popDiv">
+        <h3>Notice</h3>
+        <div class="accountBox">
+            <h4></h4>
+            <div class="submitBox"><a href="javascript:;" class="button btn1 a_click">继续 <i></i></a></div>
+        </div>
+    </div>
+    <div id="Login" class="popDiv">
+        <h3>登录</h3>
+        <div class="loginBox">
+            <div class="alert alert-absolute fade"></div>
+            <p><label for="Mail">Email</label><input id="Mail" type="text"></p>
+            <p><label for="Password">密码</label><input id="Password" type="password"></p>
+            <div class="f">
+                <label><input type="checkbox" checked>使我保持登录状态</label>
+                <a href="javascript:;" class="a_forget">忘记密码？</a>
+            </div>
+            <div class="submitBox">
+                <a class="button btn1 a_login" href="javascript:;">登录 <i></i></a>
+                <span>还没有注册帐号?<a class="linkBtn" href="/cn/users/reg?return_url=/cn/page/detail/474cr">点击这里 <i></i></a></span>
+            </div>
+        </div>
+    </div>
+    <div id="Forget" class="popDiv">
+        <h3>忘记密码</h3>
+        <div class="loginBox forgetBox">
+            <div class="alert alert-absolute fade"></div>
+            <p class="t">输入注册邮箱后，您将收到邮件告知如何重获密码。</p>
+            <p><label for="Mail">Email</label><input id="Mail" type="text"></p>
+            <div class="submitBox">
+                <a class="button btn1 a_submit" href="javascript:;">发送 <i></i></a>
+                <span>还没有注册帐号?<a class="linkBtn" href="/cn/users/reg?return_url=/cn/page/detail/474cr">点击这里 <i></i></a></span>
+            </div>
+        </div>
+    </div>
+    <div id="Forget_password" class="popDiv">
+        <h3>忘记密码</h3>
+        <div class="accountBox">
+            <h4>发送完成</h4>
+            <div class="submitBox">
+                <a href="javascript:;" class="button btn1" onclick="$.fancybox.close()">继续 <i></i></a>
+                <a class="button btn2 btn_resend">重新发送 <i></i></a>
+                <a style="display:none" class="button btn1 btn_resend2" href="javascript:;">重新发送 <i></i></a>
+                <em>请等待<label></label>秒</em>
+            </div>
+        </div>
+    </div>
+    <!-- 邮箱验证 -->
+    <div id="Account" class="popDiv">
+        <h3>激活你的帐号</h3>
+        <div class="accountBox">
+            <h4>请查收邮件 <strong></strong><br>并完成注册流程。</h4>
+            <p>如果您未收到激活邮件，请先检查垃圾邮箱，或点击以下按钮重新发送。</p>
+            <div class="submitBox">
+                <a class="button btn2 btn_resend">重新发送 <i></i></a>
+                <a style="display:none" class="button btn1 btn_resend2" href="javascript:;">重新发送 <i></i></a>
+                <em>请等待<label></label>秒</em>
+            </div>
+        </div>
+    </div>
+    <!-- 手机验证 -->
+    <div id="moblieVerify" class="popDiv">
+        <h3>手机激活</h3>
+        <div class="loginBox">
+            <div class="alert alert-absolute fade"></div>
+            <p><label for="code">短信验证码</label><input id="code" class="verify_code" type="text"></p>
+            <div class="submitBox">
+                <a href="javascript:;" class="button btn1 a_submit">继续 <i></i></a>
+                <a class="button btn2 btn_resend">重新发送 <i></i></a>
+                <a style="display:none" class="button btn1 btn_resend2" href="javascript:;">重新发送 <i></i></a>
+                <em>请等待<label></label>秒</em>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var G_forget_email = '';
+        var tim_resend;
+
+        //preload small pic
+        $('#topKvBg img[_src]').each(function(){
+            var _this = $(this);
+            var img = new Image();
+            img.onload = function(){
+                _this.attr('src',_this.attr('_src'));
+            };
+            img.src = $(this).attr('_src');
+        });
+
+        //top menu first click
+        $('.topMenu .menu>li').each(function(){
+            var a_tag = $(this).children('a');
+            var a_sub = $(this).find('ul li:first a');
+            if(a_sub.attr('href') != 'javascript:;'){
+                a_tag.attr('href',a_sub.attr('href'));
+            }
+        });
+        //top menu exhibition/event
+        function set_top_menu(div){
+            $(div+' .previewBox:first').show();
+            $(div+' .switch i:first').addClass('now');
+
+            $(div+' .switch i').css({cursor:'pointer'});
+
+            var idx = 0;
+            var idx_count = $(div+' .previewBox').size() -1;
+            if(idx_count < 1){
+                return;
+            }
+
+            var tim = null;
+
+            $(div+' .switch i').hover(function(){
+                clearTimeout(tim);
+                idx = $(this).index();
+                $(div+' .previewBox:visible').fadeOut();
+                $(div+' .previewBox').eq(idx).fadeIn();
+                $(div+' .switch i').removeClass('now');
+                $(div+' .switch i').eq(idx).addClass('now');
+            },function(){
+                go();
+            });
+
+            $(div+' .preview').hover(function(){
+                clearTimeout(tim);
+            },function(){
+                go();
+            });
+            function go(){
+                clearTimeout(tim);
+                tim = setTimeout(function(){
+                    if($(div).is(':visible')){
+                        idx++;
+                        if(idx >= idx_count){
+                            idx = -1;
+                        }
+                        $(div+' .previewBox:visible').fadeOut();
+                        $(div+' .previewBox').eq(idx).fadeIn();
+                        $(div+' .switch i').removeClass('now');
+                        $(div+' .switch i').eq(idx).addClass('now');
+                    }
+                    go();
+                },3000);
+            };
+            go();
+        };
+        set_top_menu('.div_menu_top1');
+        set_top_menu('.div_menu_top2');
+
+
+        //news list
+        function set_news_list(){
+            var div = '#footer .newSwitch';
+            $(div+' .newBox').hide();
+            $(div+' .newBox:first').show();
+            $(div+' .switch i:first').addClass('now');
+
+            var idx = 0;
+            var idx_count = $(div+' .newBox').size() -1;
+            if(idx_count < 1){
+                return;
+            }
+
+            var tim = null;
+            $(div+' .switch i').hover(function(){
+                clearTimeout(tim);
+                idx = $(this).index();
+                $(div+' .newBox:visible').stop().fadeOut();
+                $(div+' .newBox').eq(idx).stop().fadeIn();
+                $(div+' .switch i').removeClass('now');
+                $(div+' .switch i').eq(idx).addClass('now');
+            },function(){
+                go();
+            });
+            function go(){
+                clearTimeout(tim);
+                tim = setTimeout(function(){
+                    idx++;
+                    if(idx >= idx_count){
+                        idx = -1;
+                    }
+                    $(div+' .newBox:visible').stop().fadeOut();
+                    $(div+' .newBox').eq(idx).stop().fadeIn();
+                    $(div+' .switch i').removeClass('now');
+                    $(div+' .switch i').eq(idx).addClass('now');
+                    go();
+                },3000);
+            };
+            go();
+        };
+        set_news_list();
+
+
+        $('.li_share').hover(function(){
+            $('.stayIcon').fadeIn();
+        },function(){
+            $('.stayIcon').fadeOut();
+        });
+
+        //日历
+        var calendar_date_arr = [20210424,20210417,20210410,20210327,20210322,20210323,20210324,20210325,20210326,20210328,20210329,20210330,20210331,20210226,20210227,20210116,20210109,20201107,20201108,20201109,20201110,20201111,20201112,20201113,20201114,20201115,20201116,20201117,20201118,20201119,20201120,20201121,20201122,20201123,20201124,20201125,20201126,20201127,20201128,20201129,20201130,20201201,20201202,20201203,20201204,20201205,20201206,20201207,20201208,20201209,20201210,20201211,20201212,20201213,20201214,20201215,20201216,20201217,20201218,20201219,20201220,20201221,20201222,20201223,20201224,20201225,20201226,20201227,20201228,20201229,20201230,20201231,20210101,20210102,20210103,20200822,20200725,20200111,20200105,20200104,20200101,20200102,20200103,20191229,20191228,20191227,20191225,20191222,20191221,20191220,20191218,20191215,20191214,20191212,20191207,20191204,20191130,20191123,20191117,20191116,20191106,20191026,20191022,20191019,20191018,20190922,20190921,20190914,20190824,20190817,20190816,20190810,20190803,20190802,20190728,20190727,20190720,20190719,20190713,20190706,20190705,20190629,20190622,20190525,20190518,20190511,20190509,20190504,20190427,20190420,20190413,20190412,20190406,20190330,20190323,20190223,20190216,20190215,20190202,20190126,20190125,20190119,20190112,20190105,20190104,20181228,20181222,20181215,20181213,20181208,20181207,20181201,20181130,20181124,20181125,20181122,20181117,20181113,20181111,20181110,20181108,20181103,20181004,20181003,20181002,20180930,20180927,20180825,20180824,20180819,20180818,20180815,20180812,20180811,20180804,20180728,20180721,20180714,20180708,20180707,20180706,20180630,20180624,20180526,20180523,20180519,20180518,20180506,20180505,20180429,20180428,20180421,20180414,20180413,20180412,20180408,20180407,20180401,20180331,20180330,20180325,20180324,20180318,20180210,20180127,20180121,20180114,20180113,20180106,20171231,20171230,20171222,20171219,20171216,20171212,20171210,20171208,20171205,20171202,20171125,20171124,20171119,20171118,20171112,20171111,20171104,20171103,20171028,20171021,20171014,20170925,20170920,20170916,20170915,20170914,20170909,20170902,20170826,20170820,20170819,20170813,20170812,20170806,20170805,20170730,20170729,20170722,20170715,20170605,20170606,20170607,20170608,20170609,20170610,20170611,20170612,20170613,20170614,20170615,20170616,20170617,20170618,20170619,20170620,20170604,20170603,20170527,20170526,20170521,20170520,20170518,20170516,20170517,20170519,20170513,20170506,20170409,20170326,20170325,20170324,20170318,20170317,20170312,20170311,20170309,20170304,20170303,20170302,20170301,20170228,20170226,20170225,20170218,20170219,20170220,20170221,20170222,20170223,20170224,20170227,20170305,20170306,20170307,20170308,20170310,20170313,20170314,20170315,20170316,20170319,20170320,20170321,20170322,20170323,20170217,20161224,20161217,20161218,20161219,20161220,20161221,20161222,20161223,20161213,20161210,20161209,20161206,20161207,20161208,20161205,20161203,20161127,20161126,20161120,20161119,20161118,20161114,20161113,20161112,20161111,20161106,20161107,20161108,20161109,20161110,20161105,20161030,20161029,20161026,20161027,20161028,20161031,20161101,20161102,20161103,20161104,20161024,20161022,20161015,20161014,20161001,20160924,20160923,20160904,20160905,20160906,20160907,20160908,20160909,20160910,20160911,20160903,20160813,20160812,20160807,20160806,20160730,20160728,20160723,20160716,20160715,20160709,20160702,20160625,20160619,20160618,20160616,20160611,20160610,20160612,20160613,20160614,20160615,20160617,20160620,20160621,20160622,20160623,20160624,20160626,20160627,20160628,20160629,20160630,20160607,20160528,20160515,20160513,20160506,20160430,20160429,20160426,20160423,20160416,20160417,20160418,20160419,20160420,20160421,20160422,20160409,20160402,20160403,20160404,20160405,20160406,20160407,20160408,20160326,20160320,20160319,20160317,20160318,20160321,20160322,20160323,20160324,20160325,20160327,20160328,20160329,20160330,20160331,20160401,20160312,20160305,20160227,20160220,20160123,20160121,20160109,20160102,20151226,20151220,20151219,20151218,20151213,20151212,20151211,20151206,20151205,20151128,20151127,20151122,20151121,20151115,20151114,20151113,20151107,20151106,20151105,20151031,20151030,20151025,20151022,20151016,20151009,20151003,20150926,20150925,20150919,20150913,20150912,20150911,20150908,20150909,20150910,20150905,20150829,20150828,20150830,20150831,20150901,20150902,20150903,20150904,20150906,20150907,20150914,20150915,20150916,20150917,20150918,20150920,20150921,20150922,20150923,20150924,20150927,20150928,20150929,20150930,20151001,20151002,20151004,20151005,20151006,20151007,20150822,20150823,20150824,20150825,20150826,20150827,20150821,20150815,20150814,20150809,20150808,20150807,20150802,20150801,20150803,20150804,20150805,20150806,20150810,20150811,20150812,20150813,20150726,20150725,20150722,20150723,20150724,20150727,20150728,20150729,20150730,20150731,20150816,20150817,20150818,20150819,20150820,20150718,20150712,20150711,20150704,20150628,20150627,20150621,20150620,20150613,20150606,20150531,20150524,20150523,20150503,20150502,20150430,20150426,20150425,20150419,20150418,20150417,20150412,20150411,20150410,20150404,20150403,20150330,20150329,20150328,20150327,20150322,20150321,20150315,20150314,20150308,20150307,20150301,20150228,20150208,20150129,20150124,20150123,20150117,20150104,20150103,20150101,20141227,20141226,20141220,20141214,20141213,20141212,20141211,20141210,20141206,20141204,20141127,20141126,20141123,20141122,20141121,20141116,20141115,20141109,20141108,20141031,20141027,20141026,20141025,20141019,20141017,20141014,20141012,20141011,20141001,20140927,20140926,20140921,20140919,20140914,20140913,20140823,20140818,20140816,20140814,20140810,20140809,20140802,20140727,20140726,20140725,20140720,20140719,20140712,20140708,20140709,20140710,20140711,20140713,20140714,20140715,20140716,20140717,20140718,20140721,20140722,20140723,20140724,20140728,20140729,20140730,20140731,20140801,20140803,20140706,20140705,20140704,20140621,20140620,20140618,20140614,20140613,20140607,20140606,20140608,20140609,20140610,20140611,20140612,20140615,20140616,20140617,20140619,20140622,20140623,20140624,20140625,20140626,20140627,20140628,20140629,20140630,20140531,20140525,20140524,20140523,20140519,20140516,20140515,20140513,20140514,20140517,20140518,20140520,20140521,20140522,20140526,20140527,20140528,20140529,20140530,20140511,20140510,20140427,20140425,20140420,20140418,20140417,20140415,20140416,20140413,20140412,20140411,20140329,20140323,20140322,20140321,20140316,20140315,20140311,20140309,20140308,20140301,20140223,20140222,20140221,20140216,20140215,20140125,20140124,20140123,20140119,20140118,20140111,20131229,20131228,20131227,20131222,20131221,20131215,20131214,20131208,20131207,20131124,20131123,20131117,20131116,20131110,20131109,20131105,20131103,20131102,20131101,20131026,20131025,20131023,20131020,20131019,20131018,20131013,20131012,20131011,20131009,20130929,20130928,20130917,20130915,20130914,20130913,20130908,20130818,20130817,20130810,20130803,20130728,20130727,20130720,20130709,20130706,20130627,20130623,20130622,20130621,20130616,20130615,20130602,20130601,20130525,20130519,20130518,20130511,20130505,20130504,20130503,20130428,20130427,20130406,20130330,20130323,20130322,20130317,20130316,20130315,20130310,20130309,20130302,20130223,20130222,20130216,20130202,20130126,20130119,20130113,20130111,20130110,20130106,20130105,20121228,20121223,20121214,20121209,20121208,20121207,20121201,20121130,20121129,20121125,20121124,20121118,20121117,20121111,20121110,20121109,20121108,20121103,20121102,20121028,20121021,20121020,20121019,20121016,20121014,20121013,20121011,20121010,20121006,20120930,20120929,20120915,20120914,20120913,20120908,20120907,20120901,20120826,20120825,20120818,20120811,20120805,20120804,20120729,20120728,20120727,20120722,20120721,20120720,20120715,20120714,20120713,20120710,20120708,20120707,20120705,20120701,20120629,20120624,20120620,20120617,20120616,20120615,20120609,20120603,20120602,20120601,20120527,20120526,20120525,20120520,20120519,20120518,20120513,20120512,20120511,20120508,20120505,20120504,20120429,20120428,20120427,20120421,20120420,20120415,20120414,20120413,20120407,20120406,20120331,20120330,20120325,20120324,20120323,20120318,20120317,20120316,20120310,20120303,20120225,20120224,20120218,20120217,20120211,20120210,20120108,20120107,20111224,20111220,20111217,20111216,20111214,20111211,20111210,20111204,20111203,20111202,20111201,20111130,20111129,20111128,20111126,20111119,20111118,20111113,20111112,20111111,20111105,20111104,20111030,20111029,20111028,20111022,20111016,20111015,20111008,20110924,20110923,20110917,20110916,20110909,20110903,20110827,20110826,20110820,20110819,20110814,20110813,20110812,20110807,20110806,20110805,20110731,20110730,20110724,20110723,20110722,20110716,20110715,20110710,20110709,20110708,20110702,20110701,20110626,20110625,20110624,20110618,20110617,20110611,20110610,20110603,20110529,20110522,20110521,20110520,20110514,20110513,20110507,20110506,20110424,20110423,20110422,20110420,20110417,20110416,20110415,20110409,20110408,20110327,20110319,20101225,20101224,20101204,20101203,20101127,20101120,20101025,20100925,20100911,20100907,20100905,20100828,20100814,20100812,20100710,20100626,20100619,20100605,20100529,20100522,20100508,20100504];
+        var cal = Calendar.setup({
+            cont     : "cont",
+            noScroll : true,
+            dateInfo : function(date, wantsClassName){
+                var as_number = Calendar.dateToInt(date);
+                if ($.inArray(as_number,calendar_date_arr) != -1) {
+                    return {
+                        klass: "art"
+                    }
+                }
+            },
+            disabled : function(date){
+                date = Calendar.printDate(date,'%Y%m%d');
+                return $.inArray(parseInt(date),calendar_date_arr) == -1;
+            },
+            onSelect : function(cal){
+                var selectionObject = cal.selection;
+                var selectedDate = selectionObject.get()+'';
+                location.href = $.gurl('/event/show_list/'+selectedDate.substr(0,6))+'?date='+selectedDate+'#a'+selectedDate;
+            }
+        });
+
+
+        //登录回车
+        $('#Login input:password').keydown(function(evt){
+            if(evt.keyCode == 13){
+                $('#Login .a_login').click();
+            }
+        });
+        //登录 提交
+        $('#Login .a_login').click(function(){
+            var btn = $(this);
+            var div = '#Login';
+            if($(btn).attr('disabled')){
+                return;
+            }
+            $(div+ ' .alert').removeClass('in');
+            var ipt_mail = $(div+' input:text');
+            var ipt_pass = $(div+' input:password');
+            var chk_keep = $(div+' input:checkbox').attr('checked')?1:0;
+            ipt_mail.val($.trim(ipt_mail.val()));
+            ipt_pass.val($.trim(ipt_pass.val()));
+
+            if(!$.check_email(ipt_mail) && !$.check_mobile(ipt_mail)){
+                $(div+ ' .alert').html(" 无效Email或手机号").addClass('in');
+                return;
+            }
+            if(!$.check_password(ipt_pass)){
+                $(div+ ' .alert').html("密码必须为6-20位字符").addClass('in');
+                return;
+            }
+
+
+            $(btn).attr('disabled',true).html('正在登录...');
+            $.post($.gurl('/ajaxs/user_login'),{
+                email:ipt_mail.val(),
+                password:ipt_pass.val(),
+                keepmelogin:chk_keep
+            },function(rsp){
+                if(rsp == 'SUCCESS'){
+                    if($.params('return')){
+                        location.href=$.params('return');
+                    }else{
+                        location.hash = '';
+                        location.reload();
+                    }
+                }else if(rsp == 'SUCCESS_CHANGEPWD'){
+                    location.href=$.gurl('/users/change_password');
+                }else if(rsp == 'SUCCESS_ACTIVE_EMAIL'){
+                    G_show_alert_div({
+                        title: '你的邮箱尚未激活'
+                        ,callback: function(){
+                            location.href=$.gurl('/users/profile');
+                        }
+                    });
+                }else{
+                    $(div+ ' .alert').html(rsp).addClass('in');
+                }
+                $(btn).attr('disabled',false).html('登录');
+            });
+        });
+        //忘记密码
+        $('#Login .a_forget').click(function(){
+            G_show_forget_password_div();
+        });
+        //忘记密码提交
+        $('#Forget .a_submit').click(function(){
+            var btn = $(this);
+            var div = '#Forget';
+            if($(btn).attr('disabled')){
+                return;
+            }
+            $(div+ ' .alert').removeClass('in');
+
+            var ipt_mail = $(div+' input:text');
+            ipt_mail.val($.trim(ipt_mail.val()));
+
+            if(!$.check_email(ipt_mail) && !$.check_mobile(ipt_mail)){
+                $(div+ ' .alert').html(" 无效Email或手机号").addClass('in');
+                return;
+            }
+            $(btn).attr('disabled',true).html('发送中...');
+            G_forget_email = ipt_mail.val();
+            $.post($.gurl('/ajaxs/password_reminder'),{
+                email:ipt_mail.val()
+            },function(rsp){
+                if(rsp == 'SUCCESS'){
+                    $.fancybox.open({
+                        href:'#Forget_password',
+                        afterShow:function(){
+                            show_resend_time('#Forget_password');
+                        },
+                        afterClose:function(){
+                            G_show_login_div();
+                        }
+                    });
+                }else{
+                    $(div+ ' .alert').html("该帐号不存在").addClass('in');
+                }
+                $(btn).attr('disabled',false).html('发送');
+            });
+        });
+
+        //重新发送
+        $('#Forget_password .submitBox .btn_resend2').click(function(){
+            var _this = $(this);
+            if(_this.attr('disabled')){
+                return;
+            }
+            $(_this).attr('disabled',true);
+            $.fancybox.showLoading();
+            $('#Forget_password .submitBox .btn_resend').show();
+            $('#Forget_password .submitBox .btn_resend2').hide();
+            $.post($.gurl('/ajaxs/password_reminder'),{
+                email:G_forget_email
+            },function(rsp){
+                $(_this).attr('disabled',false);
+                $.fancybox.hideLoading();
+                show_resend_time('#Forget_password');
+            });
+        });
+
+        //social
+        $('.follow').append($('.stayIcon').html());
+        $('.stayIcon .i4,.follow .i4').fancybox({padding:10});
+
+        //搜索
+        $('.a_header_search').click(function(){
+            if($('.div_header_search_artist_exhibition:visible').size()){
+                $('.div_header_search_artist_exhibition').fadeOut();
+            }else{
+                $('.div_header_search_artist_exhibition').fadeIn();
+                $('.div_header_search_artist_exhibition .ipt_search_text').val('').focus();
+            }
+        });
+        $('.div_header_search_artist_exhibition').xAutocomplete({
+            url:$.gurl('/ajaxs/search_exhibition_artist_for_artworks?isheader=1&q=')
+        });
+        $('.div_header_search_artist_exhibition dd[_id]').live('click',function(){
+            $('.div_header_search_artist_exhibition .ipt_search_text').val('');
+            $('.div_header_search_artist_exhibition').hide();
+            if($(this).attr('_type') == 'Artist'){
+                location.href = $.gurl('/artist/overview/'+$(this).attr('_id'));
+            }else if($(this).attr('_type') == 'Exhibition'){
+                location.href = $.gurl('/exhibition/overview/'+$(this).attr('_id'));
+            }
+        });
+        $(document).bind("click.xAutocomplete",function(evt){
+            if(!$(evt.srcElement).hasClass('ipt_search_text')
+                && !$(evt.srcElement).hasClass('a_header_search')
+                && !$(evt.srcElement).hasClass('div_header_search_artist_exhibition')){
+                $('.div_header_search_artist_exhibition').hide();
+            }
+        });
+
+        function show_resend_time(str){
+            var total = 30;
+            if(tim_resend){
+                clearInterval(tim_resend);
+            }
+            $(str+' .submitBox em').animate({opacity:1});
+            $(str+' .submitBox em label').html(total--);
+            tim_resend = setInterval(function(){
+                $(str+' .submitBox em label').html(total--);
+                if(total == -1){
+                    $(str+' .submitBox em').animate({opacity:0});
+                    $(str+' .submitBox .btn_resend').hide();
+                    $(str+' .submitBox .btn_resend2').show();
+                    clearInterval(tim_resend);
+                }
+            },1000);
+        }
+
+        //显示忘记密码
+        G_show_forget_password_div = function(){
+            $.fancybox.open({
+                padding:0,
+                href:'#Forget',
+                beforeLoad:function(){
+                    $('#Forget .alert').html('').removeClass('in');
+                    $('#Forget input').val('');
+                    setTimeout(function(){
+                        $('#Forget input:eq(0)').val($('#Login #Mail').val()).focus();
+                    },200);
+                }
+            });
+        };
+        //显示登录
+        G_show_login_div = function(){
+            $.fancybox.open({
+                padding:0,
+                href:'#Login',
+                beforeLoad:function(){
+                    $('#Login .alert').html('').removeClass('in');
+                    $('#Login input').val('');
+                    setTimeout(function(){
+                        $('#Login input:eq(0)').focus();
+                    },200);
+                }
+            });
+        };
+        //显示激活邮件
+        G_show_active_email_div = function(opt){
+            $('#Account').attr('_email',opt.email);
+            $('#Account').attr('_username',opt.username);
+            $('#Account').attr('_lang',opt.lang);
+            if(opt.email){
+                $('#Account h4 strong').html(opt.email);
+            }
+            $.fancybox.open({
+                padding:0,
+                href:'#Account',
+                beforeLoad:function(){
+                    show_resend_time('#Account');
+                },
+                afterClose:function(){
+                    G_show_login_div();
+                }
+            });
+        };
+        //显示激活手机
+        G_show_active_mobile_div = function(opt){
+            $('#moblieVerify').attr('_mobile',opt.mobile);
+            $.fancybox.open({
+                padding:0,
+                href:'#moblieVerify',
+                beforeLoad:function(){
+                    $('#moblieVerify .alert').html('').removeClass('in');
+                    $('#moblieVerify input').val('');
+                }
+            });
+        };
+        //显示提示框
+        G_show_alert_div = function(opt){
+            $('#div_common_alert h4').html('');
+            if(opt.title){
+                $('#div_common_alert h4').html(opt.title);
+            };
+            $('#div_common_alert .a_click').off().click(function(){
+                opt.callback && opt.callback();
+            });
+            $.fancybox.open({
+                padding:0,
+                href:'#div_common_alert',
+                afterClose:function(){
+                    opt.callback && opt.callback();
+                }
+            });
+        };
+
+        //重新发送激活短信
+        $('#moblieVerify .submitBox .btn_resend2').click(function(){
+            var _this = $(this);
+            if(_this.attr('disabled')){
+                return;
+            }
+            $(_this).attr('disabled',true);
+            $.fancybox.showLoading();
+            $('#moblieVerify .submitBox .btn_resend').show();
+            $('#moblieVerify .submitBox .btn_resend2').hide();
+            $.post($.gurl('/mobile/send_valid_code'),{
+                mobile:$('#moblieVerify').attr('_mobile')
+            },function(rsp){
+                $(_this).attr('disabled',false);
+                $.fancybox.hideLoading();
+                show_resend_time('#moblieVerify');
+            });
+        });
+        $('#moblieVerify .submitBox .a_submit').click(function() {
+            $('#moblieVerify .alert').removeClass('in');
+            $.post($.gurl('/ajaxs/verify_mobile'),{
+                verify_code:$('#moblieVerify .verify_code').val(),
+                mobile:$('#moblieVerify').attr('_mobile')
+            },function(rsp) {
+                if (rsp == 'SUCCESS') {
+                    $.fancybox.close();
+                    window.location.reload();
+                } else if (rsp == 'CODE_ERROR') {
+                    $('#moblieVerify .alert').html('验证码错误').addClass('in');
+                } else if (rsp == 'ERROR_VERFIED') {
+                    $.fancybox.close();
+                    $('.mobile_dd input').focus();
+                    $('.mobile_dd em').after('<div class="div_error"><span class="error">此号码已被其它账号激活</span></div>');
+                }
+            });
+        });
+
+        //重新发送激活邮件
+        $('#Account .submitBox .btn_resend2').click(function(){
+            var _this = $(this);
+            if(_this.attr('disabled')){
+                return;
+            }
+            $(_this).attr('disabled',true);
+            $.fancybox.showLoading();
+            $('#Account .submitBox .btn_resend').show();
+            $('#Account .submitBox .btn_resend2').hide();
+            $.post($.gurl('/ajaxs/resend_email_active'),{
+                'data[Users][email]':$('#Account').attr('_email')
+                ,'data[Users][username]':$('#Account').attr('_username')
+                ,'data[Users][lang]':$('#Account').attr('_lang')
+                ,'data[Users][return_url]':($.params('return_url')?$.params('return_url'):'')
+            },function(rsp){
+                $(_this).attr('disabled',false);
+                $.fancybox.hideLoading();
+                show_resend_time('#Account');
+            });
+        });
+        //登录框里登录失败后重新发送激活邮件
+        $('#Login').on('click','.a_resend_active_email',function(){
+            G_show_active_email_div({
+                email:$('#Login .a_resend_active_email').attr('_email')
+                ,username:$('#Login .a_resend_active_email').attr('_username')
+                ,lang:$('#Login .a_resend_active_email').attr('_lang')
+            });
+            $('#Account .submitBox .btn_resend2').click();
+        });
+
+        //判断需要登录
+        if(location.hash == '#login'){
+            G_show_login_div();
+        }
+    });
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-46060211-1', 'rockbundartmuseum.org');
+    ga('send', 'pageview');
+</script>
+</body>
+</html>

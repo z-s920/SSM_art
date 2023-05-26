@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace配置 -->
+<mapper namespace="com.hdc.zs.art.dao.JournalismDao">
+
+	<!--遍历新闻-->
+	<select id="findNews" parameterType="String" resultType="com.hdc.zs.art.empty.Journalism">
+		select * from journalism
+	</select>
+	<update id="updateNews" parameterType="com.hdc.zs.art.empty.Journalism">
+		update journalism set title=#{title},content=#{content} where id=#{id}
+	</update>
+</mapper>

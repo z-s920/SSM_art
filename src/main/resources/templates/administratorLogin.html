@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script th:src="@{asserts/js/vue.js}"></script>
+    <link th:href="@{asserts/css/maina.css}" rel="stylesheet" type="text/css" />
+</head>
+</head>
+<body>
+<div class="wrap" >
+
+    <div class="div" style="margin-top:75px ;padding-top: 5px;">管理员登录</div>
+        <div  id="div1">
+    <div class="container" style="margin-top:75px ">
+    <h1 style="color: white; margin-top: -80px; text-align: center">Sign up</h1>
+    <form th:action="@{/main}">
+        <span style="margin-left: 380px;margin-top:10px;color: red" >[[${msg}]]</span>
+        <label><input type="text" placeholder="Your username" name="username"/></label>
+        <label><input type="password" placeholder="password" name="password"/></label>
+        <input type="submit" th:click="result" value="Sign up"/>
+    </form>
+    </div>
+</div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+</body>
+</html>
+
+

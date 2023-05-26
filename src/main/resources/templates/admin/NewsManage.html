@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>三级导航</title>
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/css/left-side-menu.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/css/iconfont.css}">
+    <script th:src="@{asserts/js/jquery-1.10.2.min.js}"></script>
+    <script th:src="@{asserts/css/jquery.slimscroll.min.js}"></script>
+    <script type="text/javascript" th:src="@{asserts/css/left-side-menu.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/css/table.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/layui/css/layui.css}">
+
+    <script type="text/javascript" th:src="@{asserts/js/jquery.basictable.min.js}"></script>
+    <script type="text/javascript" th:src="@{asserts/js/reponsetable.min.js}"></script>
+    <script type="text/javascript" th:src="@{asserts/layer/layer.js}"></script>
+    <link rel="stylesheet" th:href="@{asserts/layer/theme/default/layer.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/css/reponse.css}">
+
+
+    <style type="text/css">
+        .alertceng{
+            background: #FFFFFF;
+            padding: 10px;
+            display: none;
+        }
+        .alertceng span.title{
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body >
+<table  class="pure-table pure-table-bordered">
+    <thead>
+    <tr>
+        <th>新闻ID</th>
+        <th>新闻标题</th>
+        <th>新闻内容</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="news:${news}">
+        <td>[[${news.id}]]</td>
+        <td>[[${news.title}]]</td>
+        <td>[[${news.content}]]</td>
+
+        <td>
+            <button class="layui-btn layui-btn-sm"  th:onclick="|addtr(${news.id})|">修改</button>
+
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+
+
+<div id="editcontent" class="alertceng"><br>
+    <p><span class="title">新闻标题:</span><input type="text" id="title"/></p><br>
+    <p><span class="title">新闻内容:</span><input type="text" id="content"/></p><br>
+</div>
+
+
+<script>
+    function addtr(data) {
+        layer.open({
+            type: 1,
+            title: '更新新闻信息',
+            closeBtn: 1,
+            area: '300px',
+            skin: '#fff', //没有背景色
+            shadeClose: true,
+            content: $('#editcontent'),
+            btn:["保存","关闭"],
+            btn1:function(index,layero){
+                let title=$("#title").val();
+                let content=$("#content").val();
+                $.ajax({
+                    url: '/updateNews',
+                    type: 'GET',
+                    dataType: 'json',
+                    data: {id: data,title: title,content: content},
+                })
+                    .done(function(data) {
+                        // data > 0 就代表成功
+                        console.log(data);
+                        location.reload();
+                    })
+                    .fail(function() {
+                        console.log("error");
+                    })
+                    .always(function() {
+                        layer.close(index);
+                    });
+            },btn2:function(index,layero){
+                layer.close(index);
+            }
+        });
+
+
+
+    }
+</script>
+
+</body>

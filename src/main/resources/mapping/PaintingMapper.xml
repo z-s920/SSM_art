@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace配置 -->
+<mapper namespace="com.hdc.zs.art.dao.PaintingDao">
+<!--//中艺术画-->
+	<select id="findpaint" parameterType="String" resultType="com.hdc.zs.art.empty.art">
+		<!-- #{}代表占位符，相当于？，#可以进行预编译，进行类型匹配-->
+		<!-- 而$不进行数据类型匹配，传入的参数是什么类型就是什么类型，容易造成sql语句报错 -->
+		select * from art
+	</select>
+<!--中西方艺术画和画廊上传图片-->
+   <insert id="upLoadPicture" parameterType="com.hdc.zs.art.empty.art" >
+	 insert into
+ 		art(name,img,des)
+ 		values(#{name},#{img},#{des})
+   </insert>
+
+	<insert id="upLoadChinesePicture" parameterType="com.hdc.zs.art.empty.Cpaintings" >
+	 insert into
+ 		buypaints(paintsName,paintsCoverImg,sellingPrice)
+ 		values(#{paintsName},#{paintsCoverImg},#{sellingPrice})
+   </insert>
+
+	<insert id="upLoadWesternPicture" parameterType="com.hdc.zs.art.empty.Wpaintings" >
+	 insert into
+ 		buywpaints(paintsName,paintsCoverImg,sellingPrice)
+ 		values(#{paintsName},#{paintsCoverImg},#{sellingPrice})
+   </insert>
+
+	<select id="findCpainting" parameterType="String" resultType="com.hdc.zs.art.empty.Cpaintings">
+		<!-- #{}代表占位符，相当于？，#可以进行预编译，进行类型匹配-->
+		<!-- 而$不进行数据类型匹配，传入的参数是什么类型就是什么类型，容易造成sql语句报错 -->
+		select * from buypaints
+	</select>
+
+	<select id="findCpaintingById" parameterType="int" resultType="com.hdc.zs.art.empty.Cpaintings">
+		select * from buypaints where id=#{id}
+	</select>
+	<insert id="addCpaints" parameterType="com.hdc.zs.art.empty.Cpaintings" >
+		insert into
+ 		mycart(name,price,img,username)
+ 		values(#{paintsName},#{sellingPrice},#{paintsCoverImg},#{username})
+	</insert>
+	<!--画廊点击商品若相同商品只添加数量-->
+	<update id="updateCpaintsCounts" >
+		update mycart set count = count + #{count } where name =#{paintsName}
+	</update>
+	<!--购物车商品添加数量-->
+	<update id="updateCpaintsCount" >
+		update mycart set count = #{count } where name =#{paintsName}
+	</update>
+	<insert id="addSn" parameterType="com.hdc.zs.art.empty.PayLog">
+		insert into ylrc_pay_log(create_time,update_time,info,pay_sn,payment,refund_amount,refund_info,refund_sn,sn,
+		status,title,total_amount,pay_time,refund_time)value (#{create_time},#{update_time},#{info},#{pay_sn},#{payment},#{refund_amount},
+		#{refund_info},#{refund_sn},#{sn},#{status},#{title},#{total_amount},#{pay_time},#{refund_time})
+
+	</insert>
+
+
+
+	<!--跳转成功删除购物车支付的商品-->
+	<delete id="deleteAlipayPaints" parameterType="String">
+		delete  from mycart where username=#{name}
+	</delete>
+
+
+
+	<!--//西方艺术画-->
+	<select id="findWpainting" parameterType="String" resultType="com.hdc.zs.art.empty.Wpaintings">
+		<!-- #{}代表占位符，相当于？，#可以进行预编译，进行类型匹配-->
+		<!-- 而$不进行数据类型匹配，传入的参数是什么类型就是什么类型，容易造成sql语句报错 -->
+		select * from buywpaints
+	</select>
+
+	<select id="findWpaintingById" parameterType="int" resultType="com.hdc.zs.art.empty.Wpaintings">
+		select * from buywpaints where id=#{id}
+	</select>
+	<insert id="addWpaints" parameterType="com.hdc.zs.art.empty.Wpaintings" >
+		insert into
+ 		mycart(name,price,img,username)
+ 		values(#{paintsName},#{sellingPrice},#{paintsCoverImg},#{username})
+	</insert>
+	<!--画廊点击商品若相同商品只添加数量-->
+	<update id="updateWpaintsCounts" >
+		update mycart set count = count + #{count } where name =#{paintsName}
+	</update>
+	<!--购物车商品添加数量-->
+	<update id="updateWpaintsCount" >
+		update mycart set count = #{count } where name =#{paintsName}
+	</update>
+
+
+	<!--对艺术画廊作品进行分页-->
+	<!--分页查询user表  参数 page:页码；limit:每页条数.-->
+	<select id="findPaintsWithPaging" parameterType="com.hdc.zs.art.empty.search" resultType="com.hdc.zs.art.empty.art">
+		select * from art
+		<where>
+			<if test="search!=null and search!=''">
+			concat(id,name,img,des) like concat("%",#{search},"%")
+			</if>
+		</where>
+		limit #{page} ,#{limit}
+	</select>
+	<select id="findPaintsWithPagingCount" parameterType="String" resultType="int">
+		select count(*) from art
+		<where>
+			<if test="_parameter!=null and _parameter!=''">
+				concat(id,name,img,des) like concat("%",#{search},"%")
+			</if>
+		</where>
+	</select>
+
+<!--	对中西方艺术画进行分页-->
+	<select id="findCPaintsWithPaging" parameterType="com.hdc.zs.art.empty.search" resultType="com.hdc.zs.art.empty.Cpaintings">
+		select * from buypaints
+		<where>
+			<if test="search!=null and search!=''">
+				concat(id,paintsName,paintsCoverImg,sellingPrice) like concat("%",#{search},"%")
+			</if>
+		</where>
+		limit #{page} ,#{limit}
+	</select>
+
+	<select id="findCPaintsWithPagingCount" parameterType="String" resultType="int">
+		select count(*) from buypaints
+		<where>
+			<if test="_parameter!=null and _parameter!=''">
+				concat(id,paintsName,paintsCoverImg,sellingPrice) like concat("%",#{search},"%")
+			</if>
+		</where>
+	</select>
+<!---->
+	<select id="findWPaintsWithPaging" parameterType="com.hdc.zs.art.empty.search" resultType="com.hdc.zs.art.empty.Wpaintings">
+		select * from buywpaints
+		<where>
+			<if test="search!=null and search!=''">
+				concat(id,paintsName,paintsCoverImg,sellingPrice) like concat("%",#{search},"%")
+			</if>
+		</where>
+		limit #{page} ,#{limit}
+	</select>
+
+	<select id="findWPaintsWithPagingCount" parameterType="String" resultType="int">
+		select count(*) from buywpaints
+		<where>
+			<if test="_parameter!=null and _parameter!=''">
+				concat(id,paintsName,paintsCoverImg,sellingPrice) like concat("%",#{search},"%")
+			</if>
+		</where>
+	</select>
+
+
+	<!--管理员删除某篇中国画作-->
+	<delete id="deleteChinese" parameterType="int">
+		delete from buypaints where id=#{id}
+
+	</delete>
+
+	<!--管理员删除某篇外国画作-->
+	<delete id="deleteWestern" parameterType="int">
+		delete from buywpaints where id=#{id}
+
+	</delete>
+		<!--管理员删除画廊的画-->
+	<delete id="deleteGallery" parameterType="int">
+		delete from art where id=#{id}
+	</delete>
+
+	<!--管理员修改画廊-->
+	<update id="updateGallery">
+		update art set name = #{name }, des =#{des} where id=#{id}
+	</update>
+
+	<!--管理员修改中西方艺术画-->
+
+	<update id="updateCpicture">
+		update buypaints set paintsName = #{paintsName}, sellingPrice =#{sellingPrice} where id=#{id}
+	</update>
+
+	<update id="updateWpicture">
+		update buywpaints set paintsName = #{paintsName}, sellingPrice =#{sellingPrice} where id=#{id}
+	</update>
+</mapper>

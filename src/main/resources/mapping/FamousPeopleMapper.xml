@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace配置 -->
+<mapper namespace="com.hdc.zs.art.dao.FamousPeople">
+<!--中国画家分页-->
+	<select id="findcPeople" parameterType="com.hdc.zs.art.empty.search" resultType="com.hdc.zs.art.empty.Cpeoples">
+		<!-- #{}代表占位符，相当于？，#可以进行预编译，进行类型匹配-->
+		<!-- 而$不进行数据类型匹配，传入的参数是什么类型就是什么类型，容易造成sql语句报错 -->
+		select * from cpeoples
+			 <where>
+				 <if test="search!=null and search!=''">
+					 concat(id,paintsName,paintsCoverImg) like concat("%",#{search},"%")
+				 </if>
+			 </where>
+		 limit #{page} ,#{limit}
+	</select>
+
+	<select id="findcPeopleWithPagingCount" parameterType="String" resultType="int">
+		select count(*) from cpeoples
+		<where>
+			<if test="_parameter!=null and _parameter!=''">
+				concat(id,paintsName,paintsCoverImg) like concat("%",#{search},"%")
+			</if>
+		</where>
+	</select>
+	<!--西方画家分页-->
+	<select id="findwPeople" parameterType="com.hdc.zs.art.empty.search" resultType="com.hdc.zs.art.empty.Wpeoples">
+		<!-- #{}代表占位符，相当于？，#可以进行预编译，进行类型匹配-->
+		<!-- 而$不进行数据类型匹配，传入的参数是什么类型就是什么类型，容易造成sql语句报错 -->
+		select * from wpeoples
+		<where>
+			<if test="search!=null and search!=''">
+				concat(id,paintsName,paintsCoverImg) like concat("%",#{search},"%")
+			</if>
+		</where>
+		limit #{page} ,#{limit}
+	</select>
+	<select id="findwPeopleWithPagingCount" parameterType="String" resultType="int">
+		select count(*) from wpeoples
+		<where>
+			<if test="_parameter!=null and _parameter!=''">
+				concat(id,paintsName,paintsCoverImg) like concat("%",#{search},"%")
+			</if>
+		</where>
+	</select>
+	<!--管理员删除某个中国艺术画家-->
+	<delete id="deleteChinesePeople" parameterType="int">
+		delete from cpeoples where id=#{id}
+	</delete>
+
+	<!--管理员删除某个西方艺术画家-->
+	<delete id="deleteWesternPeople" parameterType="int">
+		delete from wpeoples where id=#{id}
+	</delete>
+	<!--管理员修改中画家-->
+	<update id="updateCpeople">
+		update cpeoples set paintsName = #{paintsName} where id=#{id}
+	</update>
+
+	<!--管理员修改中画家-->
+	<update id="updateWpeople">
+		update wpeoples set paintsName = #{paintsName} where id=#{id}
+	</update>
+	<insert id="upLoadWesternPeople" parameterType="com.hdc.zs.art.empty.Wpeoples" >
+	 insert into
+ 		wpeoples(paintsName,paintsCoverImg)
+ 		values(#{paintsName},#{paintsCoverImg})
+   </insert>
+
+	<insert id="upLoadChinesePeople" parameterType="com.hdc.zs.art.empty.Cpeoples" >
+	 insert into
+ 		cpeoples(paintsName,paintsCoverImg)
+ 		values(#{paintsName},#{paintsCoverImg})
+   </insert>
+</mapper>

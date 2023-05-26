@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>漫游岛屿 | 校园艺术画展| Campus art exhibition</title>
+    <link rel="shortcut icon"  th:href="@{/asserts/image/favicon.ico}">
+    <link rel="stylesheet" th:href="@{/asserts/css/style_cn.css}" />
+    <link rel="stylesheet" th:href="@{/asserts/css/lrtk.css}" />
+    <link rel="stylesheet" th:href="@{/asserts/css/jqtransform.css}" />
+    <script type="text/javascript" th:src="@{/asserts/player/jwplayer.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery-1.8.0.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.fancybox.pack.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/audio.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/coin-slider.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/banner.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/common_fun.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/xAutocomplete_JQ.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.xplaceholder.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.jqtransform.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/avalon/avalon.min_xwk.js}"></script>
+    <script type="text/javascript">
+        avalon.config({loader: false})
+    </script>
+    <style type="text/css">
+        .fancybox-lock .fancybox-overlay {overflow:hidden}
+        .jwclick{opacity:0}
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="topKvBg">
+        <img class="img_big"  th:src="@{asserts/image/202012311755489013.jpg}">
+        <s></s><i></i>
+    </div>
+    <div id="header">
+        <div class="topMenu">
+            <div class="inner">
+                <ul class="menu">
+                    <li >
+                        <a class="con" href="/user/home">HOME</a>
+
+                    </li>
+
+                    <li>
+                        <a class="con" href="javascript:;">艺术商店</a>
+                        <div class="downMenu downMenu2 div_menu_top2">
+                            <div class="preview">
+                                <div class="previewBox" style="display:none">
+                                    <a href="" class="previewCon">
+                                        <div class="pic"><img th:src="@{/asserts/image/20210920.jpg}"></div>
+                                        <h4>（延期）RAM纸张实验室 | 来吧！纸人偶！</h4>
+                                        <p>2021-01-23</p>
+                                    </a>
+                                </div>
+                                <div class="previewBox" style="display:none">
+                                    <a href="" class="previewCon">
+                                        <div class="pic"><img th:src="@{/asserts/image/202101211714221797.jpg}"></div>
+                                        <h4>（延期）RAM纸张实验室 | 缝隙</h4>
+                                        <p>2021-01-24</p>
+                                    </a>
+                                </div>
+                                <div class="switch">
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                            </div>
+                            <ul>
+                                <li><a href="/chinese">中国艺术画</a></li>
+                                <li><a href="/western">西方艺术画</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="con" href="javascript:;">艺术家</a>
+                        <div class="downMenu">
+                            <ul>
+                                <li><a href="/chinesepeople">中国艺术家</a></li>
+                                <li><a href="">西方艺术家</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li >
+                        <a class="con" href="/Mycart"><i class="t3"></i>购物车</a>
+                    </li>
+                </ul>
+                <div class="topLink">
+                    <ul>
+
+                        <li><a class="link" onclick="show('http://127.0.0.1:8081/userKeFu','用户客服中心','800','600')"><i class="t7"></i>客服</a></li>
+                        </li>
+                        <li><a class="link" href="/administratorLogin" onclick="G_show_login_div()"><i class="t8"></i>管理员登录</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content" class="exhibitionDetail cf">
+        <s class="conLBg"></s><s class="conRBg"></s>
+        <div class="exhibitionTitle">
+            <h2>漫游岛城 - 岛屿生态学 章节1: 航行记<span>2021年1月9日 星期六 14:00 - 16:30</span></h2>
+            <div class="HugoBossLogo"></div>
+        </div>
+        <div class="exhibitionDetailTop cf">
+            <div class="colL">
+                <dl>
+
+                    <dt>场馆:</dt>
+                    <dd><a target="_blank" href="">RAM空间站（邯郸学院逸夫楼一楼）</a></dd>
+                    <dt>主持人:</dt>
+                    <dd><a target="_blank" href="">木焱</a></dd>
+                    <dt>对话者:</dt>
+                    <dd><a target="_blank" href="">Ivan·Juarez</a>、<a target="_blank" href="">李依佩</a>、<a target="_blank" href="">Elizabeth Gabrielle ·Lee</a>、<a target="_blank" href="">熊彧秀</a>、<a target="_blank" href="">薛雨璇</a></dd>
+                    <dt>类型:</dt><dd>讲座</dd><dt>语言:</dt><dd>英文、中文（无翻译）</dd>
+                </dl>
+                <div class="tag">
+                    <strong>平台:</strong>
+                    <a href="">教育</a>
+                    <a href="">研究</a>
+                </div>
+            </div>
+            <s class="line"></s>
+        </div>
+        <div class="exhibitionMain cf" style="background: whitesmoke">
+            <div class="colL">
+                <div class="bigTestList" style="background: whitesmoke">
+                    <ul>
+                        <li id="retract_0">
+                            <h3></h3>
+                            <p><strong>嘉宾：</strong><br />
+                                <br />
+                                李依佩｜台北</p>
+
+                            <p>Elizabeth Gabrielle Lee｜新加坡</p>
+
+                            <p>Ivan Juarez｜墨西哥城</p>
+
+                            <p>x:x（熊彧秀&amp;薛雨璇）｜成都</p>
+
+                            <p>主持人：木焱<br />
+                                &nbsp;</p>
+
+                            <p><strong>地点：</strong><br />
+                                <br />
+                                RAM 空间站（邯郸市逸夫楼）</p>															</li>
+                        <li id="more_0" style="display:none;">
+                            <h3></h3>
+                            <p><strong>嘉宾：</strong><br />
+                                <br />
+                                李依佩｜台北</p>
+
+                            <p>Elizabeth Gabrielle Lee｜新加坡</p>
+
+                            <p>Ivan Juarez｜墨西哥城</p>
+
+                            <p>x:x（熊彧秀&amp;薛雨璇）｜成都</p>
+
+                            <p>主持人：木焱<br />
+                                &nbsp;</p>
+
+                            <p><strong>地点：</strong><br />
+                                <br />
+                                RAM 空间站（上海市黄浦区圆明园路185号，兰心大楼一楼）</p>								<a href="javascript:;" _kid="0" class="retractMore">仅阅读简介 <i></i></a>
+                        </li>
+                        <li id="retract_1">
+                            <h3></h3>
+                            <p>搭乘飞机时，我们经常望着窗外，看着土地面积随高度上升而渺小，对土地界线的感知，也在短短数分钟内从二维角度提升为上帝视角。从城市平原到蜿蜒曲折的河流、从山丘纵谷到雄伟壮阔的山脉，渐渐变成汪洋大海中一座座耸立的岛屿。恍然大悟，岛屿其实就是微型的大陆，而大陆是非常非常巨大的岛屿。看似边界分明的土地和海洋，世界既有关联又好似没有关系。正是这种美丽的虚无，让我们想去探索。<br />
+                                <br />
+                                一张岛屿地图曾带给儿童经典故事金银岛的作者斯蒂文森 （Robert Louis Stevenson）灵感。他曾在《写作技巧论述》中说到：&ldquo;某种情况下，我绘制了一座岛屿地图，这座岛屿的色彩外型激发了我的想像力。那里的港口仿佛十四行诗般让我心醉神迷。&rdquo;<br />
+                                <br />
+                                &ldquo;漫游岛城 - 岛屿生态学&rdquo;是个基于网络的驻村发展计划，将透过人文科学基础探索岛屿集合形成作为艺术实验形式的可能性。<br />
+                                <br />
+                                我们以岛屿拓扑学为基础，从港口到岛屿，从大陆到湖泊，看似不关联的点，在一场虚构的梦里，打破时间与空间的连续性，通过虚构解谜真实，探索隔离和连接的⼆元对⽴之间的模糊地带。这是⼀段沿着国境线的旅程、这是一场没有边界的航行：被海洋包围的陆地任何一处都是起点，每个⼭头都是对⽴的点，但是它们⼜彼此连接着边境。<br />
+                                <br />
+                                ⼈在管道上呼吸，命运在⻓笛上奏曲。<br />
+                                <br />
+                                散落在现场的我们，探索不同世界的同时，共同的太阳和对存在于不同角落的神话⺠族、人类与万物、生态资源系统等事件，犹如置身奇异稜镜。在这片网络中，无论是地理或精神上解体，我们所处的边界犹如虚无间的生存空间，当我们乘着交通工具和思想航行最终到达⼀个岛屿的时候，此刻所⻅的岛屿会与出发前我们对岛屿的看法有何不同呢？<br />
+                                ...	<a href="javascript:;" _kid="1" class="readMore">了解更多 <i></i></a>
+                        </li>
+                        <li id="more_1" style="display:none;">
+                            <h3></h3>
+                            <p>搭乘飞机时，我们经常望着窗外，看着土地面积随高度上升而渺小，对土地界线的感知，也在短短数分钟内从二维角度提升为上帝视角。从城市平原到蜿蜒曲折的河流、从山丘纵谷到雄伟壮阔的山脉，渐渐变成汪洋大海中一座座耸立的岛屿。恍然大悟，岛屿其实就是微型的大陆，而大陆是非常非常巨大的岛屿。看似边界分明的土地和海洋，世界既有关联又好似没有关系。正是这种美丽的虚无，让我们想去探索。<br />
+                                <br />
+                                一张岛屿地图曾带给儿童经典故事金银岛的作者斯蒂文森 （Robert Louis Stevenson）灵感。他曾在《写作技巧论述》中说到：&ldquo;某种情况下，我绘制了一座岛屿地图，这座岛屿的色彩外型激发了我的想像力。那里的港口仿佛十四行诗般让我心醉神迷。&rdquo;<br />
+                                <br />
+                                &ldquo;漫游岛城 - 岛屿生态学&rdquo;是个基于网络的驻村发展计划，将透过人文科学基础探索岛屿集合形成作为艺术实验形式的可能性。<br />
+                                <br />
+                                我们以岛屿拓扑学为基础，从港口到岛屿，从大陆到湖泊，看似不关联的点，在一场虚构的梦里，打破时间与空间的连续性，通过虚构解谜真实，探索隔离和连接的⼆元对⽴之间的模糊地带。这是⼀段沿着国境线的旅程、这是一场没有边界的航行：被海洋包围的陆地任何一处都是起点，每个⼭头都是对⽴的点，但是它们⼜彼此连接着边境。<br />
+                                <br />
+                                ⼈在管道上呼吸，命运在⻓笛上奏曲。<br />
+                                <br />
+                                散落在现场的我们，探索不同世界的同时，共同的太阳和对存在于不同角落的神话⺠族、人类与万物、生态资源系统等事件，犹如置身奇异稜镜。在这片网络中，无论是地理或精神上解体，我们所处的边界犹如虚无间的生存空间，当我们乘着交通工具和思想航行最终到达⼀个岛屿的时候，此刻所⻅的岛屿会与出发前我们对岛屿的看法有何不同呢？<br />
+                                <br />
+                                2020年是个非常特殊的一年，我们深受新冠疫情影响。如今，跨文化交流旅行仍然很难回到原来的状态。在国界持续隔离情况下，我们想知道岛状拓扑的可能性和局限性、共创模式，定义区域之间的缝隙以及生物杂交与地方性间的震荡。<br />
+                                <br />
+                                我们希望这次讲座能为连接艺术界创造一个新的平台。彼此仍然可以分享我们的经验，相互学习，并继续发展艺术的可能性。驻村时间将从2020年12月开始至2021年5月期间举办。如果您身处在这样的环境，也愿意参与讨论，欢迎加入我们。</p>								<a href="javascript:;" _kid="1" class="retractMore">仅阅读简介 <i></i></a>
+                        </li>
+                        <li id="retract_2">
+                            <h3></h3>
+                            <p><strong>关于嘉宾：</strong><br />
+                                <br />
+                                <strong>Elizabeth Gabrielle Lee | 新加坡</strong></p>
+
+                            <p>具有伦敦艺术大学文学背景和摄影学硕士的艺术家&nbsp;Elizabeth Gabrielle Lee经常往返新加坡与伦敦之间，以&ldquo;邻近 near&rdquo;和&ldquo;他处 elsewhere&rdquo;相互迭代的慢性暴力和多样性形成艺术实践。</p>
+
+                            <p>在试图消弭知识生产手段的武装时，她避开了削减和完善。抛开本质主义，Elizabeth 对曾经被遗忘的微观和无聊叙事感兴趣，而进行视觉和文本的介入，表现感知和保留之间的细微差别。</p>
+
+                            <p>Elizabeth 经营了诗学和政治学为中心的研究策展平台 XING，尝试从非主流角度探索相关矩阵。她曾参与过英国 V&amp;A 博物馆、Photo London、Guest Projects、新加坡 DECK、Arts House、荷兰 Unseen 等国际展览。目前为英国罗切斯特创意艺术大学美术与摄影学院的副讲师。<br />
+                                <br />
+                                <strong>Ivan Juarez | 墨西哥城</strong></p>
+
+                            <p>出生于墨西哥的&nbsp;Ivan Juarez，是一位实践艺术家和景观设计师。他现为波兰弗罗茨瓦夫艺术与设计学院博士学位学校艺术研究教育博士学位候选人。从巴西热带雨林到秘鲁安第斯山脉梯田、从挪威峡湾针叶林到斯瓦尔巴群岛的北极群岛、从澳洲桉树丛林到日本稻田，都有他的足迹。</p>
+
+                            <p>Ivan 创办了 x-studio 致力于通过生态、生物和文化系统间的对话，从跨学科研究角度探索自然和建筑环境，试图通过概念化和创新方法的发现来感知景观。在《种子文化档案 The Seed Cultures Archive》项目，汇集了环境地景艺术家将种子作为出发点，以纪念农业食品系统中生物和文化多样性之间的肥沃纽带。</p>
+                            ...																	<a href="javascript:;" _kid="2" class="readMore">了解更多 <i></i></a>
+                        </li>
+                        <li id="more_2" style="display:none;">
+                            <h3></h3>
+                            <p><strong>关于嘉宾：</strong><br />
+                                <br />
+                                <strong>Elizabeth Gabrielle Lee | 新加坡</strong></p>
+
+                            <p>具有伦敦艺术大学文学背景和摄影学硕士的艺术家&nbsp;Elizabeth Gabrielle Lee经常往返新加坡与伦敦之间，以&ldquo;邻近 near&rdquo;和&ldquo;他处 elsewhere&rdquo;相互迭代的慢性暴力和多样性形成艺术实践。</p>
+
+                            <p>在试图消弭知识生产手段的武装时，她避开了削减和完善。抛开本质主义，Elizabeth 对曾经被遗忘的微观和无聊叙事感兴趣，而进行视觉和文本的介入，表现感知和保留之间的细微差别。</p>
+
+                            <p>Elizabeth 经营了诗学和政治学为中心的研究策展平台 XING，尝试从非主流角度探索相关矩阵。她曾参与过英国 V&amp;A 博物馆、Photo London、Guest Projects、新加坡 DECK、Arts House、荷兰 Unseen 等国际展览。目前为英国罗切斯特创意艺术大学美术与摄影学院的副讲师。<br />
+                                <br />
+                                <strong>Ivan Juarez | 墨西哥城</strong></p>
+
+                            <p>出生于墨西哥的&nbsp;Ivan Juarez，是一位实践艺术家和景观设计师。他现为波兰弗罗茨瓦夫艺术与设计学院博士学位学校艺术研究教育博士学位候选人。从巴西热带雨林到秘鲁安第斯山脉梯田、从挪威峡湾针叶林到斯瓦尔巴群岛的北极群岛、从澳洲桉树丛林到日本稻田，都有他的足迹。</p>
+
+                            <p>Ivan 创办了 x-studio 致力于通过生态、生物和文化系统间的对话，从跨学科研究角度探索自然和建筑环境，试图通过概念化和创新方法的发现来感知景观。在《种子文化档案 The Seed Cultures Archive》项目，汇集了环境地景艺术家将种子作为出发点，以纪念农业食品系统中生物和文化多样性之间的肥沃纽带。</p>
+
+                            <p>Ivan Juarez 曾参与过丹麦艺术基金会 J&oslash;rn Utzon 的 Can Lis House 项目、奥地利建筑论坛、拉丁美洲地景建筑双年展，获得纽约建筑联盟奖、Venice Arte Laguna 特别奖、奥地利 BigCi 环境艺术奖，并获得了墨西哥地景建筑双年展和伦敦新兴建筑师的建筑评论等国际殊荣。<br />
+                                <br />
+                                <strong>x:x (熊彧秀 &amp; 薛雨璇) | 成都</strong></p>
+
+                            <p>来自中国的双人组艺术家&nbsp;x:x由毕业于伦敦艺术大学传媒学院摄影硕士的薛雨璇，以及伦敦艺术大学认知与决策科学背景的熊彧秀组成。</p>
+
+                            <p>擅长影像创作的薛雨璇来自位于山东半岛，既面向大海又衔接内陆的东营；在当地著名的胜利油田，处于封闭的自治状态和自给自足的经济体系中，另一方面，却与中国各地的人有着密不可分的交集。她曾参与过台北国际摄影节、伦敦艺术学院摄影展、北京女性影展等展览，以及获伦敦&nbsp;Photobox 提名奖。</p>
+
+                            <p>从事艺术之前，熊彧秀从生物和认知科学角度切入自由意志的研究；关于人的脑电波峰值之间微小波动的未知领域，被许多人认为是神存在的空间，她将其理解为&ldquo;区间之间的空隙&rdquo;是超越人的思维、只能用心去感受的无限概念。她们将展开了一场介于想像力与时空之间的虚构环形叙事探索解谜，试图从对立关系的暧昧空间层层剖析，回应着所处的绵延不绝的土地、身体与思想。<br />
+                                <br />
+                                <strong>李依佩 | 台北</strong></p>
+
+                            <p>出生于台北，现正就读法国 EAC 艺术文化管理学院工商管理硕士。作为独立策展人和文字工作者，关注亚洲整体与当代艺术趋势，自2008年长期关注东南亚地区文化与艺术环境，通过展览策划、驻村、文化研究等国际交流，进行跨地及跨领域项目。相继成立细着艺术和创办岛屿城志 (Insular City Zine)，重新思考文化边界和艺术影响力。主要项目包括关注自然环境与艺术的「未来种子：热带雨林研究计画」以及岛屿作为文化研究的「漫游岛城」系列。</p>
+
+                            <p>她是2020 波兹南艺术周策展人之一，策划展览「解方- 生命维数」。其他项目包含「触见今日－台湾与东南亚当代艺术现况联展」、「延/伸:文化与媒材的移动关系&minus;亚洲当代艺术群展」、「微光真实/越南」、「Dinh project－Taqetaq」等展览。曾于北越芒族博物馆、印尼泗水 Alam Batik 驻村，文章散见信睿周报、艺术家、hiart、REVOLVE、Artco 等刊物。</p>								<a href="javascript:;" _kid="2" class="retractMore">仅阅读简介 <i></i></a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="moreTestList cf">
+                </div>
+            </div>
+            <s class="line"></s>
+            <div class="colR">
+                <div class="smallTestList"  >
+                    <ul>
+                        <li>
+                            <strong>购票信息</strong>
+                            <p>
+                                本活动免费，请预约参加。						</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    <script type="text/javascript">
+                        //了解更多
+                        $('.readMore').click(function(){
+                            var kid = $(this).attr('_kid');
+                            $('#retract_'+kid).hide();
+                            $('#more_'+kid).show();
+                        });
+                        $('.retractMore').click(function(){
+                            var kid = $(this).attr('_kid');
+                            $('#more_'+kid).hide();
+                            $('#retract_'+kid).show();
+                        });
+
+                        $('.suitable_crowd').click(function() {
+                            var _this = $(this);
+                            if($(_this).attr('disabled')){
+                                return;
+                            }
+                            $(_this).attr('disabled',true);
+                            // $.fancybox.showLoading();
+                            $.post($.gurl('/ajaxs/event_suitable_crowd'),{
+                                exhibition_id:"0b2csvu"
+                            },function(rsp){
+                                $(_this).attr('disabled',false);
+                                if(rsp == 'NEEDLOGIN'){
+                                    $.fancybox.open({
+                                        href:'#Login'
+                                    });
+                                    return;
+                                } else if (rsp == 'ERROR_MEMBER') {
+                                    window.location.href = $.gurl('/users/reg_overview');
+                                }
+                            });
+                        });
+
+                    </script>
+                </div>
+
+                <div class="moreTestList cf">
+                </div>
+            </div>
+            <s class="line"></s>
+            <div class="colR">
+                <div class="smallTestList">
+                    <ul>
+                        <li>
+                            <strong>购票信息</strong>
+                            <p>
+                                价格：350元/人<br />
+                                包含材料及Riso机器使用<br />
+                                <br />
+                                人数限制：10人<br />
+                                购票链接：https://detail.damai.cn/item.htm?id=640496733566<br />
+                                * 烦请提前购买，不接受现场购票。						</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+    <div id="footer">
+        <s></s>
+        <div class="inner">
+            <div class="topBox" style="padding-top: 10px;">
+                <div class="newSwitch" >
+                    <h3>公告</h3>
+                    <a class="more" href="">更多新闻</a>
+                    <a class="newBox" href="" th:each="News:${session.news}">
+                        <h4>[[${News.title}]]</h4>
+                        <p>[[${News.content}]]</p>
+                    </a>
+                    <div class="switch">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="info">
+                    <h3><i class="i2"></i>开放时间</h3>
+                    <p>星期二 - 星期日 10:00 ~ 18:00</p>
+                    <h3><i class="i3"></i>地址</h3>
+                    <p>邯郸市邯山区学院北路</p>
+                    <h3><i class="i1"></i>电话和邮箱</h3>
+                    <p> +86 21 63216251<br><a href="">1136993620@qq.com</a></p>
+                </div>
+                <div class="calendarBox" style="margin-top: -180px">
+                    <div class="cldBody">
+                        <table>
+                            <thead>
+                            <tr>
+                                <td colspan="7">
+                                    <div class="top">
+                                        <span id="left"><</span>
+                                        <span id="topDate"></span>
+                                        <span id="right">></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr id="week" >
+                                <td>日</td>
+                                <td>一</td>
+                                <td>二</td>
+                                <td>三</td>
+                                <td>四</td>
+                                <td>五</td>
+                                <td>六</td>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody" ></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        var G_forget_email = '';
+        var tim_resend;
+
+        //preload small pic
+        $('#topKvBg img[_src]').each(function(){
+            var _this = $(this);
+            var img = new Image();
+            img.onload = function(){
+                _this.attr('src',_this.attr('_src'));
+            };
+            img.src = $(this).attr('_src');
+        });
+
+        //top menu first click
+        $('.topMenu .menu>li').each(function(){
+            var a_tag = $(this).children('a');
+            var a_sub = $(this).find('ul li:first a');
+            if(a_sub.attr('href') != 'javascript:;'){
+                a_tag.attr('href',a_sub.attr('href'));
+            }
+        });
+        //top menu exhibition/event
+        function set_top_menu(div){
+            $(div+' .previewBox:first').show();
+            $(div+' .switch i:first').addClass('now');
+
+            $(div+' .switch i').css({cursor:'pointer'});
+
+            var idx = 0;
+            var idx_count = $(div+' .previewBox').size() -1;
+            if(idx_count < 1){
+                return;
+            }
+
+            var tim = null;
+
+            $(div+' .switch i').hover(function(){
+                clearTimeout(tim);
+                idx = $(this).index();
+                $(div+' .previewBox:visible').fadeOut();
+                $(div+' .previewBox').eq(idx).fadeIn();
+                $(div+' .switch i').removeClass('now');
+                $(div+' .switch i').eq(idx).addClass('now');
+            },function(){
+                go();
+            });
+
+            $(div+' .preview').hover(function(){
+                clearTimeout(tim);
+            },function(){
+                go();
+            });
+            function go(){
+                clearTimeout(tim);
+                tim = setTimeout(function(){
+                    if($(div).is(':visible')){
+                        idx++;
+                        if(idx >= idx_count){
+                            idx = -1;
+                        }
+                        $(div+' .previewBox:visible').fadeOut();
+                        $(div+' .previewBox').eq(idx).fadeIn();
+                        $(div+' .switch i').removeClass('now');
+                        $(div+' .switch i').eq(idx).addClass('now');
+                    }
+                    go();
+                },3000);
+            };
+            go();
+        };
+        set_top_menu('.div_menu_top1');
+        set_top_menu('.div_menu_top2');
+
+
+        //news list
+        function set_news_list(){
+            var div = '#footer .newSwitch';
+            $(div+' .newBox').hide();
+            $(div+' .newBox:first').show();
+            $(div+' .switch i:first').addClass('now');
+
+            var idx = 0;
+            var idx_count = $(div+' .newBox').size() -1;
+            if(idx_count < 1){
+                return;
+            }
+
+            var tim = null;
+            $(div+' .switch i').hover(function(){
+                clearTimeout(tim);
+                idx = $(this).index();
+                $(div+' .newBox:visible').stop().fadeOut();
+                $(div+' .newBox').eq(idx).stop().fadeIn();
+                $(div+' .switch i').removeClass('now');
+                $(div+' .switch i').eq(idx).addClass('now');
+            },function(){
+                go();
+            });
+            function go(){
+                clearTimeout(tim);
+                tim = setTimeout(function(){
+                    idx++;
+                    if(idx >= idx_count){
+                        idx = -1;
+                    }
+                    $(div+' .newBox:visible').stop().fadeOut();
+                    $(div+' .newBox').eq(idx).stop().fadeIn();
+                    $(div+' .switch i').removeClass('now');
+                    $(div+' .switch i').eq(idx).addClass('now');
+                    go();
+                },3000);
+            };
+            go();
+        };
+        set_news_list();
+
+
+        $('.li_share').hover(function(){
+            $('.stayIcon').fadeIn();
+        },function(){
+            $('.stayIcon').fadeOut();
+        });
+
+        var date = new Date();
+        var year = date.getFullYear();
+        var nowyear = date.getFullYear();
+        var month = date.getMonth()+1;
+        var nowmonth = date.getMonth()+1;
+        var dateday = date.getDate();
+        var todateHtml = year + '年'+ month + '月';
+        $('#topDate').text(todateHtml);
+        function showcld(){
+            var monthDay = [31,28,31,30,31,30,31,31,30,31,30,31];  // 创建数组存放每个月有多少天 ,默认2月为28天
+            // 判断闰年
+            if(year % 4 == 0 && year %100 != 0 || year % 400 == 0){
+                monthDay[1] = 29;
+            }
+            // 计算每个月的天数
+            var days = monthDay[month-1];
+            // 判断每月第一天为周几
+            date.setYear(year);        //某年
+            date.setMonth(month-1);   //某年的某月
+            date.setDate(1);   // 某月的某天
+            var weekday = date.getDay();  // 判断某天是周几
+            // 补齐一号前的空格
+            var tbodyHtml = '<tr>';
+            for(var i = 0; i<weekday; i++){
+                tbodyHtml += "<td></td>";
+            }
+            // 补齐每月的日期
+            var changLine = weekday;
+            var tagClass = '';
+            for(i=1; i<=days; i++){//每一个日期的填充
+                if(year == nowyear && month == nowmonth && i == dateday) {
+                    tagClass = "curDate";//当前日期对应格子
+                }else{
+                    tagClass = "isDate";
+                }
+                tbodyHtml += "<td class=" + tagClass + ">" + i + "</td>";
+                changLine = (changLine+1)%7;
+                if(changLine == 0 && i != days){//是否换行填充的判断
+                    tbodyHtml += "</tr><tr>";
+                }
+            }
+            $('#tbody').empty();   // 清空原有的内容
+            $('#tbody').append(tbodyHtml);   //添加当前月份的日期内容
+        }
+// 设置按钮点击事件
+        $('#left').click(function(){
+            month = month-1;
+            if(month < 1){
+                month = 12;
+                year--;
+            }
+            var todateHtml = year + '年'+ month + '月';
+            $('#topDate').text(todateHtml);
+            showcld();
+        });
+
+        $('#right').click(function(){
+            month = month+1;
+            if(month > 12){
+                month = 1;
+                year++;
+            }
+            var todateHtml = year + '年'+ month + '月';
+            $('#topDate').text(todateHtml);
+            showcld();
+        })
+        showcld();  //页面加载后执行函数
+
+
+    });
+
+
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-46060211-1', 'rockbundartmuseum.org');
+    ga('send', 'pageview');
+</script>
+</body>
+</html>

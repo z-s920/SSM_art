@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>校园艺术画展| Campus art exhibition</title>
+    <link rel="icon" th:href="@{/asserts/image/favicon.ico}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/asserts/css/style_cn.css}" />
+    <link rel="stylesheet" th:href="@{/asserts/css/lrtk.css}" />
+    <link rel="stylesheet" th:href="@{/asserts/css/jqtransform.css}" />
+    <script type="text/javascript" th:src="@{/asserts/player/jwplayer.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery-1.8.0.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.fancybox.pack.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/audio.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/coin-slider.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/banner.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/common_fun.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/xAutocomplete_JQ.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.xplaceholder.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.jqtransform.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/avalon/avalon.min_xwk.js}"></script>
+    <script type="text/javascript">
+        avalon.config({loader: false})
+    </script>
+</head>
+<body>
+<div id="wrap">
+    <div id="topKvBg">
+        <img th:src="@{asserts/css/img/03.jpg}">
+        <s></s><i></i>
+    </div>
+    <div id="header">
+        <div class="topMenu">
+            <div class="inner">
+                <ul class="menu">
+                    <li >
+                        <a class="con" href="/user/home">HOME</a>
+
+                    </li>
+      
+                    <li>
+                        <a class="con" href="javascript:;">艺术商店</a>
+                        <div class="downMenu downMenu2 div_menu_top2">
+                            <div class="preview">
+                                <div class="previewBox" style="display:none">
+                                    <a href="" class="previewCon">
+                                        <div class="pic"><img th:src="@{/asserts/image/20210920.jpg}"></div>
+                                        <h4>（延期）RAM纸张实验室 | 来吧！纸人偶！</h4>
+                                        <p>2021-01-23</p>
+                                    </a>
+                                </div>
+                                <div class="previewBox" style="display:none">
+                                    <a href="" class="previewCon">
+                                        <div class="pic"><img th:src="@{/asserts/image/202101211714221797.jpg}"></div>
+                                        <h4>（延期）RAM纸张实验室 | 缝隙</h4>
+                                        <p>2021-01-24</p>
+                                    </a>
+                                </div>
+                                <div class="switch">
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                            </div>
+                            <ul>
+                                <li><a href="/chinese">中国艺术画</a></li>
+                                <li><a href="/western">西方艺术画</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="con" href="javascript:;">艺术家</a>
+                        <div class="downMenu">
+                            <ul>
+                                <li><a href="/chinesepeople">中国艺术家</a></li>
+                                <li><a href="">西方艺术家</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li >
+                        <a class="con" href="/Mycart"><i class="t3"></i>购物车</a>
+                    </li>
+                </ul>
+                <div class="topLink">
+                    <ul>
+
+                        <li><a class="link" onclick="show('http://127.0.0.1:8081/userKeFu','用户客服中心','800','600')"><i class="t7"></i>客服</a></li>
+                        </li>
+                        <li><a class="link" href="/administratorLogin" onclick="G_show_login_div()"><i class="t8"></i>管理员登录</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content" style="background: whitesmoke" class="bookDetail cf">
+        <s class="conLBg"></s><s class="conRBg"></s>
+        <div class="cf">
+            <div class="bookImg">
+                <div>
+					<span class="bigPic">
+						<img th:src="@{asserts/image/202006111645005641.jpg}">
+						<s class="rBg"></s>
+					</span>
+                </div>
+                <div class="buyButtom">
+                    <em><i class="yuan">¥</i><span>999</span></em>					</div>
+            </div>
+            <div class="bookInfo">
+                <h2>帘幕线上出版第一期：末日超话</h2>
+                <span>图书 / 艺术类</span>
+                <em></em>
+
+                <p><br />
+                    人类与新冠肺炎的斗争已近半年。这段噩梦般的日子持续不休，社会生活也受到了极大的限制。当人类的生命受到威胁，有关国家角色的讨论又回到了霍布斯在《利维坦》中所探讨的现代政治的经典主题：人民必须让渡其权利才得以实现自我保护。我们看到世界各国采用了各种方法，如个人轨迹追踪、算法识别可疑病源等，以控制公民的行动防止病毒大流行。当然，这也反映了乔治&middot;阿甘本的思想，即例外状态的发生将使国家或其他公共机构利用这一机会扩张其权力。</p>
+
+                <p>&nbsp;</p>
+
+                <p>人们的日常生活对数码设备的强烈依赖，使得个人数据已然成为实现各种目的的重要资源。从各个方面来说，数码设备成为了人与现实世界的接口：获取信息、社交联系、日常生活甚至是进入某个地方的许可。在这段时期，技术似乎为人们提供了支持，但其收集到的数据也为不同机构提供了潜在的控制手段。我们的行为正成为这些数据的基础。然而这样的状况并非一蹴而就：如果从更长远的角度来看，当下从国家层面部署的信息网络基础设施将在未来&mdash;&mdash;也许是不远的未来对我们产生何种影响？地球如何成了监控的对象？基于对信息、大数据的处理，人类与自己、与世界的关系正通过数字媒介引发剧烈的改变：数字平台成了我们了解世界、与世界交换信息和控制世界的唯一方式。</p>
+                <p>&nbsp;</p>
+                <p>在《帘幕》项目的第一期线上出版中，让我们打开双眼与脑洞，激活对当代监视机制及其现状的公开探讨和大胆想象&mdash;&mdash;在线上生存的社会中，人如何能跳出这个由观看、监视和控制所组成的体系？</p>
+            </div>
+        </div>
+        <div>
+        </div>
+    <div id="footer">
+        <s></s>
+        <div class="inner">
+            <div class="topBox">
+                <div class="newSwitch" >
+                    <h3>公告</h3>
+                    <a class="more" href="">更多新闻</a>
+                    <a class="newBox" href="" th:each="News:${session.news}">
+                        <h4>[[${News.title}]]</h4>
+                        <p>[[${News.content}]]</p>
+                    </a>
+                    <div class="switch">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="info">
+                    <h3><i class="i2"></i>开放时间</h3>
+                    <p>星期二 - 星期日 10:00 ~ 18:00</p>
+                    <h3><i class="i3"></i>地址</h3>
+                    <p>邯郸市邯山区学院北路</p>
+                    <h3><i class="i1"></i>电话和邮箱</h3>
+                    <p> +86 21 63216251<br><a href="">1136993620@qq.com</a></p>
+                </div>
+                <div class="calendarBox">
+                    <div class="cldBody">
+                        <table>
+                            <thead>
+                            <tr>
+                                <td colspan="7">
+                                    <div class="top">
+                                        <span id="left"><</span>
+                                        <span id="topDate"></span>
+                                        <span id="right">></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr id="week" >
+                                <td>日</td>
+                                <td>一</td>
+                                <td>二</td>
+                                <td>三</td>
+                                <td>四</td>
+                                <td>五</td>
+                                <td>六</td>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody" ></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var param = {
+            tim_show_next_page:false,
+            data_end:false,
+            loading:false,
+            page:1
+        };
+        function show_next_page(){
+            if(param.loading){
+                return;
+            }
+            param.loading = true;
+            $.fancybox.showLoading();
+
+            $.get($.gurl('/ajaxs/load_publication'),{
+                page:++param.page
+            },function(rsp){
+                if(rsp == ''){
+                    param.data_end = true;
+                }else{
+                    $('.bookList ul').append(rsp);
+                }
+                param.loading = false;
+                $.fancybox.hideLoading();
+            });
+        }
+        $(window).bind('scroll.show_next_page', function (){
+            //显示下一页
+            if($.pageEnd() && !param.data_end){
+                if(param.tim_show_next_page){
+                    clearTimeout(param.tim_show_next_page);
+                }
+                param.tim_show_next_page = setTimeout(function(){
+                    show_next_page();
+                },200);
+            }
+        });
+    });
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        var G_forget_email = '';
+        var tim_resend;
+
+        //preload small pic
+        $('#topKvBg img[_src]').each(function(){
+            var _this = $(this);
+            var img = new Image();
+            img.onload = function(){
+                _this.attr('src',_this.attr('_src'));
+            };
+            img.src = $(this).attr('_src');
+        });
+
+        //top menu first click
+        $('.topMenu .menu>li').each(function(){
+            var a_tag = $(this).children('a');
+            var a_sub = $(this).find('ul li:first a');
+            if(a_sub.attr('href') != 'javascript:;'){
+                a_tag.attr('href',a_sub.attr('href'));
+            }
+        });
+        //top menu exhibition/event
+        function set_top_menu(div){
+            $(div+' .previewBox:first').show();
+            $(div+' .switch i:first').addClass('now');
+
+            $(div+' .switch i').css({cursor:'pointer'});
+
+            var idx = 0;
+            var idx_count = $(div+' .previewBox').size() -1;
+            if(idx_count < 1){
+                return;
+            }
+
+            var tim = null;
+
+            $(div+' .switch i').hover(function(){
+                clearTimeout(tim);
+                idx = $(this).index();
+                $(div+' .previewBox:visible').fadeOut();
+                $(div+' .previewBox').eq(idx).fadeIn();
+                $(div+' .switch i').removeClass('now');
+                $(div+' .switch i').eq(idx).addClass('now');
+            },function(){
+                go();
+            });
+
+            $(div+' .preview').hover(function(){
+                clearTimeout(tim);
+            },function(){
+                go();
+            });
+            function go(){
+                clearTimeout(tim);
+                tim = setTimeout(function(){
+                    if($(div).is(':visible')){
+                        idx++;
+                        if(idx >= idx_count){
+                            idx = -1;
+                        }
+                        $(div+' .previewBox:visible').fadeOut();
+                        $(div+' .previewBox').eq(idx).fadeIn();
+                        $(div+' .switch i').removeClass('now');
+                        $(div+' .switch i').eq(idx).addClass('now');
+                    }
+                    go();
+                },3000);
+            };
+            go();
+        };
+        set_top_menu('.div_menu_top1');
+        set_top_menu('.div_menu_top2');
+
+
+        //news list
+        function set_news_list(){
+            var div = '#footer .newSwitch';
+            $(div+' .newBox').hide();
+            $(div+' .newBox:first').show();
+            $(div+' .switch i:first').addClass('now');
+
+            var idx = 0;
+            var idx_count = $(div+' .newBox').size() -1;
+            if(idx_count < 1){
+                return;
+            }
+
+            var tim = null;
+            $(div+' .switch i').hover(function(){
+                clearTimeout(tim);
+                idx = $(this).index();
+                $(div+' .newBox:visible').stop().fadeOut();
+                $(div+' .newBox').eq(idx).stop().fadeIn();
+                $(div+' .switch i').removeClass('now');
+                $(div+' .switch i').eq(idx).addClass('now');
+            },function(){
+                go();
+            });
+            function go(){
+                clearTimeout(tim);
+                tim = setTimeout(function(){
+                    idx++;
+                    if(idx >= idx_count){
+                        idx = -1;
+                    }
+                    $(div+' .newBox:visible').stop().fadeOut();
+                    $(div+' .newBox').eq(idx).stop().fadeIn();
+                    $(div+' .switch i').removeClass('now');
+                    $(div+' .switch i').eq(idx).addClass('now');
+                    go();
+                },3000);
+            };
+            go();
+        };
+        set_news_list();
+
+
+        $('.li_share').hover(function(){
+            $('.stayIcon').fadeIn();
+        },function(){
+            $('.stayIcon').fadeOut();
+        });
+
+        var date = new Date();
+        var year = date.getFullYear();
+        var nowyear = date.getFullYear();
+        var month = date.getMonth()+1;
+        var nowmonth = date.getMonth()+1;
+        var dateday = date.getDate();
+        var todateHtml = year + '年'+ month + '月';
+        $('#topDate').text(todateHtml);
+        function showcld(){
+            var monthDay = [31,28,31,30,31,30,31,31,30,31,30,31];  // 创建数组存放每个月有多少天 ,默认2月为28天
+            // 判断闰年
+            if(year % 4 == 0 && year %100 != 0 || year % 400 == 0){
+                monthDay[1] = 29;
+            }
+            // 计算每个月的天数
+            var days = monthDay[month-1];
+            // 判断每月第一天为周几
+            date.setYear(year);        //某年
+            date.setMonth(month-1);   //某年的某月
+            date.setDate(1);   // 某月的某天
+            var weekday = date.getDay();  // 判断某天是周几
+            // 补齐一号前的空格
+            var tbodyHtml = '<tr>';
+            for(var i = 0; i<weekday; i++){
+                tbodyHtml += "<td></td>";
+            }
+            // 补齐每月的日期
+            var changLine = weekday;
+            var tagClass = '';
+            for(i=1; i<=days; i++){//每一个日期的填充
+                if(year == nowyear && month == nowmonth && i == dateday) {
+                    tagClass = "curDate";//当前日期对应格子
+                }else{
+                    tagClass = "isDate";
+                }
+                tbodyHtml += "<td class=" + tagClass + ">" + i + "</td>";
+                changLine = (changLine+1)%7;
+                if(changLine == 0 && i != days){//是否换行填充的判断
+                    tbodyHtml += "</tr><tr>";
+                }
+            }
+            $('#tbody').empty();   // 清空原有的内容
+            $('#tbody').append(tbodyHtml);   //添加当前月份的日期内容
+        }
+// 设置按钮点击事件
+        $('#left').click(function(){
+            month = month-1;
+            if(month < 1){
+                month = 12;
+                year--;
+            }
+            var todateHtml = year + '年'+ month + '月';
+            $('#topDate').text(todateHtml);
+            showcld();
+        });
+
+        $('#right').click(function(){
+            month = month+1;
+            if(month > 12){
+                month = 1;
+                year++;
+            }
+            var todateHtml = year + '年'+ month + '月';
+            $('#topDate').text(todateHtml);
+            showcld();
+        })
+        showcld();  //页面加载后执行函
+
+
+
+        //搜索
+
+
+
+
+
+
+    });
+</script>
+
+</body>
+</html>

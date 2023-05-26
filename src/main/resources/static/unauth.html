@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>权限</title>
+    <script type="text/javascript"  src="/asserts/js/jquery-3.3.1.min.js"></script>
+
+    <!-- Loading Bootstrap -->
+    <link  href="/asserts/css/vendor/bootstrap.min.css" rel="stylesheet">
+    <link  href="/asserts/layui/css/layui.css" rel="stylesheet">
+<style>
+    body{
+        background: #a6a6a6;
+    }
+    .text-shadow{
+        text-shadow:#FF0000 0 0 10px;
+        color:white;
+        font-size:60px;
+        text-align: center;
+    }
+    a{
+    text-decoration: none;
+    }
+    a:hover{text-decoration:none}
+
+</style>
+</head>
+<body>
+<h1 class="text-shadow">权限不足，请联系管理员！！</h1><br>
+<a  type="button" href="/loginOut" target="_blank" 	class="layui-btn layui-btn-normal">换身分登陆</a><br>
+<a  type="button" href="/user/home" target="_blank" 	class="layui-btn layui-btn-normal">返回主界面</a><br>
+
+</body>
+</html>

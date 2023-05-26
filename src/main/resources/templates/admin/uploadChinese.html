@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" th:href="@{asserts/layui/css/layui.css}">
+<script th:src="@{asserts/layui/layui.js}"></script>
+<script type="text/javascript"  th:src="@{/asserts/js/jquery-3.3.1.min.js}"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>上传功能</title>
+
+
+
+</head>
+<body>
+<!--<form th:action="@{/upload}" th:method="post" enctype="multipart/form-data">
+    一束花名字：<input type="text" name="name" value="" /><br>
+    描述:<input type="text" name="des" value="" /><br>
+    <input type="file" name="photo" value="上传文件" /><br>
+    <input type="submit" />
+</form>-->
+<form class="layui-form" action="">
+    <div class="layui-form-item">
+        <label class="layui-form-label">标题</label>
+        <div class="layui-input-block">
+            <input type="text" name="paintsName" required  lay-verify="required" placeholder="请输入图片名" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    </div>
+
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">新价格</label>
+        <div class="layui-input-block">
+            <input name="sellingPrice" placeholder="请输入价格" />
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+
+            <input type="file" id="fileToUpload" value="上传文件" />
+            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+        </div>
+    </div>
+</form>
+
+<script>
+
+    //Demo
+    layui.use('form', function(){
+        let form = layui.form;
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            // layer.msg(JSON.stringify(data.field));
+            let file = document.getElementById('fileToUpload').files[0];
+            let formdata=new FormData();
+            formdata.append("file",file);
+            formdata.append("paintsName",data.field.paintsName);
+            formdata.append("sellingPrice",data.field.sellingPrice);
+            console.log(formdata);
+            $.ajax({
+                url:'/uploadChinese',
+                type:'POST',
+                data:formdata,
+                processData: false,
+                contentType: false,
+                success:function(res){
+                    if (res === '0'){
+                        layer.msg("上传成功！！");
+                    }else
+                        layer.msg("上传失败！！");
+
+                },
+                error:function(){
+                    layer.msg("上传异常！！");
+                }
+            });
+
+            return false;
+        });
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>帘幕 | 展览 | 校内艺术画展 | Rockbund Art Museum</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="shortcut icon"  th:href="@{/asserts/image/favicon.ico}">
+    <link rel="stylesheet" th:href="@{/asserts/css/style_cn.css}" />
+    <link rel="stylesheet" th:href="@{/asserts/css/lrtk.css}" />
+    <link rel="stylesheet" th:href="@{/asserts/css/jqtransform.css}" />
+    <script type="text/javascript" th:src="@{/asserts/player/jwplayer.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery-1.8.0.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.fancybox.pack.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/audio.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/coin-slider.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/banner.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/common_fun.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/xAutocomplete_JQ.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.xplaceholder.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.jqtransform.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/avalon/avalon.min_xwk.js}"></script>
+    <script type="text/javascript">
+        avalon.config({loader: false})
+    </script>
+    <style type="text/css">
+        .fancybox-lock .fancybox-overlay {overflow:hidden}
+        .jwclick{opacity:0}
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="topKvBg">
+
+        <img class="img_big" style="display:" th:src="@{asserts/image/202103101905018236.jpg}">
+        <s></s><i></i>
+    </div>
+    <div id="header">
+        <div class="topMenu">
+            <div class="inner">
+                <ul class="menu">
+                    <li >
+                        <a class="con" href="/user/home">HOME</a>
+
+                    </li>
+
+                    <li>
+                        <a class="con" href="javascript:;">艺术商店</a>
+                        <div class="downMenu downMenu2 div_menu_top2">
+                            <div class="preview">
+                                <div class="previewBox" style="display:none">
+                                    <a href="" class="previewCon">
+                                        <div class="pic"><img th:src="@{/asserts/image/20210920.jpg}"></div>
+                                        <h4>（延期）RAM纸张实验室 | 来吧！纸人偶！</h4>
+                                        <p>2021-01-23</p>
+                                    </a>
+                                </div>
+                                <div class="previewBox" style="display:none">
+                                    <a href="" class="previewCon">
+                                        <div class="pic"><img th:src="@{/asserts/image/202101211714221797.jpg}"></div>
+                                        <h4>（延期）RAM纸张实验室 | 缝隙</h4>
+                                        <p>2021-01-24</p>
+                                    </a>
+                                </div>
+                                <div class="switch">
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                            </div>
+                            <ul>
+                                <li><a href="/chinese">中国艺术画</a></li>
+                                <li><a href="/western">西方艺术画</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="con" href="javascript:;">艺术家</a>
+                        <div class="downMenu">
+                            <ul>
+                                <li><a href="/chinesepeople">中国艺术家</a></li>
+                                <li><a href="/westernpeople">西方艺术家</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li >
+                        <a class="con" href="/Mycart"><i class="t3"></i>购物车</a>
+                    </li>
+                </ul>
+                <div class="topLink">
+                    <ul>
+
+                        <li><a class="link" onclick="show('http://127.0.0.1:8081/userKeFu','用户客服中心','800','600')"><i class="t7"></i>客服</a></li>
+                        </li>
+                        <li><a class="link" href="/administratorLogin" onclick="G_show_login_div()"><i class="t8"></i>管理员登录</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="content" class="exhibitionDetail cf">
+        <s class="conLBg"></s><s class="conRBg"></s>
+        <div class="exhibitionTitle">
+            <h2>帘幕<span>2021年5月15日 - 2021年7月25日</span></h2>
+            <div class="HugoBossLogo"></div>
+        </div>
+        <div class="exhibitionDetailTop cf">
+            <div class="colL">
+                <dl>
+                    <dt>展馆:</dt>
+
+                    <dd><a target="_blank" href="">香港Para Site艺术空间</a>、<a target="_blank" href="">Soho House香港</a></dd>
+                    <dt>策展人:</dt>
+                    <dd>
+                        <a target="_blank" href="">康喆明</a>、<a target="_blank" href="">拉瑞斯·弗洛乔</a>、<a target="_blank" href="">何思颖</a>、<a target="_blank" href="">李安琪</a>、<a target="_blank" href="">曾明俊</a>、<a target="_blank" href="">徐天天</a>                            </dd>
+                    <dt>艺术家:</dt>
+                    <dd>
+                        <a target="_blank" href="">尚塔尔•阿克曼</a>、<a target="_blank" href="">西扎•克鲁兹•巴卡尼</a>、<a target="_blank" href="">利•鲍厄里</a>                       </dd>
+                </dl>
+            </div>
+            <s class="line"></s>
+
+        </div>
+        <div class="exhibitionMain cf">
+            <div class="colL">
+                <div class="bigTestList">
+                    <ul>
+                        <li id="retract_0">
+                            <h3></h3>
+                            <p><strong>合作者：</strong>比利安娜&middot;思瑞克、马蒂尔&middot;科普兰</p>
+                            <p><br />
+                                <strong>Para Site艺术空间与校内艺术画展荣幸宣布两间艺术机构将于全新大型群展&ldquo;帘幕&rdquo;中再度合作，开启精彩的新篇章。
+                                    群展&ldquo;帘幕&rdquo;将在2021年5月15日于邯郸的两个展览场地揭幕，包括Para Site艺术空间及上环的临时展场。</strong>自2019年合作策划的展览&ldquo;百物曲&rdquo;起，Para Site艺术空间与校内艺术画展展开了一场持续且独特的机构间对话与合作，&ldquo;帘幕&rdquo;正是这一合作的延续。本次展览也是<strong>同名长期研究项目&ldquo;帘幕&rdquo;</strong>的首次线下呈现。通过不同的视觉和表演形式，研究项目和对话性交流，该项目旨在突破展览的时间和物理限制，跨越地域和旅程不断聚集来自不同群体和领域拥有批判性思考的合作者及实践者。<br />
+                                <br />
+                                横跨两个展场，&ldquo;帘幕&rdquo;将呈现24名艺术家的新旧作品以及于场域特定的艺术介入，并透过丰富的层次回应展览主题的流动概念。&ldquo;帘幕&rdquo;从日常生活中的物件，到不同文化语境中的佈景；从作为通风遮光的布帘，到作为当代电子设备的屏幕，它的变迁为展览赋予了通道、边界、区隔、连接、佔领、流通、地域等丰富的艺术和观念意蕴。展览旨在干预视觉文化消费的诸多的旧习，并透过爬行、移动、窥视、嗅闻、聆听、阅读、书写、感觉等行动，为观众开启新的空间感知。<br />
+                                ...   <a href="javascript:;" _kid="0" class="readMore">了解更多 <i></i></a>
+                            </p>
+
+                        </li>
+                        <li id="more_0" style="display:none;">
+                            <h3></h3>
+                            <p><strong>合作者：</strong>比利安娜&middot;思瑞克、马蒂尔&middot;科普兰</p>
+                            <p><br>
+                                <strong>Para Site艺术空间与校内艺术画展荣幸宣布两间艺术机构将于全新大型群展&ldquo;帘幕&rdquo;中再度合作，开启精彩的新篇章。群展&ldquo;帘幕&rdquo;将在2021年5月15日于香港的两个展览场地揭幕，包括Para Site艺术空间及上环的临时展场。</strong>自2019年合作策划的展览&ldquo;百物曲&rdquo;起，Para Site艺术空间与上海外滩美术馆展开了一场持续且独特的机构间对话与合作，&ldquo;帘幕&rdquo;正是这一合作的延续。本次展览也是<strong>同名长期研究项目&ldquo;帘幕&rdquo;</strong>的首次线下呈现。通过不同的视觉和表演形式，研究项目和对话性交流，该项目旨在突破展览的时间和物理限制，跨越地域和旅程不断聚集来自不同群体和领域拥有批判性思考的合作者及实践者。<br />
+                                <br>
+                                横跨两个展场，&ldquo;帘幕&rdquo;将呈现24名艺术家的新旧作品以及于场域特定的艺术介入，并透过丰富的层次回应展览主题的流动概念。&ldquo;帘幕&rdquo;从日常生活中的物件，到不同文化语境中的佈景；从作为通风遮光的布帘，到作为当代电子设备的屏幕，它的变迁为展览赋予了通道、边界、区隔、连接、佔领、流通、地域等丰富的艺术和观念意蕴。展览旨在干预视觉文化消费的诸多的旧习，并透过爬行、移动、窥视、嗅闻、聆听、阅读、书写、感觉等行动，为观众开启新的空间感知。<br />
+                                <br>
+                                展览中的部分创作透过审视报章、摄影中图像生产以及其于社交媒体、科学、艺术及政治领域的运用，细腻地讲述被遗忘的历史，并提出一系列关于监控时代的批判性问题。在探索科技平台及社会架构的可见与不可见之外，另一批作品将视线投向处于主流边缘的小型生态及文化，并试图釐清不同地域间的共生关係，从被忽略的视角出发，理解跨国交流的重要性。展览内，部分艺术家不仅将&ldquo;帘幕&rdquo;视为现实空间内的区隔，更将它看作电子屏幕的界限，人们对电子设备的愈发依赖使他们与世界的关係亦随之剧变，而电子设备亦逐步成为人认识世界及自我的主要途径。展览中的其他作品则聚焦于个人与集体身分间的动态表演，从而深入探问人如何辨别&ldquo;他者&rdquo;以及将其与自身区分。&ldquo;帘幕&rdquo;之内，我们或追溯记忆，或瞭望未来，希冀能够介入、干扰这规训且萦绕著后疫情世界的信息系统。<br />
+                                <br>
+                                鉴于当前疫情期间大家需要保持社交距离，其他原定的表演和公共教育项目将在疫情缓解后择机举行。作为研究项目&ldquo;帘幕&rdquo;的延续，&ldquo;含羞草俱乐部研讨会&rdquo;将于2022年2月在新加坡举办，邀请同心同志的合作者和伙伴们一起相聚线下。<br />
+                                <br>
+                                <br>
+                                <a href="javascript:;" _kid="0" class="retractMore">仅阅读简介 <i></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bigImg">
+                    <div id="exhibitionSlide">
+                        <ul>
+                            <li _effect="1">
+                                <a class="fancyboxIframe" href="javascript:;">
+                                    <img th:src="@{asserts/image/202104301453337994.jpg}">
+                                </a><i></i>
+                                <div class="text"><a target="_blank" >尚塔尔•阿克曼</a> / 《在空冰箱里走在自己的鞋带旁》之二</div>
+                            </li>
+                            <li _effect="1">
+                                <a class="fancyboxIframe" href="javascript:;" >
+                                    <img th:src="@{asserts/image/202104301519298091.jpg}">
+                                </a><i></i>
+                                <div class="text"><a target="_blank" href="" >丹尼尔•施特格曼•曼格拉内</a> / 《夏日的云》</div>
+                            </li>
+                            <li _effect="1">
+                                <a class="fancyboxIframe" href="javascript:;" >
+                                    <img th:src="@{asserts/image/202104301524308599.jpg}">
+                                </a><i></i>
+                                <div class="text"><a target="_blank" href="" >利•鲍厄里</a> / 《1988年Leigh Bowery于Anthony d’Offay画廊的演出》</div>
+                            </li>
+                            <li _effect="1">
+                                <a class="fancyboxIframe" href="javascript:;">
+                                    <img th:src="@{asserts/image/202104301527113979.jpg}">
+                                </a><i></i>
+                                <div class="text"><a target="_blank" href="" >何倩彤</a> / 《晚星》</div>
+                            </li>
+                            <li _effect="1">
+                                <a class="fancyboxIframe" href="javascript:;" >
+                                    <img th:src="@{asserts/image/202104301535569763.jpg}">
+                                </a><i></i>
+                                <div class="text"><a target="_blank" href="" >胡尹萍</a> / 《小芳》</div>
+                            </li>
+                            <li _effect="1">
+                                <a class="fancyboxIframe" href="javascript:;" >
+                                    <img th:src="@{asserts/image/202104301537008033.jpg}">
+                                </a><i></i>
+                                <div class="text"><a target="_blank" href="" >胡昀</a> / 《你们是世上的光》</div>
+                            </li>
+                            <li _effect="1">
+                                <a class="fancyboxIframe" href="javascript:;" >
+                                    <img th:src="@{asserts/image/202104301538421821.jpg}">
+                                </a><i></i>
+                                <div class="text"><a target="_blank" href=" ">德里克•贾曼</a> / 《蓝》</div>
+                            </li>
+                            <li _effect="1">
+                                <a class="fancyboxIframe" href="javascript:;" >
+                                    <img th:src="@{asserts/image/202104301540367174.jpg}">
+                                </a><i></i>
+                                <div class="text"><a target="_blank" href="" >林珉旭</a> / 《安蒂冈妮》</div>
+                            </li>
+                            <li _effect="1">
+                                <a class="fancyboxIframe" href="javascript:;" >
+                                    <img th:src="@{asserts/image/202104301542064267.jpg}">
+                                </a><i></i>
+                                <div class="text"><a target="_blank" href="" >古斯塔夫·梅茨格</a> / 《历史照片：走入——圣殿山屠杀，耶路撒冷，1990年11月8日》</div>
+                            </li>
+                            <li _effect="1">
+                                <a class="fancyboxIframe" href="javascript:;">
+                                    <img th:src="@{asserts/image/202104301545363092.jpg}">
+                                </a><i></i>
+                                <div class="text"><a target="_blank" href="" >黄汉冲</a> / 《Quora Fora：一次排演》</div>
+                            </li>
+                            <li _effect="1">
+                                <a class="fancyboxIframe" href="javascript:;" >
+                                    <img th:src="@{asserts/image/202104301547417091.jpg}">
+                                </a><i></i>
+                                <div class="text"><a target="_blank" href="" >吴佳儒</a> / 《beige_jelly_projection_single_channel_silence》</div>
+                            </li>
+                            <li _effect="1">
+                                <a class="fancyboxIframe" href="javascript:;" >
+                                    <img th:src="@{asserts/image/202104301552277972.jpg}">
+                                </a><i></i>
+                                <div class="text"><a target="_blank" href="" >周滔</a> / 《蓝与红》</div>
+                            </li>
+                            <li _effect="1">
+                                <a class="fancyboxIframe" href="javascript:;" >
+                                    <img th:src="@{asserts/image/202104301553557276.jpg}">
+                                </a><i></i>
+                                <div class="text"><a target="_blank" href="" >郑亦然</a> / 《部屋物语（上海）》</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <script type="text/javascript">
+                        <!--
+                        $(document).ready(function () {
+                            //了解更多
+                            $('.readMore').click(function () {
+                                var kid = $(this).attr('_kid');
+                                $('#retract_' + kid).hide();
+                                $('#more_' + kid).show();
+                            });
+                            $('.retractMore').click(function () {
+                                var kid = $(this).attr('_kid');
+                                $('#more_' + kid).hide();
+                                $('#retract_' + kid).show();
+                            });
+
+                            $('.fancyboxText').fancybox({
+                                autoSize: false,
+                                padding: 15,
+                                margin: 0,
+                                scrolling: 'no',
+                                width: '780',
+                                height: '70%',
+                                openSpeed: 150,
+                                closeSpeed: 150,
+                                type: 'iframe'
+                            });
+                        });
+                        //-->
+                    </script>
+                    <script type="text/javascript">
+                        <!--
+                        $(document).ready(function(){
+                            function x_slideshow(){
+                                var div_slide = '#exhibitionSlide';
+                                var first = $(div_slide+' ul li:first').clone();
+                                var last = $(div_slide+' ul li:last').clone();
+                                if(first.find('img[id]').size()){
+                                    first.find('img[id]').attr('id',first.find('img[id]').attr('id')+'_first');
+                                }
+                                if(last.find('img[id]').size()){
+                                    last.find('img[id]').attr('id',last.find('img[id]').attr('id')+'_last');
+                                }
+                                $(div_slide+' ul').append(first);
+                                $(div_slide+' ul li:first').before(last);
+
+                                var index = 1;
+                                var sWidth = $(div_slide).width();
+                                var len = $(div_slide+' ul li').size();
+                                var onplay = false;
+
+                                $('#exhibitionSlide li:eq('+(index)+') img[_src]').attr('src',function(){
+                                    return $(this).attr('_src');
+                                });
+
+                                $(div_slide).append('<div class="pre"><i></i></div><div class="next"><i></i></div>');
+                                $(div_slide+' ul').css('width', sWidth * (len));
+                                $(div_slide+' ul').css({left:-sWidth});
+                                $(div_slide+' .pre').click(function () {
+                                    onplay = false;
+                                    showPics('prev');
+                                });
+                                $(div_slide+' .next').click(function () {
+                                    onplay = false;
+                                    showPics('next');
+                                });
+                                function showPics(opera){
+                                    if(onplay){
+                                        return;
+                                    }
+                                    if($(div_slide+' ul').is(':animated')){
+                                        return;
+                                    }
+                                    if(opera == 'next'){
+                                        index ++;
+                                    }else{
+                                        index --;
+                                    }
+
+                                    var index_temp = index;
+                                    if(index <= 0){
+                                        index_temp = len - 2;
+                                    }else if(index >= len - 1){
+                                        index_temp = 1;
+                                    }
+                                    $('#exhibitionSlide li:eq('+index_temp+') img[_src]').attr('src',function(){
+                                        return $(this).attr('_src');
+                                    });
+                                    $('[id^=VideoPlay_]').each(function(){
+                                        var _this = $(this);
+                                        jwplayer(_this.attr('id')).stop();
+                                    });
+                                    var nowLeft = -index * sWidth;
+                                    $(div_slide+' ul').stop(true, true).animate({
+                                        'left': nowLeft
+                                    },300,function(){
+                                        if(index <= 0){
+                                            index = len - 2;
+                                            $(div_slide+' ul').css({left:-index * sWidth});
+                                        }else if(index >= len - 1){
+                                            index = 1;
+                                            $(div_slide+' ul').css({left:-index * sWidth});
+                                        }
+                                    });
+                                };
+                                /*停止自动播放
+                                $(div_slide).hover(function () {
+                                    clearInterval(picTimer);
+                                }, function () {
+                                    if(!onplay){
+                                        picTimer = setInterval(function () {
+                                            showPics('next');
+                                        }, 2800);
+                                    }
+                                }).trigger('mouseleave');
+                                */
+
+                                $('img[id^=VideoPlay_]').each(function(){
+                                    var _this = $(this);
+                                    jwplayer(_this.attr('id')).setup({
+                                        file: _this.attr('_file'),
+                                        image: _this.attr('_image'),
+                                        skin: '/player/xskin.xml',
+                                        primary: "flash",
+                                        width: 680,
+                                        height: 382,
+                                        autostart: false,
+                                        analytics:{
+                                            enabled: false,
+                                            cookies: false
+                                        }
+
+                                    }).onPlay(function(){
+                                        onplay = true;
+                                        clearInterval(picTimer);
+                                    });
+                                });
+                            };
+                            x_slideshow();
+
+                            $('.fancyboxIframe').each(function(){
+                                $(this).attr('data-fancybox-href',$(this).attr('data-fancybox-href')+'?index='+($(this).parent().index()-1));
+                            });
+                        });
+                        //-->
+                    </script>
+                </div>
+                <div class="moreTestList2 cf">
+                </div>
+            </div>
+            <s class="line"></s>
+            <div class="colR">
+                <div class="smallTestList">
+                </div>
+                <div class="relatedBook">
+                    <a target="_blank"
+                       href="">
+							<span class="pic">
+								<img th:src="@{asserts/image/202105131306243593.jpg}">
+								<i></i><s class="lBg"></s><s class="rBg"></s>
+							</span>
+                        <strong>“帘幕”导览手册</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="footer">
+        <s></s>
+        <div class="inner">
+            <div class="topBox">
+                <div class="newSwitch" >
+                    <h3>公告</h3>
+                    <a class="more" href="">更多新闻</a>
+                    <a class="newBox" href="" th:each="News:${session.news}">
+                        <h4>[[${News.title}]]</h4>
+                        <p>[[${News.content}]]</p>
+                    </a>
+                    <div class="switch">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="info">
+                    <h3><i class="i2"></i>开放时间</h3>
+                    <p>星期二 - 星期日 10:00 ~ 18:00</p>
+                    <h3><i class="i3"></i>地址</h3>
+                    <p>邯郸市邯山区学院北路</p>
+                    <h3><i class="i1"></i>电话和邮箱</h3>
+                    <p> +86 21 63216251<br><a href="">1136993620@qq.com</a></p>
+                </div>
+                <div class="calendarBox">
+                    <div class="cldBody">
+                        <table>
+                            <thead>
+                            <tr>
+                                <td colspan="7">
+                                    <div class="top">
+                                        <span id="left"><</span>
+                                        <span id="topDate"></span>
+                                        <span id="right">></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr id="week" >
+                                <td>日</td>
+                                <td>一</td>
+                                <td>二</td>
+                                <td>三</td>
+                                <td>四</td>
+                                <td>五</td>
+                                <td>六</td>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody" ></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+//news list
+        function set_news_list(){
+            var div = '#footer .newSwitch';
+            $(div+' .newBox').hide();
+            $(div+' .newBox:first').show();
+            $(div+' .switch i:first').addClass('now');
+
+            var idx = 0;
+            var idx_count = $(div+' .newBox').size() -1;
+            if(idx_count < 1){
+                return;
+            }
+
+            var tim = null;
+            $(div+' .switch i').hover(function(){
+                clearTimeout(tim);
+                idx = $(this).index();
+                $(div+' .newBox:visible').stop().fadeOut();
+                $(div+' .newBox').eq(idx).stop().fadeIn();
+                $(div+' .switch i').removeClass('now');
+                $(div+' .switch i').eq(idx).addClass('now');
+            },function(){
+                go();
+            });
+            function go(){
+                clearTimeout(tim);
+                tim = setTimeout(function(){
+                    idx++;
+                    if(idx >= idx_count){
+                        idx = -1;
+                    }
+                    $(div+' .newBox:visible').stop().fadeOut();
+                    $(div+' .newBox').eq(idx).stop().fadeIn();
+                    $(div+' .switch i').removeClass('now');
+                    $(div+' .switch i').eq(idx).addClass('now');
+                    go();
+                },3000);
+            };
+            go();
+        };
+        set_news_list();
+
+
+        $('.li_share').hover(function(){
+            $('.stayIcon').fadeIn();
+        },function(){
+            $('.stayIcon').fadeOut();
+        });
+
+
+
+
+        var date = new Date();
+        var year = date.getFullYear();
+        var nowyear = date.getFullYear();
+        var month = date.getMonth()+1;
+        var nowmonth = date.getMonth()+1;
+        var dateday = date.getDate();
+        var todateHtml = year + '年'+ month + '月';
+        $('#topDate').text(todateHtml);
+        function showcld(){
+            var monthDay = [31,28,31,30,31,30,31,31,30,31,30,31];  // 创建数组存放每个月有多少天 ,默认2月为28天
+            // 判断闰年
+            if(year % 4 == 0 && year %100 != 0 || year % 400 == 0){
+                monthDay[1] = 29;
+            }
+            // 计算每个月的天数
+            var days = monthDay[month-1];
+            // 判断每月第一天为周几
+            date.setYear(year);        //某年
+            date.setMonth(month-1);   //某年的某月
+            date.setDate(1);   // 某月的某天
+            var weekday = date.getDay();  // 判断某天是周几
+            // 补齐一号前的空格
+            var tbodyHtml = '<tr>';
+            for(var i = 0; i<weekday; i++){
+                tbodyHtml += "<td></td>";
+            }
+            // 补齐每月的日期
+            var changLine = weekday;
+            var tagClass = '';
+            for(i=1; i<=days; i++){//每一个日期的填充
+                if(year == nowyear && month == nowmonth && i == dateday) {
+                    tagClass = "curDate";//当前日期对应格子
+                }else{
+                    tagClass = "isDate";
+                }
+                tbodyHtml += "<td class=" + tagClass + ">" + i + "</td>";
+                changLine = (changLine+1)%7;
+                if(changLine == 0 && i != days){//是否换行填充的判断
+                    tbodyHtml += "</tr><tr>";
+                }
+            }
+            $('#tbody').empty();   // 清空原有的内容
+            $('#tbody').append(tbodyHtml);   //添加当前月份的日期内容
+        }
+// 设置按钮点击事件
+        $('#left').click(function(){
+            month = month-1;
+            if(month < 1){
+                month = 12;
+                year--;
+            }
+            var todateHtml = year + '年'+ month + '月';
+            $('#topDate').text(todateHtml);
+            showcld();
+        });
+
+        $('#right').click(function(){
+            month = month+1;
+            if(month > 12){
+                month = 1;
+                year++;
+            }
+            var todateHtml = year + '年'+ month + '月';
+            $('#topDate').text(todateHtml);
+            showcld();
+        })
+        showcld();  //页面加载后执行函数
+
+    });
+</script>
+
+</body>
+</html>

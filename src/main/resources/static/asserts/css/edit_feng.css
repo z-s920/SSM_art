@@ -1,0 +1,235 @@
+@charset "utf-8";
+/* CSS Document */
+.aTitle {line-height:50px; height:50px; padding-left:20px; font-size:32px; color:#FFF; background:#1A1A1A; font-weight:normal}
+.artist {background:url(img/detailed_bg2.png)}
+.artist .colL {width:250px; height:100%}
+.artist {margin-top:230px}
+.artist .line {position:absolute; z-index:10; height:100%; width:5px; background:url(img/line_04.png); left:-5px}
+.artist .colR {width:680px; padding:0 35px; min-height:600px; position:relative}
+.artistLeft img {width:250px; height:250px; display:block}
+.artistLeft strong {font-size:26px; line-height:28px; display:block; margin:10px 20px; color:#333}
+.artistLeft p {margin:10px 20px; display:block; color:#666; font-size:12px; line-height:18px}
+.artistLeft .shareMin {background:#CCC}
+.artistLeft .shareMin strong {font-size:12px}
+.ie7 .shareMin #bdshare {display:inline}
+.artistInfo { padding:30px 0; border-top:1px solid #CCC}
+.artistInfo p {font-size:12px; line-height:18px; color:#666}
+.artistInfo a:hover {color:#000}
+.artistInfo h3 {font-size:12px; font-weight:bold; color:#333; margin-bottom:5px}
+.twoRow {width:310px; margin-right:30px; margin-top:10px; float:left; display:block}
+.twoRow img {display:block; height:100px; width:100px; float:left}
+.twoRow strong {font-size:16px; line-height:20px; margin-bottom:5px}
+.twoRow strong, .twoRow span, .twoRow p {display:block; width:190px; float:right}
+.twoRow span {color:#B3B3B3; font-size:12px; line-height:18px; margin-bottom:10px}
+.noBorder {border:none}
+.artistul {list-style:disc; margin-left:20px}
+.artistul li {font-size:12px; line-height:18px}
+
+.artistInfo .blockBook {width:200px; margin:0 3px; position:relative; display:block; margin-bottom:10px}
+.artistInfo .blockBook, .artistInfo .blockBook1 { float:left; padding:10px}
+.artistInfo .blockBook img {width:200px; height:200px;  display:block; margin-bottom:10px; box-shadow:#CCC 0 1px 2px}
+.artistInfo .blockBook span, .artistInfo .blockBook1  span{font-size:12px; font-weight:300; color:#333; display:block; text-align:center}
+
+.artistInfo .blockBook1 {display:block; width:200px; text-align:center}
+.artistInfo .blockBook1 strong {display:block; font-size:12px}
+.artistInfo .blockBook1 .pic {display:inline-block; margin:auto; position:relative; width:auto}
+.artistInfo .blockBook1 img {display:block}
+.artistInfo .blockBook1 .pic {margin-bottom:5px}
+.artistInfo .blockBook1 .pic s {background:url(img/zz_book.png); width:14px; height:125px; position:absolute; bottom:10px}
+.artistInfo .blockBook1 .pic .lBg {background-position:left bottom; left:-14px}
+.artistInfo .blockBook1 .pic .rBg {background-position:right bottom; right:-14px}
+.artistInfo .blockBook1 .pic i {width:100%; height:100%; background:url(img/zz_book2.png) left top no-repeat; position:absolute; left:0; top:0}
+
+
+/*PHOTO GALLERY*/
+.gallery {margin-top:150px}
+.headline {background:#1a1a1a; height:70px; position:relative}
+.ie7 .headline {z-index:999}
+.gallery h2 {line-height:70px; font-size:32px; color:#FFF; padding-left:18px; font-weight:100; float:left}
+.headline .classify {margin-top:20px; float:right; border-bottom:1px solid #5c5c5c; height:29px}
+.headline .classify li {float:left; position:relative}
+.headline .classify li a {color:#555; display:block; line-height:28px; height:28px; padding:1px 15px}
+.headline .classify li a:hover {color:#999}
+.headline .classify li.now a {padding:0 14px 1px; background:#1a1a1a; border:1px solid #5c5c5c; color:#fff; border-bottom:none}
+.headline .classify li.now a:hover {color:#fff}
+.galleryW a {width:310px; box-shadow:5px 5px 10px #111; display:inline-block; background:#333; outline:#1A1A1A 0 solid}
+#tiles {position:relative; }
+#tiles li:hover {z-index:100}
+.galleryW a:hover {box-shadow:5px 5px 10px #000; outline:#000 5px solid; background:#000}
+.galleryW a:hover span {background:none}
+.galleryW {background:#1A1A1A}
+.galleryW a img {display:block; padding:0; margin:0}
+.galleryW a p {padding:10px 14px; font-size:14px; line-height:20px; color:#FFF; display:block; margin-top:1px; border-bottom:#393939 1px solid}
+.galleryW a span {display:block; padding:5px 14px; font-size:14px; line-height:20px; color:#666; font-size:11px; background:#272727; font-weight:300}
+.galleryW a span span {float:right; margin:0; background:none; padding:0}
+.ie7 .galleryW a span span {margin-top:-26px; margin-right:10px}
+.galleryW i {width:24px; height:19px; background:url(img/video03.png) right no-repeat; display:inline-block; margin-right:10px; margin-bottom:-3px}
+.galleryA {float:right; line-height:30px; height:30px; background:#333; padding:0 15px; margin:22px 15px; color:#fff}
+.galleryA:hover {color:#fff}
+.galleryA.now {background:#000; color:#666}
+.galleryA.now:hover {background:#000; color:#666}
+.galleryA.now .headphone {background-image:url(img/video04.jpg)}
+.headphone {width:20px; height:19px; display:inline-block; background:url(img/video03.png) left no-repeat; margin:0 5px -5px 0}
+.gallery .search {float:right; width:20px; height:20px; display:block; background:url(img/search.png) no-repeat right top; margin:27px 30px 0 0}
+.inputText {position:absolute; right:0; top:57px; z-index:9999; background:#4D4D4D; width:250px; padding:10px}
+.inputText em {display:block; height:0; width:0; border:7px solid; border-color:transparent; border-bottom:7px solid #4D4D4D; top:-12px; right:33px; position:absolute}
+.inputText form {position:relative}
+.inputText form input {width:205px; padding:6px 10px; line-height:18px; font-size:12px; height:18px; border:none; box-shadow:none; color:#000; background:#FFF; padding-right:35px; background:url(img/enter.png) right top no-repeat}
+.inputText form input:focus {border:none; box-shadow:none; width:205px; padding:6px 35px 6px 10px; line-height:18px; font-size:12px; height:18px}
+.inputText p {background:#FFF; color:#333; line-height:24px; padding:5px 15px 0; font-weight:bold; margin-top:1px}
+.inputText ul {background:#FFF; padding-bottom:10px}
+.inputText ul li {padding:0 10px}
+.inputText ul li a {color:#666; display:block; line-height:16px; padding:5px 10px; word-break:keep-all; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.inputText ul li a:hover {background:#E5E5E5}
+.hiden {display:none}
+.yearC {float:right; line-height:30px; height:30px; background:#989898; margin:22px 0 0 15px; color:#666; position:relative; text-indent:10px; text-indent:5px\9; +text-indent:0}
+.yearC:hover {color:#666}
+.yearC i {display:inline-block; height:0; width:0; border:5px solid; border-color:transparent; border-top:5px solid #666; position:absolute; top:12px; right:10px}
+body .yearC ul {border-color:#989898}
+.yearC ul li a {background:#CCC; color:#666; border-color:#989898; padding:0 10px; +padding:0 5px}
+.yearC ul li a.selected {background:#989898}
+.yearC ul li a:hover,.yearC ul li a.selected:hover {background:#666}
+
+/*videoGallery*/
+.videoG {background:#1A1A1A}
+.ie7 .videoG {padding-bottom:15px}
+.ie7 .videoG .floatLeft {margin-bottom:15px}
+.videoG .floatLeft {width:1050px; padding-left:20px}
+.videoG .floatRight {width:1050px; margin-left:-55px}
+.videoG .bigVideo {width:635px; height:365px}
+.videoG li span {display:block; width:290px; padding:5px 10px; position:absolute; bottom:0; left:0; line-height:18px; font-size:12px; color:#fff; background:rgba(0,0,0,.6); word-break:keep-all; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.ie7 .videoG li span,.ie8 .videoG li span {background:none; filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#99000000', endColorstr='#99000000')}
+.videoG .bigVideo s {display:block; width:70px; height:70px; background:url(img/icon_video1.png); position:absolute; top:50%; left:50%; margin-top:-35px; margin-left:-35px}
+.videoG li s {display:block; width:46px; height:46px; background:url(img/icon_video2.png); position:absolute; top:50%; left:50%; margin-top:-23px; margin-left:-23px}
+.videoG li {width:310px; display:block; margin:0 15px 15px 0; position:relative}
+.videoG li img {display:block}
+.videoG li:hover s {background:url(img/icon_video2_hover.png)}
+.videoG .bigVideo:hover s {background:url(img/icon_video1_hover.png)}
+.videoG li i {display:none; z-index:100}
+.videoG li:hover i {display:block; position:absolute; top:0; left:0; width:310px; height:140px; background:url(img/bgI.png)}
+.videoG .bigVideo:hover i {width:635px; height:330px} 
+.videoG li s, .videoG li i, .eduE .con {-webkit-transition:all .3s ease-out; -moz-transition:all .3s ease-out; -o-transition:all .3s ease-out; transition:all .3s ease-out}
+
+.floatLeft li {float:left}
+.floatRight li {float:right}
+
+
+/*教育*/
+.recentEdu {margin-top:45px; border-top:#BBB 1px solid; padding:10px 20px}
+.recentEdu p {font-size:18px; line-height:45px; font-weight:normal; color:#000}
+.recentEdu li {margin:5px 0 25px}
+.recentEdu li u {display:block; line-height:19px; color:#666; font-size:13px}
+.recentEdu li p {display:block; line-height:19px; color:#666; font-size:13px; font-weight:lighter}
+.recentEdu li span {display:block; line-height:19px; color:#999; font-size:12px}
+.recentEdu li:hover u, .recentEdu li:hover p {color:#333}
+.recentEdu li:hover span {color:#666}
+.education .content {padding:30px; color:#333}
+.education .content h3 {font-size:18px; line-height:40px; font-weight:normal; margin-bottom:10px}
+.education .content p {margin-bottom:25px}
+.eduBox {box-shadow:-1px 3px 5px #CCC; margin-bottom:15px; position:relative; overflow:hidden; behavior:url(../css/PIE.htc);}
+.eduBox img {float:left; display:block; width:200px; height:200px;}
+.eduBox h4 {font-size:16px; font-weight:600; line-height:20px; margin-bottom:5px}
+.eduBox div {float:right; padding:10px 20px; width:450px; height:180px; background:#E6E6E6}.eduBox div li {line-height:1.4em; list-style-type:disc; margin:7px 15px 0 20px}
+.eduBox .more {background:url(img/edu_more.png) right top no-repeat; line-height:16px; font-weight:600; font-size:11px; color:#333; position:absolute; bottom:15px; right:15px; padding-right:16px}
+.eduBox .more:hover {background-position:right bottom}
+.ie7 .subnav li i {top:7px}
+.education .centerBox {text-align:center; margin-top:80px}
+.education .centerBox img {display:inline}
+.education .centerBox p {text-align:center; font-size:14px; line-height:40px}
+.eduE {display:block}
+.eduE .con {display:block; width:750px; height:250px; overflow:hidden; color:#999; position:relative; z-index:1}
+.eduE .con:hover {background:#FFF; color:#000; z-index:2; box-shadow:0 0 20px rgba(0,0,0,.7)}
+.eduE .con img,.eduE .con .loading {float:left; width:250px; height:250px}
+.eduE .con .loading {background:#000 url(img/loading.gif) no-repeat center; opacity:0.4; filter:alpha(opacity=40)}
+.eduE .con .text {float:left; padding:20px; width:460px; height:210px}
+.eduE .con h4 {font-size:20px}
+.eduE .con h5 {font-size:14px; font-weight:normal; padding:5px 0}
+.eduE .con p {line-height:1.4}
+.eduE .bg2 {background:#E6E6E6}
+.eduE .bg1 {background:#F2F2F2}
+
+
+.eduP {padding-bottom:10px}
+.ie7 .eduP, .ie8 .eduP {padding-bottom:0}
+.eduP .bookList {width:750px}
+.ie7 .eduP .bookList {width:753px}
+.education .colR {z-index:20}
+body .education .line {z-index:0}
+
+/*Research*/
+.research .content {padding:30px; color:#333}
+.research .content strong {font-size:18px; margin-bottom:20px; display:block}
+.research .content p {font-size:14px; margin-bottom:20px}
+.research .content .objective {margin:25px 0 70px; padding-top:20px; border-top:1px dotted #e5e5e5}
+.research .content .objective strong {margin-bottom:10px}
+.research .content .objective li {list-style:none; padding-left:20px; line-height:35px; position:relative}
+.research .content .objective li i {width:4px; height:2px; background:#000; position:absolute; left:7px; top:18px}
+.research .content .resProgram h3 {font-size:14px; line-height:30px; margin-bottom:5px; display:block}
+.research .content .oneProgram {border-top:1px solid #000; margin-bottom:25px; display:block}
+.research .content .oneProgram h4 {font-size:30px}
+.research .content .oneProgram strong {font-size:18px; margin-bottom:13px}
+.research .content .oneProgram p {margin-bottom:15px}
+.researchDetailTop h2 {font-size:30px}
+.researchDetailTop p {font-size:18px; margin-bottom:10px}
+.researchDetailTop .share {margin-top:25px}
+.researchText {padding:30px 35px}
+.researchText span {font-size:14px; color:#4D4D4D; margin-bottom:20px; display:block}
+.researchText li {list-style:disc; font-size:14px; color:#4D4D4D; margin-bottom:15px; margin-left:20px}
+.researchText p {line-height:17px; margin-top:20px}
+.researchBlock {margin:45px 35px 10px ; padding-top:10px; border-top:1px solid #E5E5E5}
+.researchBlock h4 {font-size:16px; line-height:38px; color:#000}
+.participant div {width:690px}
+.participant a {display:block; margin:0 4px 0 0; width:110px; float:left}
+.participant a span {display:block; text-align:center; color:#333}
+.researchInfo .con {display:block; width:680px; height:250px; overflow:hidden; color:#999; position:relative; z-index:1; margin-top:20px}
+.researchInfo .con img,.eduE .con .loading {float:left; width:250px; height:250px}
+.researchInfo .con .loading {background:#000 url(img/loading.gif) no-repeat center; opacity:0.4; filter:alpha(opacity=40)}
+.researchInfo .con .text {float:left; padding-left:15px; width:415px; height:210px}
+.researchInfo .con h4 {font-size:20px}
+.researchInfo .con h5 {font-size:14px; font-weight:normal; padding:5px 0}
+.researchInfo .con p {line-height:1.4}
+.researchMain .colR h3 {background:rgba(0,0,0,.1); line-height:37px; position:relative; padding:0 20px; color:#000}
+.researchMain .colR h3 i {width:0; height:0; position:absolute; display:block; border:4px solid; border-color:transparent; border-top:4px solid #000; left:100px; top:17px}
+.colRshadow {background:url(img/colibg.png) center no-repeat; width:250px; height:10px; display:block}
+.downloadColR {display:block; padding:20px}
+.downloadColR .pdf {float:left}
+.downloadColR strong {margin-top:8px}
+.downloadColR strong,.downloadColR span {display:block; width:145px; padding-left:15px; float:left}
+i.pdf {width:50px; height:49px; display:block; background:url(img/pdficon.png)}
+
+/*搜索详情*/
+.searchDetail .searchInput {margin-bottom:-60px; height:60px; display:block; z-index:999 !important; position:relative; width:750px}
+.searchDetail .searchInput input {display:block; width:640px; height:30px; line-height:30px; padding:15px 25px; background:#000; font-size:28px; color:#fff; border:none; float:left}
+.searchDetail .searchInput input:focus {border:none; box-shadow:0 0 5px #666 inset; background:#E6E6E6; color:#000}
+.searchDetail .searchInput a {display:block; width:60px; height:60px; float:right; background:#000 url(img/searchBG.png)}
+.searchDetail .colL {width:750px} 
+.searchDetail .searchResult {margin-top:60px; background:#fff}
+.searchDetail .searchResult h3 {line-height:24px; height:24px; display:block; padding:0 45px; background:url(img/h3BG.png) repeat; width:660px; position:relative; margin-bottom:-24px; z-index:99}
+.searchDetail .searchResult h3 i {display:block; width:0; height:0; border:4px solid transparent; border-top-color:#808080; position:absolute; left:30px; top:10px}
+.searchDetail .searchResult ul {padding-top:24px; display:block; padding-right:25px}
+.searchDetail .searchResult .imgCenter {width:120px; height:120px; float:left; padding:20px 24px}
+.searchDetail .searchResult .imgCenter img {display:block; height:120px; margin:auto}
+.searchDetail .searchResult .content {float:right; width:555px}
+.searchDetail .searchResult .content a {display:block; padding-top:15px; font-size:16px; color:#333; text-decoration:underline; margin-bottom:5px}
+.searchDetail .searchResult .content a:hover {color:#000}
+.searchDetail .searchResult .content span {display:block; color:#999; font-size:11px}
+.searchDetail .searchResult .content p {line-height:16px; padding-bottom:10px; border-bottom:1px dotted #E6E6E6}
+.searchDetail .searchResult .oneResult ul li:last-child p {border-bottom:none}
+.searchDetail .searchResult .content .price {font-size:18px; margin-bottom:5px}
+.searchDetail .searchResult .content .price em {font-size:14px; font-style:normal; margin-right:3px}
+.searchDetail .searchResult .noImg .content {float:none; width:700px; margin-left:25px; padding:0}
+.searchDetail .searchResult .noImg span {margin-bottom:5px}
+.searchDetail .searchResult .searchPeople ul {padding:44px 0 15px 25px}
+.searchDetail .searchResult .searchPeople li {width:110px; height:110px; display:block; float:left; margin-right:10px; margin:0 8px 8px 0}
+.searchDetail .searchResult .searchPeople li a {width:110px; height:110px; display:block; position:relative}
+.searchDetail .searchResult .searchPeople li a.more {text-align:center; line-height:108px; width:108px; height:108px; border:1px solid #E6E6E6; background:#F2F2F2; font-size:14px; color:#666}
+.searchDetail .searchResult .searchPeople li span {position:absolute; display:block; width:110px; height:25px; line-height:25px; text-align:center; bottom:0px; left:0; color:#fff; background: rgb(0, 0, 0); background: rgba(0, 0, 0, 0.6); background: transparent\9; filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000Colorstr=#99000000); -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)"}
+.moreBtn {width:210px; height:35px; line-height:35px; display:block; background:url(img/moreBtn.png); margin:auto; text-align:center; color:#999999; position:relative; margin-bottom:20px}
+.moreBtn i {width:190px; height:16px; display:block; background:#f2f2f2 url(img/wait.GIF) center no-repeat; position:absolute; top:9px; left:10px}
+.searchDetail .searchResult .video i {display:block; background:url(img/video_mini.png); background-size:40px 40px; width:40px; height:40px; top:35px; left:35px; position:absolute}
+.searchDetail .searchResult .video:hover i {background-image:url(img/video_mini2.png)}
+.searchDetail .colR {background:#fff; width:250px; height:354px}
+.searchDetail .colR h3 {font-size:16px; font-weight:normal; color:#333; margin-bottom:10px}
+.searchDetail .colR label {display:block; color:#333333; line-height:34px; font-size:12px; padding:0 10px; border-bottom:1px solid #eee}
+.searchDetail .colR label input {margin-top:-2px; margin-right:5px}
+.searchDetail .fixedR {background:#fff; width:210px; padding:20px}

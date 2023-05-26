@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon"  th:href="@{/asserts/image/favicon.ico}"
+	type="asserts/image/x-icon" />
+<meta charset="UTF-8">
+<title>校内艺术画鉴赏与交易系统</title>
+
+<script type="text/javascript"  th:src="@{/asserts/js/jquery-3.3.1.min.js}"></script>
+
+<!-- Loading Bootstrap -->
+<link  th:href="@{/asserts/css/vendor/bootstrap.min.css}" rel="stylesheet">
+
+<!-- Loading Flat UI Pro -->
+<link  th:href="@{/asserts/css/flat-ui.css}" rel="stylesheet">
+
+<!-- Loading Flat UI Pro -->
+<link  th:href="@{/asserts/css/animate.css}" rel="stylesheet">
+
+<link  th:href="@{'http://fonts.googleapis.com/css?family=Montserrat:400,700'}"
+	rel='stylesheet' type='text/css'>
+<script type='text/javascript'  th:src="@{/asserts/scripts/particles.js}"></script>
+<!--<script type='text/javascript' src='scripts/jquery.particleground.js'></script>-->
+<script  th:src="@{/asserts/js/bootstrap.min.js}"></script>
+<style>
+.login-plane {
+	padding: 2rem;
+	margin-top: 3rem;
+}
+
+.center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.center-carousel {
+	width: 33%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.login-btn {
+	width: 100%;
+	margin-top: 1rem;
+}
+
+.container {
+	padding-top: 4rem;
+}
+
+body {
+	/*background: url(image/bj.jpg)*/
+	
+}
+</style>
+
+<link  th:href="@{/asserts/css/animate.css}" rel="stylesheet">
+	<!--<link href="asserts/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.5.3/css/bootstrap.css}" rel="stylesheet">-->
+
+</head>
+<body style="display: flex;">
+	<div id="particles-js">
+		<canvas class="particles-js-canvas-el" width="1322" height="774"
+			style="width: 100%; height: 100%;">
+    </canvas>
+	</div>
+	<div class="container" id="particles"
+		style="position: relative; top: -4rem; margin: auto;">
+		<div class="row">
+			<div class="col-md-12">
+				<h4 class="text-center animated bounceInDown" th:text="#{login.tip}">
+					Art painting appreciation and trading system</h4>
+			</div>
+			<div class="col-md-12">
+				<div class="row login-plane animated fadeIn">
+					<div class="col-md-4 center-block">
+
+						<form method="post" name="login" id="login" th:action="@{/login}"
+							onsubmit="return check()">
+							<strong th:text="#{login.message}">account information</strong>
+							<div class="form-group has-feedback">
+								<input name="username" type="text" id="userid" value=""
+									placeholder="userid" class="form-control" m="userid"
+									onkeyup="value=value.replace(/[\u4e00-\u9fa5]|(^\s+)|(\s+$)/ig,'')"
+									maxlength="12" /> <span class="form-control-feedback fui-user"></span>
+							</div>
+							<div class="form-group has-feedback">
+								<input name="password" type="password" value="" id="password"
+									placeholder="password" class="form-control" m="password"
+									onkeyup="this.value=this.value.replace(/(^\s+)|(\s+$)/g,'');"
+									maxlength="16" /> <span class="form-control-feedback fui-lock"></span>
+							</div>
+
+							<a href="register1" th:text="#{login.register}"><i></i>Register now</a>
+							<button class="btn btn-primary btn-wide login-btn" value="LOGIN"
+									type="submit" th:text="#{login.lo}"></button>
+							<p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+							<a class="btn btn-sm" th:href="@{/login.html(l='zh_CN')}">中文</a>
+							<a class="btn btn-sm" th:href="@{/login.html(l='en_US')}">English</a>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	<script  th:src="@{/asserts/scripts/bganimation.js}"></script>
+</body>
+</html>

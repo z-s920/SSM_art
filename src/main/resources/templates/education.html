@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>RAM纸张实验室 | 缝隙 | 活动 | 校园艺术画展| Campus art exhibition</title>
+        <link rel="shortcut icon"  th:href="@{/asserts/image/favicon.ico}">
+        <link rel="stylesheet" th:href="@{/asserts/css/style_cn.css}" />
+        <link rel="stylesheet" th:href="@{/asserts/css/lrtk.css}" />
+        <link rel="stylesheet" th:href="@{/asserts/css/jqtransform.css}" />
+        <script type="text/javascript" th:src="@{/asserts/player/jwplayer.js}"></script>
+        <script type="text/javascript" th:src="@{/asserts/js/jquery-1.8.0.min.js}"></script>
+        <script type="text/javascript" th:src="@{/asserts/js/jquery.fancybox.pack.js}"></script>
+        <script type="text/javascript" th:src="@{/asserts/js/audio.min.js}"></script>
+        <script type="text/javascript" th:src="@{/asserts/js/coin-slider.min.js}"></script>
+        <script type="text/javascript" th:src="@{/asserts/js/banner.js}"></script>
+        <script type="text/javascript" th:src="@{/asserts/js/common_fun.js}"></script>
+        <script type="text/javascript" th:src="@{/asserts/js/xAutocomplete_JQ.js}"></script>
+        <script type="text/javascript" th:src="@{/asserts/js/jquery.xplaceholder.js}"></script>
+        <script type="text/javascript" th:src="@{/asserts/js/jquery.jqtransform.js}"></script>
+        <script type="text/javascript" th:src="@{/asserts/js/avalon/avalon.min_xwk.js}"></script>
+    <script type="text/javascript">
+        avalon.config({loader: false})
+    </script>
+    <style type="text/css">
+        .fancybox-lock .fancybox-overlay {overflow:hidden}
+        .jwclick{opacity:0}
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="topKvBg">
+        <img class="img_big"  th:src="@{asserts/image/202101211651448545.jpg}">
+        <s></s><i></i>
+    </div>
+    <div id="header">
+        <div class="topMenu">
+            <div class="inner">
+                <ul class="menu">
+                    <li >
+                        <a class="con" href="/user/home">HOME</a>
+
+                    </li>
+
+                    <li>
+                        <a class="con" href="javascript:;">艺术商店</a>
+                        <div class="downMenu downMenu2 div_menu_top2">
+                            <div class="preview">
+                                <div class="previewBox" style="display:none">
+                                    <a href="" class="previewCon">
+                                        <div class="pic"><img th:src="@{/asserts/image/20210920.jpg}"></div>
+                                        <h4>（延期）RAM纸张实验室 | 来吧！纸人偶！</h4>
+                                        <p>2021-01-23</p>
+                                    </a>
+                                </div>
+                                <div class="previewBox" style="display:none">
+                                    <a href="" class="previewCon">
+                                        <div class="pic"><img th:src="@{/asserts/image/202101211714221797.jpg}"></div>
+                                        <h4>（延期）RAM纸张实验室 | 缝隙</h4>
+                                        <p>2021-01-24</p>
+                                    </a>
+                                </div>
+                                <div class="switch">
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                            </div>
+                            <ul>
+                                <li><a href="/chinese">中国艺术画</a></li>
+                                <li><a href="/western">西方艺术画</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="con" href="javascript:;">艺术家</a>
+                        <div class="downMenu">
+                            <ul>
+                                <li><a href="/chinesepeople">中国艺术家</a></li>
+                                <li><a href="">西方艺术家</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li >
+                        <a class="con" href="/Mycart"><i class="t3"></i>购物车</a>
+                    </li>
+                </ul>
+                <div class="topLink">
+                    <ul>
+
+                        <li><a class="link" onclick="show('http://127.0.0.1:8081/userKeFu','用户客服中心','800','600')"><i class="t7"></i>客服</a></li>
+                        </li>
+                        <li><a class="link" href="/administratorLogin" onclick="G_show_login_div()"><i class="t8"></i>管理员登录</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content" class="exhibitionDetail cf">
+        <s class="conLBg"></s><s class="conRBg"></s>
+        <div class="exhibitionTitle">
+            <h2>RAM纸张实验室 | 缝隙<span>2021年4月10日 星期六 13:30 - 18:30</span></h2>
+            <div class="HugoBossLogo"></div>
+        </div>
+        <div class="exhibitionDetailTop cf">
+            <div class="colL">
+                <dl>
+
+                    <dt>场馆:</dt>
+                    <dd><p >RAM空间站（邯郸市邯山区邯郸学院，逸夫楼一楼）</p></dd><br>
+                    <dt>主讲人:</dt>
+                    <dd><a target="_blank" >张硕ZS</a></dd><br>
+                    <dt>类型:</dt><dd>画展</dd><br>
+
+                    <dt>语言:</dt><dd>中文</dd><br>
+                </dl>
+                <div class="tag">
+                    <strong>平台:</strong>
+                    <a href="">IDEA</a>
+                    <i></i>
+                    <strong>话题:</strong>
+                    <a href="">纸张实验室</a>
+                </div>
+            </div>
+            <s class="line"></s>
+
+        </div>
+        <div class="exhibitionMain cf">
+            <div class="colL">
+                <div class="bigTestList">
+                    <ul>
+                        <li id="retract_0">
+                            <h3></h3>
+                            <p>用纸和墨留下私人的一幕，互相述说着悄悄话，试图将人们关系里的距离缩短一点，通过一本zine建立一段短暂又亲密的链接。再一次思考个人与他人之间的距离，把他人铸造为客体而不进行道德的评价，看到其中的趣味。<br />
+                                <br />
+                                <span style="line-height:1.6em">过去的一年里我们找到了一条&ldquo;缝隙&rdquo;，那是石缝之间的空隙，是情感之中的疏忽，是没来得及回顾的消息，以及认真体悟生活中的细碎，借助有着不同情绪的纸张，将生活中的体悟转化，即能看到一些交叉和差异，同时也存在着共性。这种体验和交换需要敏感的你同我们一起分享完成，为了让到场的每个人有这份完整的体验，这次&ldquo;缝隙&rdquo;工作坊计划10人参加，从制作内容到Riso印刷再到装帧成册，你将同一个偶然的集体里体验到整个zine从无到有的过程为新的一年播下一颗种子，是为春天制定的一个计划，我们期待着你的加入。</span><br />
+                                <br />
+                                注意：参与学员需要带上各自的创作素材，可以是影像、文字或报纸剪贴等，创作媒材不拘。创作时只需要将你对&ldquo;缝隙&rdquo;的想像，进行视觉化的呈现即可。</p>															</li>
+                        <li id="more_0" style="display:none;">
+                            <h3></h3>
+                            <p>用纸和墨留下私人的一幕，互相述说着悄悄话，试图将人们关系里的距离缩短一点，通过一本zine建立一段短暂又亲密的链接。再一次思考个人与他人之间的距离，把他人铸造为客体而不进行道德的评价，看到其中的趣味。<br />
+                                <br />
+                                <span style="line-height:1.6em">过去的一年里我们找到了一条&ldquo;缝隙&rdquo;，那是石缝之间的空隙，是情感之中的疏忽，是没来得及回顾的消息，以及认真体悟生活中的细碎，借助有着不同情绪的纸张，将生活中的体悟转化，即能看到一些交叉和差异，同时也存在着共性。这种体验和交换需要敏感的你同我们一起分享完成，为了让到场的每个人有这份完整的体验，这次&ldquo;缝隙&rdquo;工作坊计划10人参加，从制作内容到Riso印刷再到装帧成册，你将同一个偶然的集体里体验到整个zine从无到有的过程为新的一年播下一颗种子，是为春天制定的一个计划，我们期待着你的加入。</span><br />
+                                <br />
+                                注意：参与学员需要带上各自的创作素材，可以是影像、文字或报纸剪贴等，创作媒材不拘。创作时只需要将你对&ldquo;缝隙&rdquo;的想像，进行视觉化的呈现即可。</p>								<a href="javascript:;" _kid="0" class="retractMore">仅阅读简介 <i></i></a>
+                        </li>
+
+
+                        <li id="retract_2">
+                            <h3>关于纸张实验室</h3>
+                            <p>纸在人类文明的漫漫长河中被认为是一种很重要的物件。人们在生活中的点点滴滴都会用到它：书籍、信函、绘画、食物包装、祝福卡片等等。除了是承载和传播信息的媒介，纸张还被看作是一种能够让人产生特殊情绪的材料。薄薄的一张纸，当我们触摸和翻动它，仔细观察它，闻到它的气味时，就能体会到当中的微妙变化，这是纸张独特的近人之美。数码科技的崛起改变了人们传递信息的方式，我们越来越少触摸纸质书籍、纸质贺卡等物件。疫情的爆发更让人们的日常生活在很长一段时间内&ldquo;转居&rdquo;线上&mdash;&mdash;人们习惯避免接触、大部分的交流都转而在屏幕上完成。在人们的生活逐渐重启的当下，我们希望通过&ldquo;纸&rdquo;这一媒介，重新思考人与人、人与世界的关系，鼓励大家交流、传递情感、表达自我。纸张实验室系列活动包括一场讲座、一场对谈以及三场工作坊，敬请期待！</p>															</li>
+                        <li id="more_2" style="display:none;">
+                            <h3>关于纸张实验室</h3>
+                            <p>纸在人类文明的漫漫长河中被认为是一种很重要的物件。人们在生活中的点点滴滴都会用到它：书籍、信函、绘画、食物包装、祝福卡片等等。除了是承载和传播信息的媒介，纸张还被看作是一种能够让人产生特殊情绪的材料。薄薄的一张纸，当我们触摸和翻动它，仔细观察它，闻到它的气味时，就能体会到当中的微妙变化，这是纸张独特的近人之美。数码科技的崛起改变了人们传递信息的方式，我们越来越少触摸纸质书籍、纸质贺卡等物件。疫情的爆发更让人们的日常生活在很长一段时间内&ldquo;转居&rdquo;线上&mdash;&mdash;人们习惯避免接触、大部分的交流都转而在屏幕上完成。在人们的生活逐渐重启的当下，我们希望通过&ldquo;纸&rdquo;这一媒介，重新思考人与人、人与世界的关系，鼓励大家交流、传递情感、表达自我。纸张实验室系列活动包括一场讲座、一场对谈以及三场工作坊，敬请期待！</p>								<a href="javascript:;" _kid="2" class="retractMore">仅阅读简介 <i></i></a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="bigImg">
+                    <div id="exhibitionSlide">
+                        <ul>
+                            <li _effect="1">
+                                <a class="fancyboxIframe" href="javascript:;" data-fancybox-href="/cn/exhibition/slideshow/35fcswn">
+                                    <img  th:src="@{asserts/image/202101151531559969.jpg}">
+                                </a><i></i>
+                                <div class="text">Riso印刷机器</div>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <script type="text/javascript">
+                        <!--
+                        $(document).ready(function(){
+                            function x_slideshow(){
+                                var div_slide = '#exhibitionSlide';
+                                var first = $(div_slide+' ul li:first').clone();
+                                var last = $(div_slide+' ul li:last').clone();
+                                if(first.find('img[id]').size()){
+                                    first.find('img[id]').attr('id',first.find('img[id]').attr('id')+'_first');
+                                }
+                                if(last.find('img[id]').size()){
+                                    last.find('img[id]').attr('id',last.find('img[id]').attr('id')+'_last');
+                                }
+                                $(div_slide+' ul').append(first);
+                                $(div_slide+' ul li:first').before(last);
+
+                                var index = 1;
+                                var sWidth = $(div_slide).width();
+                                var len = $(div_slide+' ul li').size();
+                                var onplay = false;
+
+                                $('#exhibitionSlide li:eq('+(index)+') img[_src]').attr('src',function(){
+                                    return $(this).attr('_src');
+                                });
+
+                                $(div_slide).append('<div class="pre"><i></i></div><div class="next"><i></i></div>');
+                                $(div_slide+' ul').css('width', sWidth * (len));
+                                $(div_slide+' ul').css({left:-sWidth});
+                                $(div_slide+' .pre').click(function () {
+                                    onplay = false;
+                                    showPics('prev');
+                                });
+                                $(div_slide+' .next').click(function () {
+                                    onplay = false;
+                                    showPics('next');
+                                });
+                                function showPics(opera){
+                                    if(onplay){
+                                        return;
+                                    }
+                                    if($(div_slide+' ul').is(':animated')){
+                                        return;
+                                    }
+                                    if(opera == 'next'){
+                                        index ++;
+                                    }else{
+                                        index --;
+                                    }
+
+                                    var index_temp = index;
+                                    if(index <= 0){
+                                        index_temp = len - 2;
+                                    }else if(index >= len - 1){
+                                        index_temp = 1;
+                                    }
+                                    $('#exhibitionSlide li:eq('+index_temp+') img[_src]').attr('src',function(){
+                                        return $(this).attr('_src');
+                                    });
+                                    $('[id^=VideoPlay_]').each(function(){
+                                        var _this = $(this);
+                                        jwplayer(_this.attr('id')).stop();
+                                    });
+                                    var nowLeft = -index * sWidth;
+                                    $(div_slide+' ul').stop(true, true).animate({
+                                        'left': nowLeft
+                                    },300,function(){
+                                        if(index <= 0){
+                                            index = len - 2;
+                                            $(div_slide+' ul').css({left:-index * sWidth});
+                                        }else if(index >= len - 1){
+                                            index = 1;
+                                            $(div_slide+' ul').css({left:-index * sWidth});
+                                        }
+                                    });
+                                };
+                                /*停止自动播放
+                                $(div_slide).hover(function () {
+                                    clearInterval(picTimer);
+                                }, function () {
+                                    if(!onplay){
+                                        picTimer = setInterval(function () {
+                                            showPics('next');
+                                        }, 2800);
+                                    }
+                                }).trigger('mouseleave');
+                                */
+
+                                $('img[id^=VideoPlay_]').each(function(){
+                                    var _this = $(this);
+                                    jwplayer(_this.attr('id')).setup({
+                                        file: _this.attr('_file'),
+                                        image: _this.attr('_image'),
+                                        skin: '/player/xskin.xml',
+                                        primary: "flash",
+                                        width: 680,
+                                        height: 382,
+                                        autostart: false,
+                                        analytics:{
+                                            enabled: false,
+                                            cookies: false
+                                        }
+
+                                    }).onPlay(function(){
+                                        onplay = true;
+                                        clearInterval(picTimer);
+                                    });
+                                });
+                            };
+                            x_slideshow();
+
+                            $('.fancyboxIframe').each(function(){
+                                $(this).attr('data-fancybox-href',$(this).attr('data-fancybox-href')+'?index='+($(this).parent().index()-1));
+                            });
+                        });
+                        //-->
+                    </script>
+                </div>
+
+                <div class="moreTestList cf">
+                </div>
+            </div>
+            <s class="line"></s>
+            <div class="colR">
+                <div class="smallTestList">
+                    <ul>
+                        <li>
+                            <strong>购票信息</strong>
+                            <p>
+                                价格：350元/人<br />
+                                包含材料及Riso机器使用<br />
+                                <br />
+                                人数限制：10人<br />
+                                购票链接：https://detail.damai.cn/item.htm?id=640496733566<br />
+                                * 烦请提前购买，不接受现场购票。						</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="footer">
+        <s></s>
+        <div class="inner">
+            <div class="topBox" style="padding-top: 10px;">
+                <div class="newSwitch" >
+                    <h3>公告</h3>
+                    <a class="more" href="">更多新闻</a>
+                    <a class="newBox" href="" th:each="News:${session.news}">
+                        <h4>[[${News.title}]]</h4>
+                        <p>[[${News.content}]]</p>
+                    </a>
+                    <div class="switch">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="info">
+                    <h3><i class="i2"></i>开放时间</h3>
+                    <p>星期二 - 星期日 10:00 ~ 18:00</p>
+                    <h3><i class="i3"></i>地址</h3>
+                    <p>邯郸市邯山区学院北路</p>
+                    <h3><i class="i1"></i>电话和邮箱</h3>
+                    <p> +86 21 63216251<br><a href="">1136993620@qq.com</a></p>
+                </div>
+                <div class="calendarBox">
+                    <div class="cldBody">
+                        <table>
+                            <thead>
+                            <tr>
+                                <td colspan="7">
+                                    <div class="top">
+                                        <span id="left"><</span>
+                                        <span id="topDate"></span>
+                                        <span id="right">></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr id="week" >
+                                <td>日</td>
+                                <td>一</td>
+                                <td>二</td>
+                                <td>三</td>
+                                <td>四</td>
+                                <td>五</td>
+                                <td>六</td>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody" ></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="bottomBox">
+                <div class="footerNav">
+                    <a href="">HOME</a><i></i>
+                    <a href="">新闻资讯</a><i></i>
+                    <a href="">展示鉴赏</a><i></i>
+                    <a href="">艺术商店</a><i></i>
+                    <a>艺术家</a>
+                    <a href="">交流服务</a><i></i>
+                </div>
+                <div class="copy">
+                    <span class="footerLogo"></span>
+                    <small>Copyright &copy; 2021 校园艺术画展 | Rockbund Art Museum. | <a href="" target="_blank">冀ICP备14223232号-1</a></small>
+                    <div class="supported">Supported by <a href="" target="_blank"><span>ROCKBUND</span></a></div>
+                    <div class="follow">
+                        <strong>follow us</strong>
+                    </div>
+                    <a href="http://www.comonetwork.com/" class="como" target="_blank">Designed &amp; Developed by COMONETWORK</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        var G_forget_email = '';
+        var tim_resend;
+
+        //preload small pic
+        $('#topKvBg img[_src]').each(function(){
+            var _this = $(this);
+            var img = new Image();
+            img.onload = function(){
+                _this.attr('src',_this.attr('_src'));
+            };
+            img.src = $(this).attr('_src');
+        });
+
+        //top menu first click
+        $('.topMenu .menu>li').each(function(){
+            var a_tag = $(this).children('a');
+            var a_sub = $(this).find('ul li:first a');
+            if(a_sub.attr('href') != 'javascript:;'){
+                a_tag.attr('href',a_sub.attr('href'));
+            }
+        });
+        //top menu exhibition/event
+        function set_top_menu(div){
+            $(div+' .previewBox:first').show();
+            $(div+' .switch i:first').addClass('now');
+
+            $(div+' .switch i').css({cursor:'pointer'});
+
+            var idx = 0;
+            var idx_count = $(div+' .previewBox').size() -1;
+            if(idx_count < 1){
+                return;
+            }
+
+            var tim = null;
+
+            $(div+' .switch i').hover(function(){
+                clearTimeout(tim);
+                idx = $(this).index();
+                $(div+' .previewBox:visible').fadeOut();
+                $(div+' .previewBox').eq(idx).fadeIn();
+                $(div+' .switch i').removeClass('now');
+                $(div+' .switch i').eq(idx).addClass('now');
+            },function(){
+                go();
+            });
+
+            $(div+' .preview').hover(function(){
+                clearTimeout(tim);
+            },function(){
+                go();
+            });
+            function go(){
+                clearTimeout(tim);
+                tim = setTimeout(function(){
+                    if($(div).is(':visible')){
+                        idx++;
+                        if(idx >= idx_count){
+                            idx = -1;
+                        }
+                        $(div+' .previewBox:visible').fadeOut();
+                        $(div+' .previewBox').eq(idx).fadeIn();
+                        $(div+' .switch i').removeClass('now');
+                        $(div+' .switch i').eq(idx).addClass('now');
+                    }
+                    go();
+                },3000);
+            };
+            go();
+        };
+        set_top_menu('.div_menu_top1');
+        set_top_menu('.div_menu_top2');
+
+
+        //news list
+        function set_news_list(){
+            var div = '#footer .newSwitch';
+            $(div+' .newBox').hide();
+            $(div+' .newBox:first').show();
+            $(div+' .switch i:first').addClass('now');
+
+            var idx = 0;
+            var idx_count = $(div+' .newBox').size() -1;
+            if(idx_count < 1){
+                return;
+            }
+
+            var tim = null;
+            $(div+' .switch i').hover(function(){
+                clearTimeout(tim);
+                idx = $(this).index();
+                $(div+' .newBox:visible').stop().fadeOut();
+                $(div+' .newBox').eq(idx).stop().fadeIn();
+                $(div+' .switch i').removeClass('now');
+                $(div+' .switch i').eq(idx).addClass('now');
+            },function(){
+                go();
+            });
+            function go(){
+                clearTimeout(tim);
+                tim = setTimeout(function(){
+                    idx++;
+                    if(idx >= idx_count){
+                        idx = -1;
+                    }
+                    $(div+' .newBox:visible').stop().fadeOut();
+                    $(div+' .newBox').eq(idx).stop().fadeIn();
+                    $(div+' .switch i').removeClass('now');
+                    $(div+' .switch i').eq(idx).addClass('now');
+                    go();
+                },3000);
+            };
+            go();
+        };
+        set_news_list();
+
+
+        $('.li_share').hover(function(){
+            $('.stayIcon').fadeIn();
+        },function(){
+            $('.stayIcon').fadeOut();
+        });
+
+        var date = new Date();
+        var year = date.getFullYear();
+        var nowyear = date.getFullYear();
+        var month = date.getMonth()+1;
+        var nowmonth = date.getMonth()+1;
+        var dateday = date.getDate();
+        var todateHtml = year + '年'+ month + '月';
+        $('#topDate').text(todateHtml);
+        function showcld(){
+            var monthDay = [31,28,31,30,31,30,31,31,30,31,30,31];  // 创建数组存放每个月有多少天 ,默认2月为28天
+            // 判断闰年
+            if(year % 4 == 0 && year %100 != 0 || year % 400 == 0){
+                monthDay[1] = 29;
+            }
+            // 计算每个月的天数
+            var days = monthDay[month-1];
+            // 判断每月第一天为周几
+            date.setYear(year);        //某年
+            date.setMonth(month-1);   //某年的某月
+            date.setDate(1);   // 某月的某天
+            var weekday = date.getDay();  // 判断某天是周几
+            // 补齐一号前的空格
+            var tbodyHtml = '<tr>';
+            for(var i = 0; i<weekday; i++){
+                tbodyHtml += "<td></td>";
+            }
+            // 补齐每月的日期
+            var changLine = weekday;
+            var tagClass = '';
+            for(i=1; i<=days; i++){//每一个日期的填充
+                if(year == nowyear && month == nowmonth && i == dateday) {
+                    tagClass = "curDate";//当前日期对应格子
+                }else{
+                    tagClass = "isDate";
+                }
+                tbodyHtml += "<td class=" + tagClass + ">" + i + "</td>";
+                changLine = (changLine+1)%7;
+                if(changLine == 0 && i != days){//是否换行填充的判断
+                    tbodyHtml += "</tr><tr>";
+                }
+            }
+            $('#tbody').empty();   // 清空原有的内容
+            $('#tbody').append(tbodyHtml);   //添加当前月份的日期内容
+        }
+// 设置按钮点击事件
+        $('#left').click(function(){
+            month = month-1;
+            if(month < 1){
+                month = 12;
+                year--;
+            }
+            var todateHtml = year + '年'+ month + '月';
+            $('#topDate').text(todateHtml);
+            showcld();
+        });
+
+        $('#right').click(function(){
+            month = month+1;
+            if(month > 12){
+                month = 1;
+                year++;
+            }
+            var todateHtml = year + '年'+ month + '月';
+            $('#topDate').text(todateHtml);
+            showcld();
+        })
+        showcld();  //页面加载后执行函数
+
+
+    });
+
+
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-46060211-1', 'rockbundartmuseum.org');
+    ga('send', 'pageview');
+</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+.a
+{
+	background-color: #e0e0e0;
+	color: #000;
+}
+
+html {
+  	font-family: sans-serif;
+  	-ms-text-size-adjust: 100%;
+  	-webkit-text-size-adjust: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td,th {
+    padding: 0;
+    width: 300px;
+    text-align: center;
+}
+
+tbody tr {
+  	background-color: #f0f0f0;
+}
+
+tbody tr:hover {
+  	cursor: pointer;
+  	background-color: #fafafa;
+}
+
+.button1:hover{
+  	background:#00BFFF;
+}
+
+.button2:hover{
+  	background:#FF3333;
+}
+
+.button3:hover{
+  	background:	#FFBB00;
+}
+
+.pure-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 1px solid #cbcbcb;
+}
+
+
+.pure-table td,.pure-table th {
+    border-left: 1px solid #cbcbcb;
+    border-width: 0 0 0 1px;
+    font-size: inherit;
+    margin: 0;
+    overflow: visible;
+    padding: .5em 1em;
+}
+
+.pure-table thead {
+    background-color: #e0e0e0;
+    color: #000;
+    text-align: left;
+    vertical-align: bottom;
+}
+
+.pure-table thead tr{
+    background-color: #2aabd2;
+    color: white;
+}
+
+.pure-table td {
+    background-color: transparent;
+}
+
+.pure-table-bordered td {
+    border-bottom: 1px solid #cbcbcb;
+}
+
+.pure-table-bordered tbody>tr:last-child>td {
+    border-bottom-width: 0;
+}
+
+
+
+
+.pure-table2 {
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 1px solid #cbcbcb;
+}
+
+
+.pure-table2 td,.pure-table2 th {
+    border-left: 1px solid #cbcbcb;
+    border-width: 0 0 0 1px;
+    font-size: inherit;
+    margin: 0;
+    overflow: visible;
+    padding: .5em 1em;
+}
+
+.pure-table2 thead {
+    background-color: #e0e0e0;
+    color: #000;
+    text-align: left;
+    vertical-align: bottom;
+}
+
+.pure-table2 thead tr{
+    background-color: #2aabd2;
+    color: white;
+}
+
+.pure-table2 td {
+    background-color: transparent;
+}
+
+.pure-table-bordered2 td {
+    border-bottom: 1px solid #cbcbcb;
+}
+
+.pure-table-bordered2 tbody>tr:last-child>td {
+    border-bottom-width: 0;
+}

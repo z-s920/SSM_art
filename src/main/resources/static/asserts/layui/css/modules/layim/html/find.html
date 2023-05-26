@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>发现好朋友</title>
+    <!--[if IE]>
+    <script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <style>
+        .result-container {
+            border: 1px solid red;
+        }
+    </style>
+    <script src="../../../../../js/jquery-1.10.1.min.js"></script>
+    <link rel="stylesheet" href="../../../search-form.css">
+    <link rel="stylesheet" href="../../../layui.css">
+    <script src="../../../../layui.js"></script>
+</head>
+<body>
+
+<section class="container layui-form">
+    <form onsubmit="submitFn(this, event);">
+        <div class="search-wrapper">
+            <div class="input-holder">
+                <input type="text" class="search-input" placeholder="全网搜索,大海捞针"/>
+                <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+            </div>
+            <span class="close" onclick="searchToggle(this, event);"></span>
+            <div class="result-container">
+
+            </div>
+        </div>
+        <input type="checkbox" id="friendSwitch" name="close" lay-skin="switch" lay-text="findFriend|OFF" checked=""/>
+        <input type="checkbox" id="groupSwitch" name="close" lay-skin="switch" lay-text="findGroup|OFF"/>
+    </form>
+
+</section>
+
+
+<script type="text/javascript">
+    function searchToggle(obj, evt) {
+        var container = $(obj).closest('.search-wrapper');
+
+        if (!container.hasClass('active')) {
+            container.addClass('active');
+            evt.preventDefault();
+        } else if (container.hasClass('active') && $(obj).closest('.input-holder').length == 0) {
+            container.removeClass('active');
+            // clear input
+            container.find('.search-input').val('');
+            // clear and hide result container when we press close
+            container.find('.result-container').fadeOut(100, function () {
+                $(this).empty();
+            });
+        }
+    }
+
+    var value;
+
+
+    function submitFn(obj, evt) {
+        value = $(obj).find('.search-input').val().trim();
+        // console.log("朋友", $("#friendSwitch").prop('checked') === true);
+        // console.log("群", $("#groupSwitch").prop('checked') === true);
+        if (!value.length) {
+            layer.msg('提示: 没有账号不能搜索', {icon: 2});
+        } else {
+            if ($("#groupSwitch").prop('checked') === true && $("#friendSwitch").prop('checked') === false) {
+                $.get("/openFeign/findGroup",
+                    {
+                        findId: value
+                    },
+                    function (data, status) {
+
+                        if (status === 'success' && data.data !== null) {
+                            //    console.log(data.data)
+                            myfun(data)
+
+                        } else {
+                            layer.msg('提示: 暂无该群组信息', {icon: 7});
+                        }
+
+                    }).error(function () {
+                  layer.msg('出错了，联系米晓东，让他修。。', {icon: 5});
+                });
+            } else if ($("#friendSwitch").prop('checked') === true && $("#groupSwitch").prop('checked') === false) {
+                $.get("/openFeign/findFriend",
+                    {
+                        findId: value
+                    },
+                    function (data, status) {
+
+                        if (status === 'success' && data.data.length !== 0) {
+                            //    console.log(data.data)
+                            myfun(data)
+
+                        } else {
+                            layer.msg('提示: 暂无该账号信息', {icon: 7});
+                        }
+
+                    }).error(function () {
+                  layer.msg('出错了，联系米晓东，让他修。。', {icon: 5});
+                });
+            }else if ($("#friendSwitch").prop('checked') === true && $("#groupSwitch").prop('checked') === true) {
+                    layer.msg('提示: 不知道搜索那一个了', {icon: 2});
+            }else {
+              layer.msg('提示: 不选没得搜', {icon: 2});
+            }
+
+        }
+
+
+        evt.preventDefault();
+    }
+
+
+    let myfun;
+    layui.use(['layim', 'laypage', 'table', 'form'], function (layim) {
+        var layer = layui.layer
+            , laytpl = layui.laytpl
+            , $ = layui.jquery
+            , laypage = layui.laypage
+            , form = layui.form
+
+        layer.alert('目前只有群聊id：1-10;与小伙伴商量好共同进同一个群即可开始聊天。默认已经你加入到群④', {icon: 7});
+
+
+        // 自定义添加函数
+        myfun = function (data) {
+
+
+            if (data.msg === 'friend') {
+                layim.add({
+                    type: 'friend' //friend：申请加好友、group：申请加群
+                    , username: data.data[0].username //好友昵称，若申请加群，参数为：groupname
+                    , avatar: data.data[0].avatar //头像
+                    , submit: function (group, remark, index) { //一般在此执行Ajax和WS，以通知对方
+                        console.log(group); //获取选择的好友分组ID，若为添加群，则不返回值
+                        if (group !== '') {
+                            layer.close(index); //关闭改面板
+                            $.get("/openFeign/addFriend", {
+                                remark: remark,
+                                id: data.data[0].id,
+                                group: group
+                            }, function (res, status) {
+                                if (status === 'success' && res === 1) {
+                                    parent.send('addMessage', data.data[0].id);
+                                    layer.msg('发送成功', {icon: 6});
+                                }
+                            }).error(function () {
+                                layer.msg('没有数据，请检查。。', {icon: 5});
+                            });
+                        }
+//          console.log(remark); //获取附加信息
+
+                    }
+                });
+            } else {           // 加群
+                layim.add({
+                    type: 'group' //friend：申请加好友、group：申请加群
+                    , username: data.data.username //好友昵称，若申请加群，参数为：groupname
+                    , avatar: data.data.avatar //头像
+                    , submit: function (group, remark, index) { //一般在此执行Ajax和WS，以通知对方
+                        //    console.log(group); //获取选择的好友分组ID，若为添加群，则不返回值
+                        //    console.log(remark); //获取附加信息
+
+                        layer.close(index); //关闭改面板
+                        $.get("/openFeign/addGroup", {remark: remark, groupId: data.data.id}, function (res, status) {
+                            if (status === 'success' && res) {
+
+
+                                parent.layui.layim.addList(data.data)
+
+
+                                layer.msg('加群成功', {icon: 6});
+                            }
+                        }).error(function () {
+                            layer.msg('没有数据。。', {icon: 5});
+                        });
+
+
+                    }
+                });
+            }
+
+
+        };
+
+
+        //一些添加好友请求之类的交互参见文档
+    });
+</script>
+</body>
+</html>

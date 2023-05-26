@@ -1,0 +1,85 @@
+<!-- Copyright (c) 2019-2020 十三 all rights reserved. -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="user/header::head-fragment('艺术画商城-订单列表','my-orders')">
+</head>
+<body>
+
+<!-- nav -->
+<nav th:replace="user/header::nav-fragment"></nav>
+
+<!-- personal -->
+<div id="personal">
+    <div class="self-info center">
+
+        <!-- sidebar -->
+        <div th:replace="user/personal-sidebar::sidebar-fragment"></div>
+
+        <div class="intro fr">
+            <div class="uc-box uc-main-box">
+                <div class="uc-content-box order-list-box">
+                    <div class="box-hd">
+                        <h1 class="title">我的订单
+                            <small>请谨防钓鱼链接或诈骗电话，<a href="/return" style="color:#1baeae;font-size: 20px;" >返回>></a>
+                            </small>
+
+                        </h1>
+                    </div>
+                    <div class="box-bd">
+                        <div id="J_orderList">
+                            <ul class="order-list">
+                                <th:block th:each="list : ${myOrders}">
+                                    <img style="margin-top: 16px;"
+                                         >
+
+                                </th:block>
+                                <th:block th:unless="${#lists.isEmpty(myOrders)}">
+                                    <th:block th:each="myOrders : ${myOrders}">
+
+                                        <li class="uc-order-item uc-order-item-list">
+
+                                            <table class="order-detail-table">
+                                                <thead>
+                                                <tr>
+                                                    <th  class="col-main"><p class="caption-info">创建时间</p></th>
+                                                    <th class="col-main"><p class="caption-info" th:text="${#dates.format(myOrders.create_time, 'yyyy-MM-dd HH:mm:ss')}">
+                                                        02月07日</p>
+                                                    </th>
+                                                </tr>
+                                                   <tr>
+                                                       <th  class="col-main"><p class="caption-info">支付金额</p></th>
+                                                       <th><p>[[${myOrders.total_amount}]]</p></th></tr>
+                                                    <tr>
+                                                        <th  class="col-main"><p class="caption-info">订单编号</p></th>
+                                                        <th><p>[[${myOrders.sn}]]</p></th></tr>
+                                              <!--      <th class="col-sub"><p class="caption-price">应付金额：<span
+                                                            class="num"
+                                                            th:text="${myOrders.total_amount * myOrders.count}">1299.00</span>元
+                                                    </p></th>-->
+
+                                                </thead>
+
+                                            </table>
+
+                        </li>
+                        </th:block>
+                        </th:block>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+</div>
+
+
+
+<!-- jQuery -->
+<script th:src="@{asserts/admin/plugins/jquery/jquery.min.js}"></script>
+<script th:src="@{asserts/mall/js/search.js}" type="text/javascript"></script>
+
+</body>
+</html>

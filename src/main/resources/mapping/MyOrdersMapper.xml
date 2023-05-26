@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace配置 -->
+<mapper namespace="com.hdc.zs.art.dao.MyOrdersDao">
+
+	<!--遍历购买成功的订单遍历一下-->
+	<select id="findAlipayPaints" parameterType="String" resultType="com.hdc.zs.art.empty.MyOrders">
+		select create_time,sn,total_amount from ylrc_pay_log order by id desc
+	</select>
+
+	<!--后台页面显示订单记录-->
+	<select id="findOrdersWithPaging" parameterType="int" resultType="com.hdc.zs.art.empty.MyOrders">
+		select * from ylrc_pay_log limit #{page} ,#{limit}
+	</select>
+
+	<select id="findOrdersWithPagingCount" resultType="int">
+		select count(*) from ylrc_pay_log
+	</select>
+</mapper>

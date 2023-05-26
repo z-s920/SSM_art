@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace配置 -->
+<mapper namespace="com.hdc.zs.art.dao.GuestbookDao">
+    <insert id="addGuestbook" parameterType="String" >
+		insert into
+ 		guestbook(comment,stars,times,username,paintsName)
+ 		values(#{comment},#{stars},#{times},#{username},#{paintsName})
+	</insert>
+	<select id="findGuest" parameterType="String" resultType="com.hdc.zs.art.empty.guestbook">
+		<!-- #{}代表占位符，相当于？，#可以进行预编译，进行类型匹配-->
+		<!-- 而$不进行数据类型匹配，传入的参数是什么类型就是什么类型，容易造成sql语句报错 -->
+		select * from guestbook where paintsName = #{paintsName} order by Id DESC
+	</select>
+	<select id="findPictureById" parameterType="int" resultType="com.hdc.zs.art.empty.art">
+		select id,name,img from art where id=#{id}
+	</select>
+
+	<select id="findPictureBypaintsName" parameterType="String" resultType="com.hdc.zs.art.empty.art">
+		select id,name,img from art where name=#{paintsName}
+	</select>
+
+
+	<delete id="deletePaintsById" parameterType="int">
+		delete  from guestbook where id=#{id}
+	</delete>
+
+	<!--分页查询user表  参数 page:页码；limit:每页条数.-->
+	<select id="findGuestbookWithPaging" parameterType="com.hdc.zs.art.empty.search" resultType="com.hdc.zs.art.empty.guestbook">
+		select * from guestbook
+		<where>
+			<if test="search!=null and search!=''">
+				concat(id,comment,stars,times,username,paintsName) like concat("%",#{search},"%")
+			</if>
+		</where>
+		limit #{page} ,#{limit}
+	</select>
+	<select id="findGuestbookWithPagingCount" parameterType="String" resultType="int">
+		select count(*) from guestbook
+		<where>
+			<if test="_parameter!=null and _parameter!=''">
+				concat(id,comment,stars,times,username,paintsName) like concat("%",#{search},"%")
+			</if>
+		</where>
+	</select>
+
+<!--	管理员删除某个用户发表的评论-->
+	<delete id="deleteCommentById" parameterType="int">
+		delete from guestbook where id=#{id}
+	</delete>
+</mapper>

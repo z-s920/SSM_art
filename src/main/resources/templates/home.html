@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>校园艺术画展| Campus art exhibition</title>
+	<link rel="shortcut icon"  th:href="@{/asserts/image/favicon.ico}">
+<link rel="stylesheet" th:href="@{/asserts/css/style_cn.css}" />
+<link rel="stylesheet" th:href="@{/asserts/css/lrtk.css}" />
+<link rel="stylesheet" th:href="@{/asserts/css/jqtransform.css}" />
+<script type="text/javascript" th:src="@{/asserts/player/jwplayer.js}"></script>
+<script type="text/javascript" th:src="@{/asserts/js/jquery-1.8.0.min.js}"></script>
+<script type="text/javascript" th:src="@{/asserts/js/jquery.fancybox.pack.js}"></script>
+<script type="text/javascript" th:src="@{/asserts/js/audio.min.js}"></script>
+<script type="text/javascript" th:src="@{/asserts/js/coin-slider.min.js}"></script>
+<script type="text/javascript" th:src="@{/asserts/js/banner.js}"></script>
+<script type="text/javascript" th:src="@{/asserts/js/common_fun.js}"></script>
+<script type="text/javascript" th:src="@{/asserts/js/xAutocomplete_JQ.js}"></script>
+<script type="text/javascript" th:src="@{/asserts/js/jquery.xplaceholder.js}"></script>
+<script type="text/javascript" th:src="@{/asserts/js/jquery.jqtransform.js}"></script>
+<script type="text/javascript" th:src="@{/asserts/js/avalon/avalon.min_xwk.js}"></script>
+<script type="text/javascript">
+avalon.config({loader: false})
+function show(url, name, iWidth, iHeight) {
+	var url; //转向网页的地址;
+	var name; //网页名称，可为空;
+	var iWidth; //弹出窗口的宽度;
+	var iHeight; //弹出窗口的高度;
+	var iTop = (window.screen.availHeight - 30 - iHeight) / 2; //获得窗口的垂直位置;
+	var iLeft = (window.screen.availWidth - 10 - iWidth) / 2; //获得窗口的水平位置;
+	window.open(url, name, 'height=' + iHeight + ',,innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' + iWidth + ',top=' + iTop + ',left=' + iLeft + ',toolbar=no,menubar=no,scrollbars=auto,resizeable=no,location=no,status=no');
+}
+</script>
+<style type="text/css">
+.fancybox-lock .fancybox-overlay {overflow:hidden}
+.jwclick{opacity:0}
+</style>
+</head>
+<body>
+	<div id="wrap">
+					<div id="topKvBg" class="indexKv" style="height:672px">
+				<!-- height:1/2当前网页宽度 实时计算-->
+				<ul class="images" id="KVposter">
+                    <li style="z-index:5;opacity:1;">
+
+									<img th:src="@{/asserts/image/202009221408109416.jpg}"  >
+                                    <i></i>
+
+							</li>
+													<li style="z-index:5;opacity:1;">
+
+									<img th:src="@{/asserts/image/202003161530384579.jpg}"  >
+																																			s>
+									<i></i>
+
+							</li>
+													<li style="z-index:4;opacity:1;">
+
+									<img th:src="@{/asserts/image/202003251935398134.jpg}"  >
+																																				<s></s>
+									<i></i>
+
+							</li>
+													<li style="z-index:3;opacity:1;">
+
+									<img th:src="@{/asserts/image/202003161013295843.jpg}"  >
+																																				<s></s>
+									<i></i>
+
+							</li>
+													<li style="z-index:2;opacity:1;">
+
+									<img th:src="@{/asserts/image/202003152202398574.jpg}"  >
+																																				<s></s>
+									<i></i>
+
+							</li>
+													<li style="z-index:1;opacity:1;">
+
+									<img th:src="@{/asserts/image/202003161021421011.jpg}"  >
+																																				<s></s>
+									<i></i>
+
+							</li>
+															</ul>
+				<div class="num" id="KVnumber">
+																		<span class="now"></span>
+													<span></span>
+													<span></span>
+													<span></span>
+													<span></span>
+													<span></span>
+															</div>
+				<div class="btn prev"></div><div class="btn next"></div>
+			</div>
+				<div id="header">
+			<div class="topMenu">
+				<div class="inner">
+					<ul class="menu">
+						<li >
+							<a class="con" href="/user/home">HOME</a>
+
+						</li>
+						<li>
+							<a class="con" href="javascript:;">艺术商店</a>
+							<div class="downMenu downMenu2 div_menu_top2">
+								<div class="preview">
+									<div class="previewBox" style="display:none">
+								<a href="" class="previewCon">
+									<div class="pic"><img th:src="@{/asserts/image/20210920.jpg}"></div>
+									<h4>（延期）RAM纸张实验室 | 来吧！纸人偶！</h4>
+													<p>2021-01-23</p>
+												</a>
+									</div>
+									<div class="previewBox" style="display:none">
+							<a href="" class="previewCon">
+							<div class="pic"><img th:src="@{/asserts/image/202101211714221797.jpg}"></div>
+								<h4>（延期）RAM纸张实验室 | 缝隙</h4>
+									<p>2021-01-24</p>
+							</a>
+							</div>
+								<div class="switch">
+									<i></i>
+									<i></i>
+								</div>
+								</div>
+								<ul>
+									<li><a href="/chinese">中国艺术画</a></li>
+									<li><a href="/western">西方艺术画</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a class="con" href="javascript:;">艺术家</a>
+							<div class="downMenu">
+								<ul>
+									<li><a href="/chinesepeople">中国艺术家</a></li>
+									<li><a href="/westernpeople">西方艺术家</a></li>
+								</ul>
+							</div>
+						</li>
+						<li >
+							<a class="con" href="/Mycart"><i class="t3"></i>购物车</a>
+						</li>
+					</ul>
+					<div class="topLink">
+						<ul>
+
+							<li><a class="link" onclick="show('http://127.0.0.1:8081/userKeFu','用户客服中心','800','600')"><i class="t7"></i>客服</a></li>
+							</li>
+							<li><a class="link" href="/administratorLogin" onclick="G_show_login_div()"><i class="t8"></i>管理员登录</a></li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+					</div>
+		<div id="content" class="indexList cf" style="margin-top:472px">
+<!-- margin-top:1/2当前网页宽度-200px 实时计算-->
+	<s class="conLBg"></s><s class="conRBg"></s>
+		<div class="column3">
+			<div class="con">
+				<a href=""><img class="bg" th:src="@{/asserts/image/202101211711082759.jpg}"></a>
+					<div class="topText">
+				<a href="javascript:;">公告</a>
+					</div>
+				<a class="bottomText" href="">
+			<h4>重要通知</h4>
+			<h5></h5>
+<p>由于突发疫情影响，原定于13月32日（本周六）的艺术画展主题为--“对比中西方艺术画差别与共同交流！”将延期至举行。具体活动日期等信息，请关注RAM官网及微信公众号的后续通知。带来的不便我们深感抱歉，感谢您的关注与理解！大家注意自我防护，我们来日再见！</p>
+				</a>
+			</div>
+
+	<div class="con mid">
+								<a href="/exhibits"><img class="bg" th:src="@{/asserts/image/202101211714221797.jpg}" ></a>
+								<div class="topText">
+										<a href="javascript:;">艺术画</a>
+										<strong><a href="javascript:;">画廊</a></strong>
+									</div>
+									<span class="countdown">回顾</span>
+								<a class="bottomText" href="/exhibits">
+									<h4>（延期）RAM纸张实验室 | 来吧！纸人偶！</h4>
+									<h5>2021-01-23 14:00 — 17:00</h5>
+							<p>一张白纸是想象力和创造力的起点，我们可以用一张白纸来做什么呢？写字、画画、折叠…除此之外还有什么？</p>
+							</a>
+							</div>
+            <div class="con">
+						<a href="/education"><img class="bg" th:src="@{/asserts/image/202101211651469125.jpg}"></a>
+																	<div class="topText">
+										<a href="/education">教育</a>
+										<strong><a href="/education">工作坊</a></strong>
+									</div>
+									<span class="countdown">回顾</span>
+
+								<a class="bottomText" href="/education">
+									<h4>（延期）RAM纸张实验室 | 缝隙</h4>
+									<h5>2021-01-24 13:30 — 18:30</h5>
+																			<p>用纸和墨留下私人的一幕，互相述说着悄悄话，试图将人们关系里的距离缩短一点，通过一本zine建立一段短暂又亲密的链接。再一次思考个人与他人之间的距离，把他人铸造为客体而不进行道德的评价，看到其中的趣味。</p>
+																	</a>
+							</div>
+															</div>
+												<div class="column1">
+																																			<a href="/onlineJournal"><img th:src="@{/asserts/image/202011031517201985.jpg}"></a>
+						<div class="topText t-l">
+															<strong>艺术项目</strong>
+													</div>
+						<a href="/onlineJournal" class="ti/onlineJournaltle t-l">
+							<strong>帘幕</strong>
+							<span></span>
+															<p>“帘幕”是本艺术画展于2020年发起的一项跨越多地的长期研究项目。项目为期3年，将以多元形式呈现一系列展览、活动、对话平台和跨机构合作等。“帘幕”系列旨在突破展览的物理限制，拓展与艺术家的对话，聚集来自不同群体和领域的批判性思考者及实践者。</p>
+													</a>
+									</div>
+															<div class="column1">
+																																			<a href="/tripBroad"><img th:src="@{/asserts/image/202011031539056315.jpg}"></a>
+						<div class="topText t-l">
+															<strong>研究项目</strong>
+													</div>
+						<a href="/tripBroad" class="title t-l">
+							<strong>要旅行，先修路。通向未来的路在你脚下</strong>
+							<span></span>
+						<p>本艺术画展荣幸地宣布，受策展人比利安娜·思瑞克之邀，与长期研究项目“要旅行，先修路。通向未来的路在你脚下”（As you go… roads under your feet, towards the new future）达成合作。项目为期3年，由比利安娜·思瑞克策划并发起。从中国到巴尔干半岛、从埃塞俄比亚到中亚，项目的核心是在不同语境中就彼此共通的问题发出原本被淹没的声音。不同的个人、组织和机构仿若一枚枚有机研究“细胞”，通过合作建立知识共性，一种新型的亲密形式将由此浮现，而其参与者也将联手呈现一种全新的合作形式。</p>
+						</a>
+			</div>
+			<div class="column3">
+				<div class="con">
+			<a href="/onlineMagazine"><img class="bg" th:src="@{/asserts/image/202010101427019915.jpg}"></a>
+			<div class="topText">
+				<a href="/onlineMagazine">线上期刊</a>
+			</div>
+			<a class="bottomText" href="/onlineMagazine">
+				<h4>帘幕线上出版第一期：末日超话</h4>
+			<h5></h5>
+			<p>在《帘幕》项目的第一期线上出版中，让我们打开双眼与脑洞，激活对当代监视机制及其现状的公开探讨和大胆想象——在线上生存的社会中，人如何能跳出这个由观看、监视和控制所组成的体系？</p>
+			</a>
+			</div>
+				<div class="con mid">
+					<a href="/onlineBook"><img class="bg" th:src="@{/asserts/image/202010101430154685.jpg}"></a>
+						<div class="topText">
+										<a href="/onlineBook">线上期刊</a>
+									</div>
+								<a class="bottomText" href="/onlineBook">
+									<h4>帘幕线上出版第二期：偶然的到访</h4>
+									<h5></h5>
+									<p>2004年，歌手陈绮贞的一曲“旅行的意义”红遍大街小巷，在年轻人之间传唱度相当高。这首歌可以说是现代休闲旅游的最佳写照，
+                                        歌词中提到“品尝过夜的巴黎”、“踏过下雪的北京”、“埋藏记忆的土耳其”、“流连电影里美丽的不真实的场景”、“你离开我，就是旅行的意义”
+                                        ——透过这些句子描绘出满足人们幻想及可供消费的图像，同时强化了旅行作为一种远离喧嚣并与自我和解的内省行为。<br /><br />
+                                        在前疫情时代，旅游对小康家庭来说是稀松平常的事，甚至是现代生活中必要的调剂品。根据中国旅游研究院发布的
+                                        《2019年旅游市场基本情况》显示，2019年，中国国内旅游人数达60.06亿人次，比上年同期增长8.4%；中国公民出境旅游人数达1.55亿人次，比上年同期增长3.3%。与此同时，智慧型手机的普及与社交媒体的广泛使用，促进人口移动过程中大量生产图像并使之流通，这些图像极大地影响人们视觉经验及意识形态与叙事的建构。
+                                    </p></a>
+							</div>
+								<div class="con">
+									<a href="/Roamingisland">
+                                        <img class="bg" th:src="@{/asserts/image/202012311755504384.jpg}"></a>
+											<div class="topText">
+										<a href="/Roamingisland">教育</a>
+										<strong><a href="/Roamingisland">讲座</a></strong>
+									</div>
+									<span class="countdown">回顾</span>
+								<a class="bottomText" href="/Roamingisland">
+									<h4>漫游岛城 - 岛屿生态学 章节1: 航行记</h4>
+									<h5>2021-01-09 14:00 — 16:30</h5>
+									<p>“漫游岛城 - 岛屿生态学”是个基于网络的驻村发展计划，将透过人文科学基础探索岛屿集合形成作为艺术实验形式的可能性。</p>
+								</a>
+							</div>
+							</div>
+							<div class="column1">
+                                <a href="">
+                                    <img th:src="@{/asserts/image/202010101753161762.jpg}"></a>
+						<div class="topText t-l">
+									<strong>公告</strong>
+						</div>
+						<a href="" class="title t-l">
+							<strong>“RAM空间站”来啦！</strong>
+							<span></span>
+							<p>邯郸大学生校园艺术画展很高兴地宣布“RAM空间站”（RAM Station）已正式向公众开放。观众熟悉的艺术商店和阅览室都已迁移至此，美术馆公共教育活动也在这里恢复举办，不定期展开影评会、讲座、工作坊以及与阅览室推荐书籍相关的各类活动。这里将成为RAM在闭馆期间与大家保持联系的新基地。</p>
+							</a>
+							</div>
+							</div>
+		<script type="text/javascript">
+			$('document').ready(function(){
+				$(window).resize(function(){
+					var height = parseInt($(window).width()/2);
+					var li_width = 1680
+					if($(window).width() < 1680){
+						li_width = $(window).width();
+					}
+					$('#KVposter li').css('width',$(window).width());
+
+					$('#topKvBg').css('height',height+'px');
+					$('#content').css('marginTop',(height-200)+'px');
+				});
+				$(window).resize();
+
+				$.xBanner({
+					idSlider:'#KVposter',
+					idNum:'#KVnumber',
+					current:'now',
+					effect:'fadeIn',
+					next:'.indexKv .next',
+					prev:'.indexKv .prev'
+				});
+			});
+		</script>
+
+		<div id="footer">
+			<s></s>
+			<div class="inner">
+				<div class="topBox">
+					<div class="newSwitch" >
+						<h3>公告</h3>
+						<a class="more" href="">更多新闻</a>
+							<a class="newBox" href="" th:each="News:${session.news}">
+								<h4>[[${News.title}]]</h4>
+								<p>[[${News.content}]]</p>
+							</a>
+						<div class="switch">
+						<i></i>
+						<i></i>
+						<i></i>
+						</div>
+					</div>
+					<div class="info">
+						<h3><i class="i2"></i>开放时间</h3>
+						<p>星期二 - 星期日 10:00 ~ 18:00</p>
+						<h3><i class="i3"></i>地址</h3>
+						<p>邯郸市邯山区学院北路</p>
+						<h3><i class="i1"></i>电话和邮箱</h3>
+						<p> +86 21 63216251<br><a href="">1136993620@qq.com</a></p>
+					</div>
+					<div class="calendarBox" style="padding-top:-500px;">
+						<div class="cldBody">
+       <table>
+          <thead>
+               <tr>
+                   <td colspan="7">
+                       <div class="top">
+                           <span id="left"><</span>
+                           <span id="topDate"></span>
+                           <span id="right">></span>
+                       </div>
+                   </td>
+               </tr>
+               <tr id="week" >
+                   <td>日</td>
+                   <td>一</td>
+                   <td>二</td>
+                   <td>三</td>
+                   <td>四</td>
+                   <td>五</td>
+                   <td>六</td>
+               </tr>
+           </thead>
+         	 <tbody id="tbody" ></tbody>
+       </table>
+  </div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	
+<script type="text/javascript">
+$(document).ready(function(){
+	var G_forget_email = '';
+	var tim_resend;
+
+	//preload small pic
+	$('#topKvBg img[_src]').each(function(){
+		var _this = $(this);
+		var img = new Image();
+		img.onload = function(){
+			_this.attr('src',_this.attr('_src'));
+		};
+		img.src = $(this).attr('_src');
+	});
+
+	//top menu first click
+	$('.topMenu .menu>li').each(function(){
+		var a_tag = $(this).children('a');
+		var a_sub = $(this).find('ul li:first a');
+		if(a_sub.attr('href') != 'javascript:;'){
+			a_tag.attr('href',a_sub.attr('href'));
+		}
+	});
+	//top menu exhibition/event
+	function set_top_menu(div){
+		$(div+' .previewBox:first').show();
+		$(div+' .switch i:first').addClass('now');
+
+		$(div+' .switch i').css({cursor:'pointer'});
+
+		var idx = 0;
+		var idx_count = $(div+' .previewBox').size() -1;
+		if(idx_count < 1){
+			return;
+		}
+
+		var tim = null;
+
+		$(div+' .switch i').hover(function(){
+			clearTimeout(tim);
+			idx = $(this).index();
+			$(div+' .previewBox:visible').fadeOut();
+			$(div+' .previewBox').eq(idx).fadeIn();
+			$(div+' .switch i').removeClass('now');
+			$(div+' .switch i').eq(idx).addClass('now');
+		},function(){
+			go();
+		});
+
+		$(div+' .preview').hover(function(){
+			clearTimeout(tim);
+		},function(){
+			go();
+		});
+		function go(){
+			clearTimeout(tim);
+			tim = setTimeout(function(){
+				if($(div).is(':visible')){
+					idx++;
+					if(idx >= idx_count){
+						idx = -1;
+					}
+					$(div+' .previewBox:visible').fadeOut();
+					$(div+' .previewBox').eq(idx).fadeIn();
+					$(div+' .switch i').removeClass('now');
+					$(div+' .switch i').eq(idx).addClass('now');
+				}
+				go();
+			},3000);
+		};
+		go();
+	};
+	set_top_menu('.div_menu_top1');
+	set_top_menu('.div_menu_top2');
+
+
+	//news list
+	function set_news_list(){
+		var div = '#footer .newSwitch';
+		$(div+' .newBox').hide();
+		$(div+' .newBox:first').show();
+		$(div+' .switch i:first').addClass('now');
+
+		var idx = 0;
+		var idx_count = $(div+' .newBox').size() -1;
+		if(idx_count < 1){
+			return;
+		}
+
+		var tim = null;
+		$(div+' .switch i').hover(function(){
+			clearTimeout(tim);
+			idx = $(this).index();
+			$(div+' .newBox:visible').stop().fadeOut();
+			$(div+' .newBox').eq(idx).stop().fadeIn();
+			$(div+' .switch i').removeClass('now');
+			$(div+' .switch i').eq(idx).addClass('now');
+		},function(){
+			go();
+		});
+		function go(){
+			clearTimeout(tim);
+			tim = setTimeout(function(){
+				idx++;
+				if(idx >= idx_count){
+					idx = -1;
+				}
+				$(div+' .newBox:visible').stop().fadeOut();
+				$(div+' .newBox').eq(idx).stop().fadeIn();
+				$(div+' .switch i').removeClass('now');
+				$(div+' .switch i').eq(idx).addClass('now');
+				go();
+			},3000);
+		};
+		go();
+	};
+	set_news_list();
+
+
+	$('.li_share').hover(function(){
+		$('.stayIcon').fadeIn();
+	},function(){
+		$('.stayIcon').fadeOut();
+	});
+	
+	  var date = new Date();
+var year = date.getFullYear();
+var nowyear = date.getFullYear();
+var month = date.getMonth()+1;
+var nowmonth = date.getMonth()+1;
+var dateday = date.getDate();
+var todateHtml = year + '年'+ month + '月';
+$('#topDate').text(todateHtml);
+function showcld(){
+  var monthDay = [31,28,31,30,31,30,31,31,30,31,30,31];  // 创建数组存放每个月有多少天 ,默认2月为28天
+  // 判断闰年
+  if(year % 4 == 0 && year %100 != 0 || year % 400 == 0){
+      monthDay[1] = 29;
+  }
+  // 计算每个月的天数
+  var days = monthDay[month-1];
+  // 判断每月第一天为周几
+  date.setYear(year);        //某年
+  date.setMonth(month-1);   //某年的某月
+  date.setDate(1);   // 某月的某天
+  var weekday = date.getDay();  // 判断某天是周几
+  // 补齐一号前的空格
+  var tbodyHtml = '<tr>';
+  for(var i = 0; i<weekday; i++){
+      tbodyHtml += "<td></td>";
+  }
+  // 补齐每月的日期
+  var changLine = weekday;
+  var tagClass = '';
+  for(i=1; i<=days; i++){//每一个日期的填充
+      if(year == nowyear && month == nowmonth && i == dateday) {
+               tagClass = "curDate";//当前日期对应格子
+                }else{
+                    tagClass = "isDate";
+                }
+      tbodyHtml += "<td class=" + tagClass + ">" + i + "</td>";
+      changLine = (changLine+1)%7;
+      if(changLine == 0 && i != days){//是否换行填充的判断
+          tbodyHtml += "</tr><tr>";
+      }
+    }
+  $('#tbody').empty();   // 清空原有的内容
+  $('#tbody').append(tbodyHtml);   //添加当前月份的日期内容
+}
+// 设置按钮点击事件
+$('#left').click(function(){
+    month = month-1;
+    if(month < 1){
+            month = 12;
+            year--;
+    }
+    var todateHtml = year + '年'+ month + '月';
+    $('#topDate').text(todateHtml);
+    showcld();
+});
+
+$('#right').click(function(){
+    month = month+1;
+    if(month > 12){
+            month = 1;
+            year++;
+    }
+    var todateHtml = year + '年'+ month + '月';
+    $('#topDate').text(todateHtml);
+    showcld();
+})
+ showcld();  //页面加载后执行函数
+
+	
+	});
+</script>
+</body>
+</html>

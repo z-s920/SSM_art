@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace配置 -->
+<mapper namespace="com.hdc.zs.art.dao.MyCartDao">
+
+	<select id="findMyCart" parameterType="String" resultType="com.hdc.zs.art.empty.Mycart">
+		<!-- #{}代表占位符，相当于？，#可以进行预编译，进行类型匹配-->
+		<!-- 而$不进行数据类型匹配，传入的参数是什么类型就是什么类型，容易造成sql语句报错 -->
+		select * from mycart where username=#{username}
+	</select>
+
+	<select id="findMyCartId" parameterType="String" resultType="String">
+		select name from mycart where username=#{username}
+	</select>
+	<delete id="deletePaintsById" parameterType="int">
+		delete  from mycart where id=#{id}
+	</delete>
+</mapper>

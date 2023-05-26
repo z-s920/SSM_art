@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace配置 -->
+<mapper namespace="com.hdc.zs.art.dao.UserDao">
+
+
+	<!--根据用户名查询用户信息，用于认证                给权限认证保留-->
+	<select id="findUserByUSerName" parameterType="String" resultType="com.hdc.zs.art.empty.User">
+		select * from user where username=#{username}
+	</select>
+
+	<!--           保留结束        -->
+	<!-- 单记录 -->
+	<select id="findUser" parameterType="String" resultType="com.hdc.zs.art.empty.User">
+		<!-- #{}代表占位符，相当于？，#可以进行预编译，进行类型匹配-->
+		<!-- 而$不进行数据类型匹配，传入的参数是什么类型就是什么类型，容易造成sql语句报错 -->
+		select * from user where username=#{username} and password=#{password}
+	</select>
+	<insert id="addUser" parameterType="String" >
+		insert into 
+ 		user(username,password,power)
+ 		values(#{username},#{password},#{power})
+	</insert>
+	<select id="findUserAndPassByname" parameterType="String" resultType="com.hdc.zs.art.empty.User">
+		select username,password,power from user where username=#{username}
+	</select>
+	<update id="updatePass" >
+		update user set password = #{password} where username =#{username}
+	</update>
+	<!--//管理员删除某个用户-->
+
+
+   <delete id="deleteUserById" parameterType="int">
+	   delete from user where id=#{id}
+   </delete>
+	<!--//管理员更新用户信息-->
+
+  <update id="updateUser" parameterType="com.hdc.zs.art.empty.User" >
+	  update user set username =#{username},password=#{password},power=#{power} where id=#{id}
+  </update>
+
+<select id="comport" parameterType="String" resultType="int">
+	select count(*) from user where username=#{username}
+</select>
+
+	<!--分页查询user表  参数 page:页码；limit:每页条数.-->
+	<select id="findUserWithPaging" parameterType="com.hdc.zs.art.empty.search" resultType="com.hdc.zs.art.empty.User">
+		select * from user
+		<where>
+			<if test="search!=null and search!=''">
+				concat(username,password,power) like concat("%",#{search},"%")
+			</if>
+		</where>
+		limit #{page} ,#{limit}
+	</select>
+
+	<select id="findUserWithPagingCount" parameterType="String" resultType="int">
+		select count(*) from user
+		<where>
+			<if test="_parameter!=null and _parameter!=''">
+				concat(username,password,power) like concat("%",#{search},"%")
+			</if>
+		</where>
+	</select>
+
+
+	<!--根据名字更新权限-->
+
+	<update id="updateUserPowerByUserName" parameterType="String" >
+	  update user set power=#{power} where username=#{username}
+  </update>
+
+
+
+
+
+
+</mapper>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>图片库 | 校园艺术画展| Campus art exhibition</title>
+    <link rel="shortcut icon"  th:href="@{/asserts/image/favicon.ico}">
+    <link rel="stylesheet" th:href="@{/asserts/css/style_cn.css}" />
+    <link rel="stylesheet" th:href="@{/asserts/css/lrtk.css}" />
+    <link rel="stylesheet" th:href="@{/asserts/css/jqtransform.css}" />
+    <script type="text/javascript" th:src="@{/asserts/player/jwplayer.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery-1.8.0.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.fancybox.pack.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/audio.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/coin-slider.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/banner.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/common_fun.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/xAutocomplete_JQ.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.xplaceholder.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.jqtransform.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/avalon/avalon.min_xwk.js}"></script>
+    <script type="text/javascript">
+        avalon.config({loader: false})
+        function show(url, name, iWidth, iHeight) {
+            var url; //转向网页的地址;
+            var name; //网页名称，可为空;
+            var iWidth; //弹出窗口的宽度;
+            var iHeight; //弹出窗口的高度;
+            var iTop = (window.screen.availHeight - 30 - iHeight) / 2; //获得窗口的垂直位置;
+            var iLeft = (window.screen.availWidth - 10 - iWidth) / 2; //获得窗口的水平位置;
+            window.open(url, name, 'height=' + iHeight + ',,innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' + iWidth + ',top=' + iTop + ',left=' + iLeft + ',toolbar=no,menubar=no,scrollbars=auto,resizeable=no,location=no,status=no');
+        }
+    </script>
+    <style type="text/css">
+        .fancybox-lock .fancybox-overlay {overflow:hidden}
+        .jwclick{opacity:0}
+        DIV.green-black {
+            PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px;
+            MARGIN: 3px; PADDING-TOP: 3px; TEXT-ALIGN: center
+        }
+        DIV.green-black A {
+            BORDER-RIGHT: #2c2c2c 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #2c2c2c 1px solid;
+            PADDING-LEFT: 5px; BACKGROUND: url(images/pageimage1.gif) #2c2c2c;
+            PADDING-BOTTOM: 2px; BORDER-LEFT: #2c2c2c 1px solid; COLOR: #fff;
+            MARGIN-RIGHT: 2px; PADDING-TOP: 2px; BORDER-BOTTOM: #2c2c2c 1px solid; TEXT-DECORATION: none
+        }
+        DIV.green-black A:hover {
+            BORDER-RIGHT: #aad83e 1px solid; BORDER-TOP: #aad83e 1px solid;
+            BACKGROUND: url(images/pageimage2.gif) #aad83e; BORDER-LEFT: #aad83e 1px solid;
+            COLOR: #fff; BORDER-BOTTOM: #aad83e 1px solid
+        }
+        DIV.green-black A:active {
+            BORDER-RIGHT: #aad83e 1px solid; BORDER-TOP: #aad83e 1px solid;
+            BACKGROUND: url(images/pageimage2.gif) #aad83e; BORDER-LEFT: #aad83e 1px solid;
+            COLOR: #fff; BORDER-BOTTOM: #aad83e 1px solid
+        }
+    </style>
+</head>
+<body onload="decodeMessage()">
+<div id="wrap">
+    <div id="topKvBg">
+        <img th:src="@{asserts/css/img/03.jpg}">
+        <s></s><i></i>
+    </div>
+    <div id="header">
+        <div class="topMenu">
+            <div class="inner">
+                <ul class="menu">
+                    <li >
+                        <a class="con" href="/user/home">HOME</a>
+
+                    </li>
+
+                    <li>
+                        <a class="con" href="javascript:;">艺术商店</a>
+                        <div class="downMenu downMenu2 div_menu_top2">
+                            <div class="preview">
+                                <div class="previewBox" style="display:none">
+                                    <a href="" class="previewCon">
+                                        <div class="pic"><img th:src="@{/asserts/image/20210920.jpg}"></div>
+                                        <h4>（延期）RAM纸张实验室 | 来吧！纸人偶！</h4>
+                                        <p>2021-01-23</p>
+                                    </a>
+                                </div>
+                                <div class="previewBox" style="display:none">
+                                    <a href="" class="previewCon">
+                                        <div class="pic"><img th:src="@{/asserts/image/202101211714221797.jpg}"></div>
+                                        <h4>（延期）RAM纸张实验室 | 缝隙</h4>
+                                        <p>2021-01-24</p>
+                                    </a>
+                                </div>
+                                <div class="switch">
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                            </div>
+                            <ul>
+                                <li><a href="/chinese">中国艺术画</a></li>
+                                <li><a href="/western">西方艺术画</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="con" href="javascript:;">艺术家</a>
+                        <div class="downMenu">
+                            <ul>
+                                <li><a href="/chinesepeople">中国艺术家</a></li>
+                                <li><a href="">西方艺术家</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li >
+                        <a class="con" href="/Mycart"><i class="t3"></i>购物车</a>
+                    </li>
+                </ul>
+                <div class="topLink">
+                    <ul>
+
+                        <li><a class="link" onclick="show('http://127.0.0.1:8081/userKeFu','用户客服中心','800','600')"><i class="t7"></i>客服</a></li>
+                        </li>
+                        <li><a class="link" href="/administratorLogin" onclick="G_show_login_div()"><i class="t8"></i>管理员登录</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="content" class="library">
+    <s class="conLBg"></s><s class="conRBg"></s>
+    <h2>西方艺术画</h2>
+    <div class="bookList cf">
+        <ul th:each="wpaintings:${wpaintings}">
+            <li>
+                <a th:href="'/myAdd?wpaintingsId=' + ${wpaintings.paintsName} + '&wp_id=' + ${wpaintings.id} ">
+					<span class="pic">
+						<img th:src="'/'+${wpaintings.paintsCoverImg}"><i></i><s class="lBg"></s><s class="rBg"></s></span>
+                    <b></b>
+                    <em>[[${wpaintings.paintsName}]]</em>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+<div style="padding-top: 170px;" CLASS="green-black">
+    <table>
+        <tfoot>
+        <tr >
+            <th ><strong style="text-align: center;margin-left:400px;padding-bottom:50px;font-size: 15px;color: #e0a800;">
+                共有：[[${total}]]条记录</strong></th>
+            <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th id="Content_div">
+
+            </th>
+
+
+            <th><strong style="text-align: center;font-size: 15px;color: #e0a800;">共:[[${#numbers.formatInteger(page,0)}]]页；每页[[${limit}]]条</strong></th>
+        </tr>
+
+        </tfoot>
+    </table>
+</div>
+<div id="footer">
+    <s></s>
+    <div class="inner">
+        <div class="topBox">
+            <div class="newSwitch" >
+                <h3>公告</h3>
+                <a class="more" href="">更多新闻</a>
+                <a class="newBox" href="" th:each="News:${session.news}">
+                    <h4>[[${News.title}]]</h4>
+                    <p>[[${News.content}]]</p>
+                </a>
+                <div class="switch">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </div>
+            </div>
+            <div class="info">
+                <h3><i class="i2"></i>开放时间</h3>
+                <p>星期二 - 星期日 10:00 ~ 18:00</p>
+                <h3><i class="i3"></i>地址</h3>
+                <p>邯郸市邯山区学院北路</p>
+                <h3><i class="i1"></i>电话和邮箱</h3>
+                <p> +86 21 63216251<br><a href="">1136993620@qq.com</a></p>
+            </div>
+            <div class="calendarBox">
+                <div class="cldBody">
+                    <table>
+                        <thead>
+                        <tr>
+                            <td colspan="7">
+                                <div class="top">
+                                    <span id="left"><</span>
+                                    <span id="topDate"></span>
+                                    <span id="right">></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr id="week" >
+                            <td>日</td>
+                            <td>一</td>
+                            <td>二</td>
+                            <td>三</td>
+                            <td>四</td>
+                            <td>五</td>
+                            <td>六</td>
+                        </tr>
+                        </thead>
+                        <tbody id="tbody" ></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="bottomBox">
+            <div class="footerNav">
+                <a href="">HOME</a><i></i>
+                <a href="">新闻资讯</a><i></i>
+                <a href="">展示鉴赏</a><i></i>
+                <a href="">艺术商店</a><i></i>
+                <a>艺术家</a>
+                <a href="">交流服务</a><i></i>
+            </div>
+            <div class="copy">
+                <span class="footerLogo"></span>
+                <small>Copyright &copy; 2021 校园艺术画展 | Rockbund Art Museum. | <a href="" target="_blank">冀ICP备14223232号-1</a></small>
+                <div class="supported">Supported by <a href="" target="_blank"><span>ROCKBUND</span></a></div>
+                <div class="follow">
+                    <strong>follow us</strong>
+                </div>
+                <a href="http://www.comonetwork.com/" class="como" target="_blank">Designed &amp; Developed by COMONETWORK</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script >
+    function decodeMessage(){
+        var tmp="";
+        for(i=1;i<=[[${page}]];i++){
+            tmp+="<a  href='/western?page="+i+"'>"+i+"</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";  // 1
+        }
+        document.getElementById("Content_div").innerHTML=tmp;
+    }
+    $(document).ready(function(){
+        var G_forget_email = '';
+        var tim_resend;
+
+        //preload small pic
+        $('#topKvBg img[_src]').each(function(){
+            var _this = $(this);
+            var img = new Image();
+            img.onload = function(){
+                _this.attr('src',_this.attr('_src'));
+            };
+            img.src = $(this).attr('_src');
+        });
+
+        //top menu first click
+        $('.topMenu .menu>li').each(function(){
+            var a_tag = $(this).children('a');
+            var a_sub = $(this).find('ul li:first a');
+            if(a_sub.attr('href') != 'javascript:;'){
+                a_tag.attr('href',a_sub.attr('href'));
+            }
+        });
+        //top menu exhibition/event
+        function set_top_menu(div){
+            $(div+' .previewBox:first').show();
+            $(div+' .switch i:first').addClass('now');
+
+            $(div+' .switch i').css({cursor:'pointer'});
+
+            var idx = 0;
+            var idx_count = $(div+' .previewBox').size() -1;
+            if(idx_count < 1){
+                return;
+            }
+
+            var tim = null;
+
+            $(div+' .switch i').hover(function(){
+                clearTimeout(tim);
+                idx = $(this).index();
+                $(div+' .previewBox:visible').fadeOut();
+                $(div+' .previewBox').eq(idx).fadeIn();
+                $(div+' .switch i').removeClass('now');
+                $(div+' .switch i').eq(idx).addClass('now');
+            },function(){
+                go();
+            });
+
+            $(div+' .preview').hover(function(){
+                clearTimeout(tim);
+            },function(){
+                go();
+            });
+            function go(){
+                clearTimeout(tim);
+                tim = setTimeout(function(){
+                    if($(div).is(':visible')){
+                        idx++;
+                        if(idx >= idx_count){
+                            idx = -1;
+                        }
+                        $(div+' .previewBox:visible').fadeOut();
+                        $(div+' .previewBox').eq(idx).fadeIn();
+                        $(div+' .switch i').removeClass('now');
+                        $(div+' .switch i').eq(idx).addClass('now');
+                    }
+                    go();
+                },3000);
+            };
+            go();
+        };
+        set_top_menu('.div_menu_top1');
+        set_top_menu('.div_menu_top2');
+
+
+        //news list
+        function set_news_list(){
+            var div = '#footer .newSwitch';
+            $(div+' .newBox').hide();
+            $(div+' .newBox:first').show();
+            $(div+' .switch i:first').addClass('now');
+
+            var idx = 0;
+            var idx_count = $(div+' .newBox').size() -1;
+            if(idx_count < 1){
+                return;
+            }
+
+            var tim = null;
+            $(div+' .switch i').hover(function(){
+                clearTimeout(tim);
+                idx = $(this).index();
+                $(div+' .newBox:visible').stop().fadeOut();
+                $(div+' .newBox').eq(idx).stop().fadeIn();
+                $(div+' .switch i').removeClass('now');
+                $(div+' .switch i').eq(idx).addClass('now');
+            },function(){
+                go();
+            });
+            function go(){
+                clearTimeout(tim);
+                tim = setTimeout(function(){
+                    idx++;
+                    if(idx >= idx_count){
+                        idx = -1;
+                    }
+                    $(div+' .newBox:visible').stop().fadeOut();
+                    $(div+' .newBox').eq(idx).stop().fadeIn();
+                    $(div+' .switch i').removeClass('now');
+                    $(div+' .switch i').eq(idx).addClass('now');
+                    go();
+                },3000);
+            };
+            go();
+        };
+        set_news_list();
+
+
+        $('.li_share').hover(function(){
+            $('.stayIcon').fadeIn();
+        },function(){
+            $('.stayIcon').fadeOut();
+        });
+
+
+
+
+        var date = new Date();
+        var year = date.getFullYear();
+        var nowyear = date.getFullYear();
+        var month = date.getMonth()+1;
+        var nowmonth = date.getMonth()+1;
+        var dateday = date.getDate();
+        var todateHtml = year + '年'+ month + '月';
+        $('#topDate').text(todateHtml);
+        function showcld(){
+            var monthDay = [31,28,31,30,31,30,31,31,30,31,30,31];  // 创建数组存放每个月有多少天 ,默认2月为28天
+            // 判断闰年
+            if(year % 4 == 0 && year %100 != 0 || year % 400 == 0){
+                monthDay[1] = 29;
+            }
+            // 计算每个月的天数
+            var days = monthDay[month-1];
+            // 判断每月第一天为周几
+            date.setYear(year);        //某年
+            date.setMonth(month-1);   //某年的某月
+            date.setDate(1);   // 某月的某天
+            var weekday = date.getDay();  // 判断某天是周几
+            // 补齐一号前的空格
+            var tbodyHtml = '<tr>';
+            for(var i = 0; i<weekday; i++){
+                tbodyHtml += "<td></td>";
+            }
+            // 补齐每月的日期
+            var changLine = weekday;
+            var tagClass = '';
+            for(i=1; i<=days; i++){//每一个日期的填充
+                if(year == nowyear && month == nowmonth && i == dateday) {
+                    tagClass = "curDate";//当前日期对应格子
+                }else{
+                    tagClass = "isDate";
+                }
+                tbodyHtml += "<td class=" + tagClass + ">" + i + "</td>";
+                changLine = (changLine+1)%7;
+                if(changLine == 0 && i != days){//是否换行填充的判断
+                    tbodyHtml += "</tr><tr>";
+                }
+            }
+            $('#tbody').empty();   // 清空原有的内容
+            $('#tbody').append(tbodyHtml);   //添加当前月份的日期内容
+        }
+// 设置按钮点击事件
+        $('#left').click(function(){
+            month = month-1;
+            if(month < 1){
+                month = 12;
+                year--;
+            }
+            var todateHtml = year + '年'+ month + '月';
+            $('#topDate').text(todateHtml);
+            showcld();
+        });
+
+        $('#right').click(function(){
+            month = month+1;
+            if(month > 12){
+                month = 1;
+                year++;
+            }
+            var todateHtml = year + '年'+ month + '月';
+            $('#topDate').text(todateHtml);
+            showcld();
+        })
+        showcld();  //页面加载后执行函数
+    });
+</script>
+
+</body>
+</html>

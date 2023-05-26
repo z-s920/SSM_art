@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>订单记录</title>
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/css/left-side-menu.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/css/iconfont.css}">
+    <script th:src="@{asserts/js/jquery-1.10.2.min.js}"></script>
+    <script th:src="@{asserts/css/jquery.slimscroll.min.js}"></script>
+    <script type="text/javascript" th:src="@{asserts/css/left-side-menu.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/css/table.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/layui/css/layui.css}">
+
+    <script type="text/javascript" th:src="@{asserts/js/jquery.basictable.min.js}"></script>
+    <script type="text/javascript" th:src="@{asserts/js/reponsetable.min.js}"></script>
+    <script type="text/javascript" th:src="@{asserts/layer/layer.js}"></script>
+    <link rel="stylesheet" th:href="@{asserts/layer/theme/default/layer.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/css/reponse.css}">
+    <style type="text/css">
+        .alertceng{
+            background: #FFFFFF;
+            padding: 10px;
+            display: none;
+        }
+        .alertceng span.title{
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body  onload="decodeMessage()">
+<table  class="pure-table2 pure-table-bordered2">
+    <thead>
+    <tr>
+        <th th:style="'width:' + 500px">订单时间</th>
+        <th >info</th>
+        <th>订单编号</th>
+        <th>订单名字</th>
+        <th>订单金额</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="orders:${orders}">
+      <!--  th:text="${#dates.format(myOrders.create_time, 'yyyy-MM-dd HH:mm:ss')}"-->
+        <td >[[${#dates.format(orders.create_time,'yyyy-MM-dd HH:mm:ss')}]]</td>
+        <td >艺术作品</td>
+        <td>[[${orders.sn}]]</td>
+        <td>[[${orders.title}]]</td>
+        <td>[[${orders.total_amount}]]</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <th>总数：[[${total}]]</th>
+
+        <th id="Content_div">
+
+        </th>
+        <th>共:[[${#numbers.formatInteger(page,0)}]]页；每页[[${limit}]]条</th>
+    </tr>
+    </tfoot>
+</table>
+
+
+
+<script type="text/javascript">
+    function decodeMessage(){
+        var tmp="";
+        for(i=1;i<=[[${page}]];i++){
+            tmp+="<a  href='/OrdersManage?page="+i+"'>"+i+"</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";  // 1
+        }
+        document.getElementById("Content_div").innerHTML=tmp;
+    }
+</script>
+
+
+</body>

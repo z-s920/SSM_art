@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>本国艺术画</title>
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/css/left-side-menu.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/css/iconfont.css}">
+    <script th:src="@{asserts/js/jquery-1.10.2.min.js}"></script>
+    <script th:src="@{asserts/css/jquery.slimscroll.min.js}"></script>
+    <script type="text/javascript" th:src="@{asserts/css/left-side-menu.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/css/table.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/layui/css/layui.css}">
+
+    <script type="text/javascript" th:src="@{asserts/js/jquery.basictable.min.js}"></script>
+    <script type="text/javascript" th:src="@{asserts/js/reponsetable.min.js}"></script>
+    <script type="text/javascript" th:src="@{asserts/layer/layer.js}"></script>
+    <link rel="stylesheet" th:href="@{asserts/layer/theme/default/layer.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/css/reponse.css}">
+    <style type="text/css">
+
+        .alertceng{
+            background: #FFFFFF;
+            padding: 10px;
+            display: none;
+        }
+        .alertceng span.title{
+            margin-right: 10px;
+        }
+        .container {
+            height: 70px;
+            width: 800px;
+            margin-top: -40px;
+            margin-left: 350px;
+        }
+        .search {
+            width: 300px;
+            height: 40px;
+            border-radius: 18px;
+            outline: none;
+            border: 1px solid #ccc;
+            padding-left: 20px;
+            position: absolute;
+        }
+        .btn {
+            height: 35px;
+            width: 35px;
+            margin-top: -5px;
+            margin-left: 740px;
+            position: absolute;
+            border-radius: 18px;
+            background: url("asserts/image/search.jpg") ;
+            top: 6px;
+            left: 285px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body  onload="decodeMessage()">
+<button  href="javascript:;" onclick="show('/uploadChinese','上传艺术画','600','300')" style="margin-left: -900px;" type="button" class="layui-btn" id="test1">
+    <i class="layui-icon">&#xe67c;</i>添加图片
+</button>
+<div class="container">
+    <form method="get" th:action="@{/ChineseManage}">
+        <input type="text" class="search" name="search" placeholder="搜索">
+        <button type="submit"  class="btn"></button>
+    </form>
+</div>
+<table  class="pure-table pure-table-bordered">
+    <thead>
+    <tr>
+        <th>画作ID</th>
+        <th>画作名字</th>
+        <th>画作图片</th>
+        <th>画作路径</th>
+        <th>画作价格</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="cpaintings:${cpaintings}">
+        <td>[[${cpaintings.id}]]</td>
+        <td>[[${cpaintings.paintsName}]]</td>
+        <td><img style="height: 60px;" th:src="'/'+${cpaintings.paintsCoverImg}"></td>
+            <td>[[${cpaintings.paintsCoverImg}]]</td>
+        <td>[[${cpaintings.sellingPrice}]]</td>
+        <td>
+            <button class="layui-btn layui-btn-sm"  th:onclick="|addtr(${cpaintings.id})|">修改</button>
+            <a th:href="'/deleteChinese?id='+ ${cpaintings.id}" class="layui-btn layui-btn-sm layui-btn-danger">删除</a>
+        </td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <th>总数：[[${total}]]</th>
+
+        <th id="Content_div">
+
+        </th>
+        <th>共:[[${#numbers.formatInteger(page,0)}]]页；每页[[${limit}]]条</th>
+    </tr>
+    </tfoot>
+</table>
+<div id="editcontent" class="alertceng"><br>
+    <p><span class="title">画作名字:</span><input type="text" id="paintsName"/></p><br>
+    <p><span class="title">画作价格:</span><input type="text" id="sellingPrice"/></p><br>
+</div>
+
+
+<script type="text/javascript">
+
+    function show(url, name, iWidth, iHeight) {
+        var url; //转向网页的地址;
+        var name; //网页名称，可为空;
+        var iWidth; //弹出窗口的宽度;
+        var iHeight; //弹出窗口的高度;
+        var iTop = (window.screen.availHeight - 30 - iHeight) / 2; //获得窗口的垂直位置;
+        var iLeft = (window.screen.availWidth - 10 - iWidth) / 2; //获得窗口的水平位置;
+        window.open(url, name, 'height=' + iHeight + ',,innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' + iWidth + ',top=' + iTop + ',left=' + iLeft + ',toolbar=no,menubar=no,scrollbars=auto,resizeable=no,location=no,status=no');
+    }
+
+    function decodeMessage(){
+        var tmp="";
+        for(i=1;i<=[[${page}]];i++){
+            tmp+="<a  href='/ChineseManage?page="+i+"'>"+i+"</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";  // 1
+        }
+        document.getElementById("Content_div").innerHTML=tmp;
+    }
+    function addtr(data) {
+        layer.open({
+            type: 1,
+            title: '更新中国画详情',
+            closeBtn: 1,
+            area: '300px',
+            skin: '#fff', //没有背景色
+            shadeClose: true,
+            content: $('#editcontent'),
+            btn: ["保存", "关闭"],
+            btn1: function (index, layero) {
+                let paintsName = $("#paintsName").val();
+                let sellingPrice = $("#sellingPrice").val();
+                $.ajax({
+                    url: '/updatechinese',
+                    type: 'GET',
+                    dataType: 'json',
+                    data: {id: data, paintsName: paintsName, sellingPrice: sellingPrice},
+                })
+                    .done(function (data) {
+                        // data > 0 就代表成功
+                        console.log(data);
+                        location.reload();
+                    })
+                    .fail(function () {
+                        console.log("error");
+                    })
+                    .always(function () {
+                        layer.close(index);
+                    });
+            }, btn2: function (index, layero) {
+                layer.close(index);
+            }
+        });
+    }
+</script>
+
+
+</body>

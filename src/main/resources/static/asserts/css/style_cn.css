@@ -1,0 +1,57 @@
+
+@import url("base.css?v=20200316");
+@font-face {
+	font-family: 'PingFangSC';
+	font-weight: 300;
+	src: local('PingFangSC-Light');
+}
+@font-face {
+	font-family: 'PingFangSC';
+	font-weight: 400;
+	src: local('PingFangSC-Regular');
+}
+@font-face {
+	font-family: 'PingFangSC';
+	font-weight: 500;
+	src: local('PingFangSC-Medium');
+}
+@font-face {
+	font-family: 'PingFangSC';
+	font-weight: 600;
+	src: local('PingFangSC-Semibold');
+}
+ .cldBody{background:#f7f7f7;width: 220px;margin: 0px auto;}
+      .cldBody .top{height: 30px;line-height: 40px;text-align: center;position: relative;}
+      #topDate{font-size: 20px;}
+      #week td{font-size: 10px;}
+      td{width: 30px; height: 30px;line-height: 35px;text-align: center;font-size: 15px;}
+      #tbody td:hover{background: #ededed;cursor: pointer;}
+      .curDate{color: red;font-weight: bold;}
+      #left,#right{width: 30px;height: 30px;cursor: pointer;}
+      #left{left: 0;}
+      #right{right: 0;}
+      #left:hover, #right:hover{background-color: rgba(30, 30, 30, 0.2);}
+body,button,input,select,textarea {
+	font-family: 'Helvetica Neue',Helvetica,Arial,arial,'PingFangSC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif !important;
+}
+.ie7 body,.ie7 button,.ie7 input,.ie7 select,.ie7 textarea{font-family:'微软雅黑',Arial,sans-serif}
+.exhibitionTitle h2 {font-size:40px; letter-spacing:-1px}
+.exhibitionTitle h3 {font-size:18px}
+.bigTestList p {font-size:14px}
+.smallTestList p {font-size:12px}
+.topMenu .language a.cn {background-position:left top; opacity:1; filter:alpha(opacity=100)}
+.topMenu .language a.en {background-position:right bottom}
+.subnav h2,.subnav2 h2 {font-size:32px; font-weight:normal}
+.memberOverview .round strong {padding-top:75px}
+.memberOverview .round a {margin-top:75px}
+.eduBox div {padding:20px 25px; width:440px; height:160px}
+.eduBox div h4 {padding-bottom:5px}
+.eduBox div li {margin:10px 40px 0 20px}
+#footer .como {background:url(img/como_cn.png); width:148px}
+#footer .como {
+	background-image:image-set(url(img/como_cn.png) 1x,url(img/como_cn@2x.png) 2x);
+	background-image:-webkit-image-set(url(img/como_cn.png) 1x,url(img/como_cn@2x.png) 2x);
+	background-image:-moz-image-set(url(img/como_cn.png) 1x,url(img/como_cn@2x.png) 2x);
+	background-image:-o-image-set(url(img/como_cn.png) 1x,url(img/como_cn@2x.png) 2x);
+	background-image:-ms-image-set(url(img/como_cn.png) 1x,url(img/como_cn@2x.png) 2x);
+}

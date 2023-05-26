@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>校园艺术画展| Campus art exhibition</title>
+    <link rel="icon" th:href="@{/asserts/image/favicon.ico}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/asserts/css/style_cn.css}" />
+    <link rel="stylesheet" th:href="@{/asserts/css/lrtk.css}" />
+    <link rel="stylesheet" th:href="@{/asserts/css/jqtransform.css}" />
+    <script type="text/javascript" th:src="@{/asserts/player/jwplayer.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery-1.8.0.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.fancybox.pack.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/audio.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/coin-slider.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/banner.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/common_fun.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/xAutocomplete_JQ.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.xplaceholder.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.jqtransform.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/avalon/avalon.min_xwk.js}"></script>
+    <script type="text/javascript">
+        avalon.config({loader: false})
+    </script>
+</head>
+<body>
+<div id="wrap">
+    <div id="topKvBg">
+        <img th:src="@{asserts/css/img/03.jpg}">
+        <s></s><i></i>
+    </div>
+    <div id="header">
+        <div class="topMenu">
+            <div class="inner">
+                <ul class="menu">
+                    <li >
+                        <a class="con" href="/user/home">HOME</a>
+
+                    </li>
+
+                    <li>
+                        <a class="con" href="javascript:;">艺术商店</a>
+                        <div class="downMenu downMenu2 div_menu_top2">
+                            <div class="preview">
+                                <div class="previewBox" style="display:none">
+                                    <a href="" class="previewCon">
+                                        <div class="pic"><img th:src="@{/asserts/image/20210920.jpg}"></div>
+                                        <h4>（延期）RAM纸张实验室 | 来吧！纸人偶！</h4>
+                                        <p>2021-01-23</p>
+                                    </a>
+                                </div>
+                                <div class="previewBox" style="display:none">
+                                    <a href="" class="previewCon">
+                                        <div class="pic"><img th:src="@{/asserts/image/202101211714221797.jpg}"></div>
+                                        <h4>（延期）RAM纸张实验室 | 缝隙</h4>
+                                        <p>2021-01-24</p>
+                                    </a>
+                                </div>
+                                <div class="switch">
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                            </div>
+                            <ul>
+                                <li><a href="/chinese">中国艺术画</a></li>
+                                <li><a href="/western">西方艺术画</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="con" href="javascript:;">艺术家</a>
+                        <div class="downMenu">
+                            <ul>
+                                <li><a href="/chinesepeople">中国艺术家</a></li>
+                                <li><a href="">西方艺术家</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li >
+                        <a class="con" href="/Mycart"><i class="t3"></i>购物车</a>
+                    </li>
+                </ul>
+                <div class="topLink">
+                    <ul>
+
+                        <li><a class="link" onclick="show('http://127.0.0.1:8081/userKeFu','用户客服中心','800','600')"><i class="t7"></i>客服</a></li>
+                        </li>
+                        <li><a class="link" href="/administratorLogin" onclick="G_show_login_div()"><i class="t8"></i>管理员登录</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content" style="background: whitesmoke" class="bookDetail cf">
+        <s class="conLBg"></s><s class="conRBg"></s>
+        <div class="cf">
+            <div class="bookImg">
+                <div>
+					<span class="bigPic">
+						<img th:src="@{asserts/image/202009031101069996.jpg}">
+						<s class="rBg"></s>
+					</span>
+                </div>
+                <div class="buyButtom">
+                    <em><i class="yuan">¥</i><span>666</span></em>					</div>
+            </div>
+            <div class="bookInfo">
+                <h2>帘幕线上出版第二期：偶然的到访</h2>
+                <span>图书 / 艺术类</span>
+                <em></em>
+
+                <p>&nbsp;</p>
+
+                <p>&nbsp;</p>
+
+                <p>2004年，歌手陈绮贞的一曲&ldquo;旅行的意义&rdquo;红遍大街小巷，在年轻人之间传唱度相当高。这首歌可以说是现代休闲旅游的最佳写照，歌词中提到&ldquo;品尝过夜的巴黎&rdquo;、&ldquo;踏过下雪的北京&rdquo;、&ldquo;埋藏记忆的土耳其&rdquo;、&ldquo;流连电影里美丽的不真实的场景&rdquo;、&ldquo;你离开我，就是旅行的意义&rdquo;&mdash;&mdash;透过这些句子描绘出满足人们幻想及可供消费的图像，同时强化了旅行作为一种远离喧嚣并与自我和解的内省行为。</p>
+
+                <p>&nbsp;</p>
+
+                <p>在前疫情时代，旅游对小康家庭来说是稀松平常的事，甚至是现代生活中必要的调剂品。根据中国旅游研究院发布的《2019年旅游市场基本情况》显示，2019年，中国国内旅游人数达60.06亿人次，比上年同期增长8.4%；中国公民出境旅游人数达1.55亿人次，比上年同期增长3.3%。与此同时，智慧型手机的普及与社交媒体的广泛使用，促进人口移动过程中大量生产图像并使之流通，这些图像极大地影响人们视觉经验及意识形态与叙事的建构。除了休闲旅游之外，旅行的研究与讨论更广泛地指涉，如宗教朝圣、帝国扩张、政治难民、经济移民、外地劳工、人类学的田野调查、科学探险、虚拟旅游等。本期讨论核心便着重关注这些人口流动或虚拟流动带来的文化交流、冲突、渗透与改变中的自我建构与他者想像，讨论包含人为何移动、生产图像的动机、观者与被观看对象之间的关系、被观看对象的自我异化、视觉符号的多重意识形态、文字意象的变异与杂糅、观光客的哲学&hellip;&hellip;等等。</p>
+
+                <p>&nbsp;</p>
+
+                <p>本期《帘幕》邀请来自国内外八位讲者与作者针对以上议题开展讨论。艺术家凯鲁丁&middot;瓦哈卜在他长期摄影项目《风景中的马来人》（2014年迄今）的基础上，进一步延伸发展《年轻人，去西方吧》的虚构写作。文章以半游记、半论述文献的形式出现，通篇充溢着&ldquo;集体幻想&rdquo;，呈现半真半假的故事和后殖民图景。艺术家区秀诒用关键词铺开她目前正在创作中的项目《静海武士的极尽旅程（三幕剧）》的线索。&ldquo;马来虎&rdquo;、&ldquo;怪杰哈力猫&rdquo;、&ldquo;导航系统&rdquo;，区秀诒试图追踪1940年代在马来亚行动的日籍情报员谷丰其在民间传说中、在不同图像媒介（历史照片、政治宣传片、电视剧）中流转的身影，他作为一种符号承载的是不同国族所欲传递的意识形态与身份认同。艺术家借此欲将历史从冷战结构的影响解放出来，重新想像马来西亚与其邻近区域的历史问题意识。来自马绍尔群岛的表演艺术家、诗人凯西&middot;杰顿&middot;基希纳，长期关注该地区的生态变迁与冷战期间核试验所遗留的影响。在她的诗《怪物》里，当地传说中的食婴女恶魔Mejenkwaad与被核辐射影响导致流产的当地妇女在形象与心理上成为相互参照的主体，试图为受创群体找寻心理治愈以及与自我和解的可能性。艺术家方迪在阶段性作品《献给布干维尔的青春》的呈现中，描写了在全球化政治经济扩展的进程中，一位中国商人因缘际会之下来到位于南太平洋的布干维尔岛，成为当地荣誉酋长、开展贸易事业并深入当地生活，在他与当地人的文化交流与权力结构中，图像慢慢地开始产生变异。学者王钦的书评为我们引介日本思想家东浩纪其著作《观光客的哲学》的精辟见解。东浩纪试图探讨&ldquo;观光客&rdquo;不再仅是市场逻辑和旅游产业的&ldquo;产品&rdquo;，一个可以被还原为统计数字的匿名群体，而是包含着当下乃至未来的政治可能性。</p>
+
+                <p>&nbsp;</p>
+
+                <p>在本期开头的部分，我们邀请独立策展人施瀚涛、写作者btr与王占黑分别从摄影、电影以及文学的角度，深入简出地剖析旅行与图像生产以及观光客心理的复杂关系。另一方面，人口流动在疫情时代变得极为困难，在执行防疫工作的同时，人们成为国际政治角力的筹码，遭受差别待遇并造成不同群体之间的对立，美术馆团队就此具有迫切的议题进行了一次内部对话。</p>
+            </div>
+        </div>
+        <div>
+        </div>
+        <div id="footer">
+            <s></s>
+            <div class="inner">
+                <div class="topBox">
+                    <div class="newSwitch" >
+                        <h3>公告</h3>
+                        <a class="more" href="">更多新闻</a>
+                        <a class="newBox" href="" th:each="News:${session.news}">
+                            <h4>[[${News.title}]]</h4>
+                            <p>[[${News.content}]]</p>
+                        </a>
+                        <div class="switch">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <h3><i class="i2"></i>开放时间</h3>
+                        <p>星期二 - 星期日 10:00 ~ 18:00</p>
+                        <h3><i class="i3"></i>地址</h3>
+                        <p>邯郸市邯山区学院北路</p>
+                        <h3><i class="i1"></i>电话和邮箱</h3>
+                        <p> +86 21 63216251<br><a href="">1136993620@qq.com</a></p>
+                    </div>
+                    <div class="calendarBox">
+                        <div class="cldBody">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <td colspan="7">
+                                        <div class="top">
+                                            <span id="left"><</span>
+                                            <span id="topDate"></span>
+                                            <span id="right">></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr id="week" >
+                                    <td>日</td>
+                                    <td>一</td>
+                                    <td>二</td>
+                                    <td>三</td>
+                                    <td>四</td>
+                                    <td>五</td>
+                                    <td>六</td>
+                                </tr>
+                                </thead>
+                                <tbody id="tbody" ></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var param = {
+                tim_show_next_page:false,
+                data_end:false,
+                loading:false,
+                page:1
+            };
+            function show_next_page(){
+                if(param.loading){
+                    return;
+                }
+                param.loading = true;
+                $.fancybox.showLoading();
+
+                $.get($.gurl('/ajaxs/load_publication'),{
+                    page:++param.page
+                },function(rsp){
+                    if(rsp == ''){
+                        param.data_end = true;
+                    }else{
+                        $('.bookList ul').append(rsp);
+                    }
+                    param.loading = false;
+                    $.fancybox.hideLoading();
+                });
+            }
+            $(window).bind('scroll.show_next_page', function (){
+                //显示下一页
+                if($.pageEnd() && !param.data_end){
+                    if(param.tim_show_next_page){
+                        clearTimeout(param.tim_show_next_page);
+                    }
+                    param.tim_show_next_page = setTimeout(function(){
+                        show_next_page();
+                    },200);
+                }
+            });
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var G_forget_email = '';
+            var tim_resend;
+
+            //preload small pic
+            $('#topKvBg img[_src]').each(function(){
+                var _this = $(this);
+                var img = new Image();
+                img.onload = function(){
+                    _this.attr('src',_this.attr('_src'));
+                };
+                img.src = $(this).attr('_src');
+            });
+
+            //top menu first click
+            $('.topMenu .menu>li').each(function(){
+                var a_tag = $(this).children('a');
+                var a_sub = $(this).find('ul li:first a');
+                if(a_sub.attr('href') != 'javascript:;'){
+                    a_tag.attr('href',a_sub.attr('href'));
+                }
+            });
+            //top menu exhibition/event
+            function set_top_menu(div){
+                $(div+' .previewBox:first').show();
+                $(div+' .switch i:first').addClass('now');
+
+                $(div+' .switch i').css({cursor:'pointer'});
+
+                var idx = 0;
+                var idx_count = $(div+' .previewBox').size() -1;
+                if(idx_count < 1){
+                    return;
+                }
+
+                var tim = null;
+
+                $(div+' .switch i').hover(function(){
+                    clearTimeout(tim);
+                    idx = $(this).index();
+                    $(div+' .previewBox:visible').fadeOut();
+                    $(div+' .previewBox').eq(idx).fadeIn();
+                    $(div+' .switch i').removeClass('now');
+                    $(div+' .switch i').eq(idx).addClass('now');
+                },function(){
+                    go();
+                });
+
+                $(div+' .preview').hover(function(){
+                    clearTimeout(tim);
+                },function(){
+                    go();
+                });
+                function go(){
+                    clearTimeout(tim);
+                    tim = setTimeout(function(){
+                        if($(div).is(':visible')){
+                            idx++;
+                            if(idx >= idx_count){
+                                idx = -1;
+                            }
+                            $(div+' .previewBox:visible').fadeOut();
+                            $(div+' .previewBox').eq(idx).fadeIn();
+                            $(div+' .switch i').removeClass('now');
+                            $(div+' .switch i').eq(idx).addClass('now');
+                        }
+                        go();
+                    },3000);
+                };
+                go();
+            };
+            set_top_menu('.div_menu_top1');
+            set_top_menu('.div_menu_top2');
+
+
+            //news list
+            function set_news_list(){
+                var div = '#footer .newSwitch';
+                $(div+' .newBox').hide();
+                $(div+' .newBox:first').show();
+                $(div+' .switch i:first').addClass('now');
+
+                var idx = 0;
+                var idx_count = $(div+' .newBox').size() -1;
+                if(idx_count < 1){
+                    return;
+                }
+
+                var tim = null;
+                $(div+' .switch i').hover(function(){
+                    clearTimeout(tim);
+                    idx = $(this).index();
+                    $(div+' .newBox:visible').stop().fadeOut();
+                    $(div+' .newBox').eq(idx).stop().fadeIn();
+                    $(div+' .switch i').removeClass('now');
+                    $(div+' .switch i').eq(idx).addClass('now');
+                },function(){
+                    go();
+                });
+                function go(){
+                    clearTimeout(tim);
+                    tim = setTimeout(function(){
+                        idx++;
+                        if(idx >= idx_count){
+                            idx = -1;
+                        }
+                        $(div+' .newBox:visible').stop().fadeOut();
+                        $(div+' .newBox').eq(idx).stop().fadeIn();
+                        $(div+' .switch i').removeClass('now');
+                        $(div+' .switch i').eq(idx).addClass('now');
+                        go();
+                    },3000);
+                };
+                go();
+            };
+            set_news_list();
+
+
+            $('.li_share').hover(function(){
+                $('.stayIcon').fadeIn();
+            },function(){
+                $('.stayIcon').fadeOut();
+            });
+
+            var date = new Date();
+            var year = date.getFullYear();
+            var nowyear = date.getFullYear();
+            var month = date.getMonth()+1;
+            var nowmonth = date.getMonth()+1;
+            var dateday = date.getDate();
+            var todateHtml = year + '年'+ month + '月';
+            $('#topDate').text(todateHtml);
+            function showcld(){
+                var monthDay = [31,28,31,30,31,30,31,31,30,31,30,31];  // 创建数组存放每个月有多少天 ,默认2月为28天
+                // 判断闰年
+                if(year % 4 == 0 && year %100 != 0 || year % 400 == 0){
+                    monthDay[1] = 29;
+                }
+                // 计算每个月的天数
+                var days = monthDay[month-1];
+                // 判断每月第一天为周几
+                date.setYear(year);        //某年
+                date.setMonth(month-1);   //某年的某月
+                date.setDate(1);   // 某月的某天
+                var weekday = date.getDay();  // 判断某天是周几
+                // 补齐一号前的空格
+                var tbodyHtml = '<tr>';
+                for(var i = 0; i<weekday; i++){
+                    tbodyHtml += "<td></td>";
+                }
+                // 补齐每月的日期
+                var changLine = weekday;
+                var tagClass = '';
+                for(i=1; i<=days; i++){//每一个日期的填充
+                    if(year == nowyear && month == nowmonth && i == dateday) {
+                        tagClass = "curDate";//当前日期对应格子
+                    }else{
+                        tagClass = "isDate";
+                    }
+                    tbodyHtml += "<td class=" + tagClass + ">" + i + "</td>";
+                    changLine = (changLine+1)%7;
+                    if(changLine == 0 && i != days){//是否换行填充的判断
+                        tbodyHtml += "</tr><tr>";
+                    }
+                }
+                $('#tbody').empty();   // 清空原有的内容
+                $('#tbody').append(tbodyHtml);   //添加当前月份的日期内容
+            }
+// 设置按钮点击事件
+            $('#left').click(function(){
+                month = month-1;
+                if(month < 1){
+                    month = 12;
+                    year--;
+                }
+                var todateHtml = year + '年'+ month + '月';
+                $('#topDate').text(todateHtml);
+                showcld();
+            });
+
+            $('#right').click(function(){
+                month = month+1;
+                if(month > 12){
+                    month = 1;
+                    year++;
+                }
+                var todateHtml = year + '年'+ month + '月';
+                $('#topDate').text(todateHtml);
+                showcld();
+            })
+            showcld();  //页面加载后执行函
+
+
+
+            //搜索
+
+
+
+
+
+
+        });
+    </script>
+
+</body>
+</html>

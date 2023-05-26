@@ -1,0 +1,42 @@
+<!-- Copyright (c) 2019-2020 十三 all rights reserved. -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head-fragment(title,path)">
+    <meta charset="UTF-8">
+    <title>艺术画展交易界面</title>
+    <link rel="stylesheet" th:href="@{/asserts/mall/css/swiper-bundle.min.css}">
+    <link rel="stylesheet" th:href="@{/asserts/mall/css/iconfont.css}">
+    <link rel="stylesheet" th:href="@{/asserts/mall/css/common.css}">
+    <link rel="stylesheet" th:href="@{/asserts/mall/styles/header.css}">
+    <link rel="stylesheet" th:href="@{'/asserts/mall/styles/'+${path}+'.css'}">
+    <link rel="stylesheet" th:href="@{/asserts/admin/plugins/sweetalert/sweetalert.css}"/>
+<nav id="nav" th:fragment="nav-fragment">
+</nav>
+<header id="header" th:fragment="header-fragment">
+    <div class="center">
+        <div class="fr">
+            <th:block th:unless="${session.newBeeMallUser==null}">
+                <div class="user">
+                    <ul class="selector">
+                        <li>
+                            <a th:href="@{/personal}">
+                                个人中心
+                            </a>
+                        </li>
+                        <li>
+                            <a th:href="@{/orders}">
+                                我的订单
+                            </a>
+                        </li>
+                        <li>
+                            <a th:href="@{/logout}">
+                                退出登录
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </th:block>
+        </div>
+    </div>
+</header>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>三级导航</title>
+    <link rel="stylesheet" type="text/css" th:href="@{css/left-side-menu.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{font/iconfont.css}">
+    <script th:src="@{asserts/js/jquery-1.10.2.min.js}"></script>
+    <script th:src="@{asserts/css/jquery.slimscroll.min.js}"></script>
+    <script type="text/javascript" th:src="@{asserts/css/left-side-menu.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/css/table.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{asserts/layui/css/layui.css}">
+    <style type="text/css">
+        .container {
+            height: 70px;
+            width: 800px;
+/*            margin-top: -40px;*/
+            margin-left: 350px;
+        }
+        .search {
+            width: 300px;
+            height: 40px;
+            border-radius: 18px;
+            outline: none;
+            border: 1px solid #ccc;
+            padding-left: 20px;
+            position: absolute;
+        }
+        .btn {
+            height: 35px;
+            width: 35px;
+            margin-top: -5px;
+            margin-left: 740px;
+            position: absolute;
+            border-radius: 18px;
+            background: url("asserts/image/search.jpg") ;
+            top: 6px;
+            left: 285px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body  onload="decodeMessage()">
+<div class="container">
+    <form method="get" th:action="@{/CommentManage}">
+        <input type="text" class="search" name="search" placeholder="搜索">
+        <button type="submit"  class="btn"></button>
+    </form>
+</div>
+<table  class="pure-table pure-table-bordered">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>评论内容</th>
+        <th>星级评分</th>
+        <th>评价时间</th>
+        <th>用户ID</th>
+        <th>评论对象</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="guestbooks:${guestbooks}">
+        <td>[[${guestbooks.id}]]</td>
+        <td>[[${guestbooks.comment}]]</td>
+        <td>[[${guestbooks.stars}]]</td>
+        <td>[[${guestbooks.times}]]</td>
+        <td>[[${guestbooks.username}]]</td>
+        <td>[[${guestbooks.paintsName}]]</td>
+        <td>
+            <a th:href="'/forbidComment?username='+${guestbooks.username}" class="layui-btn layui-btn-sm" >禁用</a>
+            <a th:href="'/deleteComment?id='+ ${guestbooks.id}" class="layui-btn layui-btn-sm layui-btn-danger">删除</a>
+        </td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <th>总数：[[${total}]]</th>
+
+        <th id="Content_div">
+
+        </th>
+        <th>共:[[${#numbers.formatInteger(page,0)}]]页；每页[[${limit}]]条</th>
+    </tr>
+    </tfoot>
+</table>
+
+
+
+<script type="text/javascript">
+    function decodeMessage(){
+        var tmp="";
+        for(i=1;i<=[[${page}]];i++){
+            tmp+="<a  href='/CommentManage?page="+i+"'>"+i+"</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";  // 1
+        }
+        document.getElementById("Content_div").innerHTML=tmp;
+    }
+</script>
+
+
+</body>

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>校园艺术画展| Campus art exhibition</title>
+    <link rel="icon" th:href="@{/asserts/image/favicon.ico}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/asserts/css/style_cn.css}" />
+    <link rel="stylesheet" th:href="@{/asserts/css/lrtk.css}" />
+    <link rel="stylesheet" th:href="@{/asserts/css/jqtransform.css}" />
+    <script type="text/javascript" th:src="@{/asserts/player/jwplayer.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery-1.8.0.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.fancybox.pack.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/audio.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/coin-slider.min.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/banner.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/common_fun.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/xAutocomplete_JQ.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.xplaceholder.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/jquery.jqtransform.js}"></script>
+    <script type="text/javascript" th:src="@{/asserts/js/avalon/avalon.min_xwk.js}"></script>
+    <script type="text/javascript">
+        avalon.config({loader: false})
+    </script>
+</head>
+<body>
+<div id="wrap">
+    <div id="topKvBg">
+        <img th:src="@{asserts/css/img/03.jpg}">
+        <s></s><i></i>
+    </div>
+    <div id="header">
+        <div class="topMenu">
+            <div class="inner">
+                <h1 class="logo"><a href="/cn/">上海外滩美术馆 | Rockbund Art Museum</a></h1>
+                <ul class="menu">
+                    <li >
+                        <a class="con" href="/user/home">HOME</a>
+                    </li>
+                    <li>
+                        <a class="con" href="">艺术商店</a>
+                        <div class="downMenu">
+                            <ul>
+                                <li><a href="/chinese">中国艺术画</a></li>
+                                <li><a href="/western">西方艺术画</a></li>
+                                <li><a href="/comment">评分</a></li>
+                                <li><input type="button" onclick="show('http://127.0.0.1:8081/userKeFu','用户客服中心','800','600')"
+                                           style="width:85px; height:29px; background-color:Orange; border-radius: 2px;border: none;font-size:16px;outline:none;"
+                                           value="客服中心" /></li>
+                                <li><a href="http://127.0.0.1:8081/adminKeFu" target="_blank">管理员客服</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="con" href="javascript:;">展示鉴赏</a>
+                        <div class="downMenu downMenu2 div_menu_top2">
+                            <div class="preview">
+                                <div class="previewBox" style="display:none">
+                                    <a href="/cn/event/overview/2f2cswm" class="previewCon">
+                                        <div class="pic"><img th:src="@{/asserts/image/20210920.jpg}"></div>
+                                        <h4>（延期）RAM纸张实验室 | 来吧！纸人偶！</h4>
+                                        <p>
+                                            2021-01-23													</p>
+                                    </a>
+                                </div>
+                                <div class="previewBox" style="display:none">
+                                    <a href="/cn/event/overview/35fcswn" class="previewCon">
+                                        <div class="pic"><img th:src="@{/asserts/image/202101211714221797.jpg}"></div>
+                                        <h4>（延期）RAM纸张实验室 | 缝隙</h4>
+                                        <p>
+                                            2021-01-24													</p>
+                                    </a>
+                                </div>
+                                <div class="switch">
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                            </div>
+                            <ul>
+                                <li><a href="/cn/event/show_list/#today">今日活动</a></li>
+                                <li><a href="/cn/event/show_list/#preview">活动预告</a></li>
+                                <li><a href="/cn/event/show_list/#review">活动回顾</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="con" href="javascript:;">艺术家</a>
+                        <div class="downMenu">
+                            <ul>
+                                <li><a href="/cn/education/overview">西方艺术家</a></li>
+                                <li><a href="/cn/education/events">本国艺术家</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="con" href="javascript:;">新闻资讯</a>
+                        <div class="downMenu">
+                            <ul>
+                                <li><a href="/cn/research/overview">综述</a></li>
+                                <li><a href="/cn/research/events">活动</a></li>
+                                <li><a href="/second">相关出版物</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li >
+                        <a class="con" href="/Mycart"><i class="t3"></i>购物车</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="content" class="library">
+        <s class="conLBg"></s><s class="conRBg"></s>
+        <h2>出版物</h2>
+        <div class="bookList cf">
+
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var param = {
+                tim_show_next_page:false,
+                data_end:false,
+                loading:false,
+                page:1
+            };
+            function show_next_page(){
+                if(param.loading){
+                    return;
+                }
+                param.loading = true;
+                $.fancybox.showLoading();
+
+                $.get($.gurl('/ajaxs/load_publication'),{
+                    page:++param.page
+                },function(rsp){
+                    if(rsp == ''){
+                        param.data_end = true;
+                    }else{
+                        $('.bookList ul').append(rsp);
+                    }
+                    param.loading = false;
+                    $.fancybox.hideLoading();
+                });
+            }
+            $(window).bind('scroll.show_next_page', function (){
+                //显示下一页
+                if($.pageEnd() && !param.data_end){
+                    if(param.tim_show_next_page){
+                        clearTimeout(param.tim_show_next_page);
+                    }
+                    param.tim_show_next_page = setTimeout(function(){
+                        show_next_page();
+                    },200);
+                }
+            });
+        });
+    </script>
+    <div id="footer">
+        <s></s>
+        <div class="inner">
+            <div class="topBox">
+                <div class="newSwitch">
+                    <h3>公告</h3>
+                    <a class="more" href="/cn/press/show_list/news">更多新闻</a>
+                    <a class="newBox" href="/cn/press/detail/c89dww">
+                        <h4>客堂间里的故事正在发生｜上海外滩美术馆发起社区项目“客堂间”</h4>
+                        <p>“客堂间”是由上海外滩美术馆发起，聚焦外滩区域内社会与个人经验变迁的长期项目平台。</p>
+                    </a>
+                    <a class="newBox" href="/cn/press/detail/550dwv">
+                        <h4>“RAM空间站"来啦！</h4>
+                        <p>上海外滩美术馆很高兴地宣布“RAM空间站”（RAM Station）已正式向公众开放。观众熟悉的艺术商店和阅览室都已迁移至此，美术馆公共教育活动也在这里恢复举办，不定期展开影评会、讲座、工作坊以及与阅览室推荐书籍相关的各类活动。这里将成为RAM在闭馆期间与大家保持联系的新基地。</p>
+                    </a>
+                    <a class="newBox" href="/cn/press/detail/9f8dwu">
+                        <h4>艺术家项目—“部屋物语”公开征集</h4>
+                        <p>这是一封致特殊时期所有记录者们的公开征集。上海外滩美术馆邀请你加入由艺术家郑亦然（Jasphy Zheng）发起的一项长期公共参与项目。我们希望通过共同的努力，收集起散落在各方的珍贵文字。</p>
+                    </a>
+                    <div class="switch">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="info">
+                    <h3><i class="i2"></i>开放时间</h3>
+                    <p>星期二 - 星期日 10:00 ~ 18:00</p>
+                    <h3><i class="i3"></i>地址</h3>
+                    <p>上海市黄浦区虎丘路20号</p>
+                    <h3><i class="i1"></i>电话和邮箱</h3>
+                    <p> +86 21 63216251<br><a href="mailto:info@rockbundartmuseum.org">info@rockbundartmuseum.org</a></p>
+                </div>
+                <div class="calendarBox">
+                    <div class="cldBody">
+                        <table>
+                            <thead>
+                            <tr>
+                                <td colspan="7">
+                                    <div class="top">
+                                        <span id="left"><</span>
+                                        <span id="topDate"></span>
+                                        <span id="right">></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr id="week" >
+                                <td>日</td>
+                                <td>一</td>
+                                <td>二</td>
+                                <td>三</td>
+                                <td>四</td>
+                                <td>五</td>
+                                <td>六</td>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody" ></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="bottomBox">
+                <div class="footerNav">
+                    <a href="/cn/page/detail/474cr">关于</a><i></i>
+                    <a href="/cn/page/detail/dbdk">参观</a><i></i>
+                    <a href="/cn/exhibition/show_list/#now">展览</a><i></i>
+                    <a href="/cn/event/show_list/#today">活动</a><i></i>
+                    <a href="/cn/education/overview">教育</a><i></i>
+                    <a href="/cn/research/overview">研究</a><i></i>
+                    <a href="/cn/library/publication">资料</a><i></i>
+                    <a href="/cn/press/show_list/press_release">媒体</a><i></i>
+                    <a href="/cn/exhibition/overview/e6djst">HUGO BOSS ASIA ART</a>
+                </div>
+                <div class="copy">
+                    <span class="footerLogo"></span>
+                    <small>Copyright &copy; 2021 上海外滩美术馆 | Rockbund Art Museum. | <a href="http://www.beian.miit.gov.cn" target="_blank">沪ICP备14037079号-1</a></small>
+                    <div class="supported">Supported by <a href="http://www.rockbund.com/" target="_blank"><span>ROCKBUND</span></a></div>
+                    <div class="follow">
+                        <strong>follow us</strong>
+                    </div>
+                    <a href="http://www.comonetwork.com/" class="como" target="_blank">Designed &amp; Developed by COMONETWORK</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        var G_forget_email = '';
+        var tim_resend;
+
+        //preload small pic
+        $('#topKvBg img[_src]').each(function(){
+            var _this = $(this);
+            var img = new Image();
+            img.onload = function(){
+                _this.attr('src',_this.attr('_src'));
+            };
+            img.src = $(this).attr('_src');
+        });
+
+        //top menu first click
+        $('.topMenu .menu>li').each(function(){
+            var a_tag = $(this).children('a');
+            var a_sub = $(this).find('ul li:first a');
+            if(a_sub.attr('href') != 'javascript:;'){
+                a_tag.attr('href',a_sub.attr('href'));
+            }
+        });
+        //top menu exhibition/event
+        function set_top_menu(div){
+            $(div+' .previewBox:first').show();
+            $(div+' .switch i:first').addClass('now');
+
+            $(div+' .switch i').css({cursor:'pointer'});
+
+            var idx = 0;
+            var idx_count = $(div+' .previewBox').size() -1;
+            if(idx_count < 1){
+                return;
+            }
+
+            var tim = null;
+
+            $(div+' .switch i').hover(function(){
+                clearTimeout(tim);
+                idx = $(this).index();
+                $(div+' .previewBox:visible').fadeOut();
+                $(div+' .previewBox').eq(idx).fadeIn();
+                $(div+' .switch i').removeClass('now');
+                $(div+' .switch i').eq(idx).addClass('now');
+            },function(){
+                go();
+            });
+
+            $(div+' .preview').hover(function(){
+                clearTimeout(tim);
+            },function(){
+                go();
+            });
+            function go(){
+                clearTimeout(tim);
+                tim = setTimeout(function(){
+                    if($(div).is(':visible')){
+                        idx++;
+                        if(idx >= idx_count){
+                            idx = -1;
+                        }
+                        $(div+' .previewBox:visible').fadeOut();
+                        $(div+' .previewBox').eq(idx).fadeIn();
+                        $(div+' .switch i').removeClass('now');
+                        $(div+' .switch i').eq(idx).addClass('now');
+                    }
+                    go();
+                },3000);
+            };
+            go();
+        };
+        set_top_menu('.div_menu_top1');
+        set_top_menu('.div_menu_top2');
+
+
+        //news list
+        function set_news_list(){
+            var div = '#footer .newSwitch';
+            $(div+' .newBox').hide();
+            $(div+' .newBox:first').show();
+            $(div+' .switch i:first').addClass('now');
+
+            var idx = 0;
+            var idx_count = $(div+' .newBox').size() -1;
+            if(idx_count < 1){
+                return;
+            }
+
+            var tim = null;
+            $(div+' .switch i').hover(function(){
+                clearTimeout(tim);
+                idx = $(this).index();
+                $(div+' .newBox:visible').stop().fadeOut();
+                $(div+' .newBox').eq(idx).stop().fadeIn();
+                $(div+' .switch i').removeClass('now');
+                $(div+' .switch i').eq(idx).addClass('now');
+            },function(){
+                go();
+            });
+            function go(){
+                clearTimeout(tim);
+                tim = setTimeout(function(){
+                    idx++;
+                    if(idx >= idx_count){
+                        idx = -1;
+                    }
+                    $(div+' .newBox:visible').stop().fadeOut();
+                    $(div+' .newBox').eq(idx).stop().fadeIn();
+                    $(div+' .switch i').removeClass('now');
+                    $(div+' .switch i').eq(idx).addClass('now');
+                    go();
+                },3000);
+            };
+            go();
+        };
+        set_news_list();
+
+
+        $('.li_share').hover(function(){
+            $('.stayIcon').fadeIn();
+        },function(){
+            $('.stayIcon').fadeOut();
+        });
+
+        var date = new Date();
+        var year = date.getFullYear();
+        var nowyear = date.getFullYear();
+        var month = date.getMonth()+1;
+        var nowmonth = date.getMonth()+1;
+        var dateday = date.getDate();
+        var todateHtml = year + '年'+ month + '月';
+        $('#topDate').text(todateHtml);
+        function showcld(){
+            var monthDay = [31,28,31,30,31,30,31,31,30,31,30,31];  // 创建数组存放每个月有多少天 ,默认2月为28天
+            // 判断闰年
+            if(year % 4 == 0 && year %100 != 0 || year % 400 == 0){
+                monthDay[1] = 29;
+            }
+            // 计算每个月的天数
+            var days = monthDay[month-1];
+            // 判断每月第一天为周几
+            date.setYear(year);        //某年
+            date.setMonth(month-1);   //某年的某月
+            date.setDate(1);   // 某月的某天
+            var weekday = date.getDay();  // 判断某天是周几
+            // 补齐一号前的空格
+            var tbodyHtml = '<tr>';
+            for(var i = 0; i<weekday; i++){
+                tbodyHtml += "<td></td>";
+            }
+            // 补齐每月的日期
+            var changLine = weekday;
+            var tagClass = '';
+            for(i=1; i<=days; i++){//每一个日期的填充
+                if(year == nowyear && month == nowmonth && i == dateday) {
+                    tagClass = "curDate";//当前日期对应格子
+                }else{
+                    tagClass = "isDate";
+                }
+                tbodyHtml += "<td class=" + tagClass + ">" + i + "</td>";
+                changLine = (changLine+1)%7;
+                if(changLine == 0 && i != days){//是否换行填充的判断
+                    tbodyHtml += "</tr><tr>";
+                }
+            }
+            $('#tbody').empty();   // 清空原有的内容
+            $('#tbody').append(tbodyHtml);   //添加当前月份的日期内容
+        }
+// 设置按钮点击事件
+        $('#left').click(function(){
+            month = month-1;
+            if(month < 1){
+                month = 12;
+                year--;
+            }
+            var todateHtml = year + '年'+ month + '月';
+            $('#topDate').text(todateHtml);
+            showcld();
+        });
+
+        $('#right').click(function(){
+            month = month+1;
+            if(month > 12){
+                month = 1;
+                year++;
+            }
+            var todateHtml = year + '年'+ month + '月';
+            $('#topDate').text(todateHtml);
+            showcld();
+        })
+        showcld();  //页面加载后执行函
+
+
+
+        //搜索
+
+
+
+
+
+
+    });
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>评论</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .star{
+            display: block;
+            position: relative;
+            width: 150px;
+            height: 60px;
+            padding: 0;
+            border: none;
+        }
+
+        .star > input{
+            position: absolute;
+            margin-right: -100%;
+            opacity: 0;
+        }
+
+        .star > label{
+            position: relative;
+            display: inline-block;
+            float: right;
+            width: 30px;
+            height: 30px;
+            color: transparent;
+            background-image: url("asserts/image/star.png");
+            background-repeat: no-repeat;
+        }
+        .star > input:focus + label{
+            outline: none;
+        }
+
+        .star > input:checked~label,
+        .star > input:focus~label,
+        .star > input:hover~label{
+            background-position: 0 -30px;
+        }
+        .star > label:before{
+            display: none;
+            position: absolute;
+            content: " ";
+            width: 30px;
+            height: 30px;
+            background-image: url("asserts/image/star.png");
+            background-repeat: no-repeat;
+            bottom: 0;
+        }
+
+        .star > input:checked + label:before{
+            display: block;
+            animation-name: rotateStar;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes rotateStar{
+            0%{
+                transform: scale(1) rotate(0);
+            }
+
+            95%{
+                transform: scale(4) rotate(90deg);
+                opacity: 0;
+            }
+
+            100%{
+                transform: scale(1) rotate(0);
+                opacity: 0;
+            }
+        }
+
+        textarea{
+
+            height: 130px;
+
+            padding: 10px;
+
+            width: 580px;
+
+        }
+        .comment{
+
+            width: 600px;
+
+            border: 1px solid gray;
+
+            margin: 50px auto;
+
+            padding: 40px 40px;
+
+        }
+    </style>
+</head>
+<body>
+<ul th:each="paint:${painting}">
+    <li>
+        <a href="/comment"> <img alt="image" th:src="'asserts/'+${paint.img}"></a>
+        <div class="info">
+            <h3>[[${paint.name}]]</h3>
+            <p>[[${paint.desc}]]</p>
+        </div>
+    </li>
+</ul>
+<div class="comment"> <span>星级评分</span>
+    <form method="post" name="message"  th:action="@{/message}"
+          onsubmit="return check()">
+        <div class="star">
+            <input type="radio" id="rate5" name="stars" value="5星">
+            <label for="rate5" title="Amazing"></label>
+            <input type="radio" id="rate4" name="stars" value="4星">
+            <label for="rate4" title="Good"></label>
+            <input type="radio" id="rate3" name="stars" value="3星">
+            <label for="rate3" title="Average"></label>
+            <input type="radio" id="rate2" name="stars" value="2星">
+            <label for="rate2" title="Not good"></label>
+            <input type="radio" id="rate1" name="stars" value="1星">
+            <label for="rate1" title="Terrible"></label>
+        </div>
+        <p style="color:red">我要评论</p>
+        <textarea placeholder="请输入你的意见和建议" name="comment">  </textarea><br>
+        <input class="btn btn-primary btn-wide login-btn" value="LOGIN"
+               type="submit" />
+    </form>
+    <table>
+        <thead>
+        <tr>
+            <th>评论</th>
+            <th>用户Id</th>
+            <th>星级评价</th>
+            <th>评论时间</th>
+        </tr>
+        <tr th:each="guest:${guestbook}">
+            <td>[[${guest.comment}]]</td>
+            <td>[[${username}]]</td>
+            <td>[[${guest.stars}]]</td>
+            <td>[[${guest.times}]]</td>
+        </tr>
+        </thead>
+    </table>
+
+</div>
+<form method="post" name="tohome"  th:action="@{/tohome}"
+      onsubmit="return check()">
+    <input class="btn btn-primary btn-wide login-btn" value="HOME"
+           type="submit" />
+</form>
+</body>
+</html>

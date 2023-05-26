@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function show(url, name, iWidth, iHeight) {
+            var url; //转向网页的地址;
+            var name; //网页名称，可为空;
+            var iWidth; //弹出窗口的宽度;
+            var iHeight; //弹出窗口的高度;
+            var iTop = (window.screen.availHeight - 30 - iHeight) / 2; //获得窗口的垂直位置;
+            var iLeft = (window.screen.availWidth - 10 - iWidth) / 2; //获得窗口的水平位置;
+            window.open(url, name, 'height=' + iHeight + ',,innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' + iWidth + ',top=' + iTop + ',left=' + iLeft + ',toolbar=no,menubar=no,scrollbars=auto,resizeable=no,location=no,status=no');
+        }
+    </script>
+</head>
+
+<body>
+<h1>登陆成功</h1><br/>
+<h3>以下为示例， 实际项目中可随意 调换  <p style="color: red">一定得仔细  看好网址  就行</p>,,<p style="color: red">看好网址</p>,,,<p style="color: red">看好网址</p></h3>
+<hr/>
+
+<a href="/user/test1">学生和管理员和兴趣爱好者</a>
+<hr/>
+<a href="/user/test2">管理员和兴趣爱好者</a>
+<hr/>
+<a href="/user/test3">管理员</a>
+<hr/>
+<a href="/user/test4">没有加权限的</a>
+<hr/>
+<br/>
+<br/>
+<a href="http://127.0.0.1:8081/adminKeFu" target="_blank">管理员客服</a>
+<input type="button" onclick="show('http://127.0.0.1:8081/userKeFu','用户客服中心','800','600')"
+       style="width:85px; height:29px; background-color:Orange; border-radius: 2px;border: none;font-size:16px;outline:none;"
+       value="客服中心" />
+</body>
+</html>
